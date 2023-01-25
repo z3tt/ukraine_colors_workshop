@@ -2,7 +2,7 @@
 
 In this workshop, we will first cover the basics of color usage in data visualization. Afterward, we will explore different color palettes that are available in R, discuss which extension packages are exceptional in terms of palettes and functionality, and learn how to customize palettes and scales in ggplot2.
 
-This session is part of the ["Workshops for Ukraine"](https://sites.google.com/view/dariia-mykhailyshyna/main/r-workshops-for-ukraine) initiative by Dariia Mykhailyshyna
+This session is part of the ["Workshops for Ukraine"](https://sites.google.com/view/dariia-mykhailyshyna/main/r-workshops-for-ukraine) initiative by Dariia Mykhailyshyna.
 
 <div align="center">
   <br>
