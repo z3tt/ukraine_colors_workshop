@@ -1,0 +1,1475 @@
+---
+title: "Color Palette Choice and Customization in R and ggplot2"
+subtitle: "<span style='font-size:1.75em;line-height:1.1;'>Workshops for Ukraine</span></span>"
+author: "<b style='color:#28a87d;'><a href='https://www.cedricscherer.com'>Cédric Scherer</a></b> **//** Jan 26, 2023"
+format: 
+  revealjs: 
+    theme: css/style.scss
+    footer: '**[Cédric Scherer](https://cedricscherer.com) //** Workshops for Ukraine **//** Jan 26, 2022'
+    transition: fade
+    progress: true
+    multiplex: false
+    preview-links: true
+    scrollable: false
+    hide-inactive-cursor: true
+    highlight-style: printing
+    chalkboard:
+      theme: whiteboard
+      boardmarker-width: 4
+      buttons: true
+    pause: true
+    mainfont: Cabinet Grotesk
+editor: source
+knitr:
+  opts_chunk: 
+    dev: "ragg_png"
+    retina: 1
+    dpi: 200
+execute:
+  freeze: auto
+  cache: true
+  echo: true
+  fig-width: 5
+  fig-height: 6
+---
+
+##  {background-image="img/avatars.png" background-position="center" background-size="77%"}
+
+::: footer
+:::
+
+##  {background-image="img/projects-clients.png" background-position="center" background-size="77%" background-color="#606060"}
+
+::: footer
+:::
+
+##  {background-image="img/projects-personal.png" background-position="center" background-size="77%" background-color="#606060"}
+
+::: footer
+:::
+
+
+## {background-image="img/color_wall.jpeg" background-position="center"}
+
+::: footer
+Photo by [Mario Gogh](https://unsplash.com/@mariogogh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on Unsplash
+:::
+
+
+## {background-image="img/rgb.png" background-position="center" background-size="70%"}
+
+
+## {background-image="img/hcl.png" background-position="center" background-size="70%"}
+
+
+# Working with Colors in R
+
+## Color Definitions
+
+```{r}
+#| label: color-defs-a
+pal_a <- c("green", "red", "blue")
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-a-pie
+#| echo: false
+#| fig-height: 5.3
+#| purl: false
+colorspace::demoplot(pal_a, type = "pie")
+```
+
+```{r}
+#| label: demo-pal-a-bar
+#| echo: false
+#| fig-height: 5.3
+#| purl: false
+colorspace::demoplot(pal_a, type = "bar")
+```
+:::
+
+## Color Definitions
+
+```{r}
+#| label: color-defs-b
+pal_b <- c("olivedrab", "salmon3", "slateblue")
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-b-pie
+#| echo: false
+#| fig-height: 5.3
+#| purl: false
+colorspace::demoplot(pal_b, type = "pie")
+```
+
+```{r}
+#| label: demo-pal-b-bars
+#| echo: false
+#| fig-height: 5.3
+#| purl: false
+colorspace::demoplot(pal_b, type = "bar")
+```
+:::
+
+## Color Definitions
+
+```{r}
+#| label: color-defs-c
+pal_c <- c("#28A87D", "#A83D28", "#2853a8")
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-c-pie
+#| echo: false
+#| fig-height: 5.3
+#| purl: false
+colorspace::demoplot(pal_c, type = "pie")
+```
+
+```{r}
+#| label: demo-pal-c-bars
+#| echo: false
+#| fig-height: 5.3
+#| purl: false
+colorspace::demoplot(pal_c, type = "bar")
+```
+:::
+
+## Color Definitions
+
+```{r}
+#| label: color-defs-d
+pal_d <- c(rgb(40, 168, 125, maxColorValue = 255), rgb(168, 61, 40, maxColorValue = 255), rgb(40, 83, 168, maxColorValue = 255))
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-d-pie
+#| echo: false
+#| fig-height: 5.1
+#| purl: false
+colorspace::demoplot(pal_d, type = "pie")
+```
+
+```{r}
+#| label: demo-pal-d-bars
+#| echo: false
+#| fig-height: 5.1
+#| purl: false
+colorspace::demoplot(pal_d, type = "bar")
+```
+:::
+
+## Demonstrate Colors
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demoplot-a
+#| fig-height: 5.3
+colorspace::demoplot(pal_d)
+```
+
+```{r}
+#| label: demoplot-b
+#| fig-height: 4.2
+colorspace::demoplot(pal_d, type = "scatter")
+```
+:::
+
+## Create Sequential Color Palettes
+
+```{r}
+#| label: color-pal-seq-multi
+colorRampPalette(pal_d)(35)
+```
+
+## Create Sequential Color Palettes
+
+```{r}
+#| label: color-pal-seq-multi-define
+pal_seq_multi <- colorRampPalette(pal_d)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-multi-pie
+#| echo: false
+#| fig-height: 5.3
+colorspace::demoplot(pal_seq_multi, type = "pie")
+```
+
+```{r}
+#| label: demo-pal-seq-multi-bars
+#| echo: false
+#| fig-height: 5.3
+colorspace::demoplot(pal_seq_multi, type = "bar")
+```
+:::
+
+
+## {background-image="img/palettes-1.png" background-position="center"  background-size="87%"}
+
+
+## {background-image="img/palettes-1-multi.png" background-position="center"  background-size="87%"}
+
+
+## {background-image="img/palettes-2.png" background-position="center"  background-size="87%"}
+
+
+## {background-image="img/palettes-3.png" background-position="center"  background-size="87%"}
+
+
+## Create Sequential Color Palettes
+
+```{r}
+#| label: color-pal-seq-multi-again
+pal_seq_multi <- colorRampPalette(pal_d)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-multi-map-again
+#| echo: false
+#| fig-height: 5.3
+colorspace::demoplot(pal_seq_multi, type = "map")
+```
+
+```{r}
+#| label: demo-pal-seq-multi-heat
+#| echo: false
+#| fig-height: 5.3
+colorspace::demoplot(pal_seq_multi, type = "heatmap")
+```
+:::
+
+## Create Sequential Color Palettes
+
+```{r}
+#| label: color-pal-seq-single
+#| code-line-numbers: "1|2"
+colors <- c("#28A87D", "grey98")
+pal_seq <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-single-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq)
+```
+
+```{r}
+#| label: demo-pal-seq-single-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq, type = "heatmap")
+```
+:::
+
+## Create Diverging Color Palettes
+
+```{r}
+#| label: color-pal-div
+colors <- c("#7754BF", "grey98", "#208462")
+pal_div <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-div-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div)
+```
+
+```{r}
+#| label: demo-pal-div-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div, type = "heatmap")
+```
+:::
+
+## Create Diverging Color Palettes
+
+```{r}
+#| label: color-pal-div-dark
+colors <- c("#AA89F6", "grey5", "#49BD92")
+pal_div_dark <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-div-dark-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_dark)
+```
+
+```{r}
+#| label: demo-pal-div-dark-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_dark, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-seq-darken
+#| code-line-numbers: "1|2"
+colors <- colorspace::darken(c("#28A87D", "grey98"), .35)
+pal_seq_dark <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-darken-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark, type = "map")
+```
+
+```{r}
+#| label: demo-pal-seq-darken-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-seq-darken-extd
+#| code-line-numbers: "1|2"
+colors <- c(colorspace::darken("#28A87D", .35), "grey98")
+pal_seq_dark <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-darken-extd-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark, type = "map")
+```
+
+```{r}
+#| label: demo-pal-seq-darken-extd-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-seq-darken-extd-hls
+colors <- c(colorspace::darken("#28A87D", .35, space = "HLS"), "grey98")
+pal_seq_dark_hls <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-darken-extd-hls-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark_hls, type = "map")
+```
+
+```{r}
+#| label: demo-pal-seq-darken-extd-hcl-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark_hls, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+> The color adjustment can be calculated in three different color spaces.
+>
+> * If `space = "HCL"`, the colors are transformed to HCL, (polarLUV), the luminance component L is adjusted, and then the colors are transformed back to a hexadecimal RGB string.
+>
+> * If `space = "HLS"`, the colors are transformed to HLS, the lightness component L is adjusted, and then the color is transformed back to a hexadecimal RGB string.
+>
+> * If `space = "combined"`, the colors are first adjusted in both the HCL and HLS spaces. Then, the adjusted HLS colors are converted into HCL, and then the chroma components of the adjusted HLS colors are copied to the adjusted HCL colors. Thus, in effect, the combined model adjusts luminance in HCL space but chroma in HLS space.
+
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-seq-reverse
+#| code-line-numbers: "1|2"
+colors <- c("grey5", colorspace::lighten("#28A87D", .85))
+pal_seq_rev <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-reverse-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_rev, type = "map")
+```
+
+```{r}
+#| label: demo-pal-seq-reverse-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_rev, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-div-intense
+colors <- c("red", "grey98", "blue")
+pal_div_raw <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-div-intense-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_raw, type = "map")
+```
+
+```{r}
+#| label: demo-pal-div-intense-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_raw, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-div-desaturate
+#| code-line-numbers: "1|2"
+colors_des <- colorspace::desaturate(colors, .7)
+pal_div_des <- colorRampPalette(colors_des)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-div-desaturate-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_des, type = "map")
+```
+
+```{r}
+#| label: demo-pal-div-desaturate-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_des, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-div-desaturate-prismatic
+#| code-line-numbers: "1|2"
+colors_des <- prismatic::clr_desaturate(colors, .7)
+pal_div_des <- colorRampPalette(colors_des)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-div-desaturate-map-prismatic
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_des, type = "map")
+```
+
+```{r}
+#| label: demo-pal-div-desaturate-heat-prismatic
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_div_des, type = "heatmap")
+```
+:::
+
+## Adjust Colors
+
+```{r}
+#| label: color-pal-seq-darken-extd-prismatic
+#| code-line-numbers: "1|2"
+colors <- c(prismatic::clr_darken("#28A87D", .35), "grey98")
+pal_seq_dark <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-seq-darken-extd-map-prismatic
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark, type = "map")
+```
+
+```{r}
+#| label: demo-pal-seq-darken-extd-heat-prismatic
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_dark, type = "heatmap")
+```
+:::
+
+## Mix Colors
+
+```{r}
+#| label: color-pal-mix
+#| code-line-numbers: "1|2"
+colors <- c(prismatic::clr_mix("blue", "green"), "grey98")
+pal_seq_mix <- colorRampPalette(colors)(35)
+```
+
+::: {layout-ncol="2"}
+```{r}
+#| label: demo-pal-prismatic-mix-map
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_mix, type = "map")
+```
+
+```{r}
+#| label: demo-pal-prismatic-mix-heat
+#| echo: false
+#| fig-height: 5.1
+colorspace::demoplot(pal_seq_mix, type = "heatmap")
+```
+:::
+
+
+# Pre-Defined Color Palettes
+
+## {colorspace}
+
+```{r}
+#| label: pals-colorspace
+#| fig-width: 14
+colorspace::hcl_palettes(plot = TRUE)
+```
+
+## {colorspace}
+
+```{r}
+#| label: pals-colorspace-pubugn
+#| fig-width: 14
+colorspace::hcl_palettes(palette = "PuBuGn", n = 10, plot = TRUE)
+```
+
+## {colorspace}
+
+```{r}
+#| label: pals-colorspace-pubugn-plot-prismatic
+#| fig-width: 14
+#| code-line-numbers: "1|2"
+pal <- colorspace::sequential_hcl(palette = "PuBuGn", n = 10)
+plot(prismatic::color(pal))
+```
+
+
+## [{RColorBrewer}](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+
+```{r}
+#| label: pals-colorbrewer
+#| fig-width: 14
+RColorBrewer::display.brewer.all()
+```
+
+## [{RColorBrewer}](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+
+```{r}
+#| label: pals-colorbrewer-cvd
+#| fig-width: 14
+RColorBrewer::display.brewer.all(colorblindFriendly = TRUE)
+```
+
+## [{RColorBrewer}](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+
+```{r}
+#| label: pals-colorbrewer-rdylbu
+#| fig-width: 14
+pal <- RColorBrewer::brewer.pal(name = "RdYlBu", n = 10)
+plot(prismatic::color(pal))
+```
+
+
+## [{scico}](https://github.com/thomasp85/scico)
+
+```{r}
+#| label: pals-scico
+#| fig-width: 14
+scico::scico_palette_show()
+```
+
+## [{scico}](https://github.com/thomasp85/scico)
+
+```{r}
+#| label: pals-scico-rdylbu
+#| fig-width: 14
+#| code-line-numbers: "1"
+pal <- scico::scico(palette = "tokyo", n = 10)
+plot(prismatic::color(pal))
+```
+
+
+## [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+
+```{r}
+#| label: pals-rcartocolor
+#| fig-width: 14
+rcartocolor::display_carto_all()
+```
+
+## [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+
+```{r}
+#| label: pals-rcartocolor-cvd
+#| fig-width: 14
+rcartocolor::display_carto_all(colorblind_friendly = TRUE)
+```
+
+## [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+
+```{r}
+#| label: pals-rcartocolor-sunset
+#| fig-width: 14
+#| code-line-numbers: "1"
+pal <- rcartocolor::carto_pal(name = "ag_Sunset", n = 10)
+plot(prismatic::color(pal))
+```
+
+## [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+
+```{r}
+#| label: pals-rcartocolor-rdylbu
+#| fig-width: 14
+#| code-line-numbers: "1"
+pal_extd <- colorRampPalette(pal)(20)
+plot(prismatic::color(pal_extd))
+```
+
+## More Color Packages
+
+* [`{dichromat}`](https://cran.r-project.org/web/packages/dichromat/dichromat.pdf) – for dichromats *
+* [`{fishualize}`](https://nschiett.github.io/fishualize/index.html) – based on teleost fishes
+* [`{ggsci}`](https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html) – based on scientific journal and Sci-Fi movies
+* [`{ggthemes}`](https://jrnold.github.io/ggthemes/) – based on popular news rooms and software
+* [`{ghibli}`](https://ewenme.github.io/ghibli/) – based on Studio Ghibli movies
+* [`{MetBrewer}`](https://github.com/BlakeRMills/MetBrewer) – inspired by the Metropolitan Museum of Art
+* [`{nord}`](https://cran.r-project.org/web/packages/nord/readme/README.html) – collection of northern inspired palettes
+* [`{pals}`](https://cran.r-project.org/web/packages/pals/vignettes/pals_examples.html) – comprehensive collection of recommended palettes *
+* [`{Redmonder}`](https://cran.r-project.org/web/packages/Redmonder/Redmonder.pdf) – inspired by Microsoft products *
+* [`{wesanderson}`](https://github.com/karthik/wesanderson) – based on movies by Wes Anderson *
+
+
+
+  
+# Working with Colors in ggplot2
+
+## Setup
+  
+```{r}
+#| label: prep
+#| code-line-numbers: "1,2,3|5|7,13|8,9,10,11,12|8|9,10|11,12"
+library(ggplot2)
+library(dplyr)
+library(prismatic)
+
+theme_set(theme_minimal(base_family = "Asap Condensed", base_size = 15, base_line_size = .5))
+
+theme_update(
+  panel.grid.minor = element_blank(),
+  plot.title = element_text(face = "bold", size = rel(1.5), margin = margin(b = 15)),
+  plot.title.position = "plot",
+  plot.caption = element_text(color = "grey45", size = rel(.7), hjust = 0, margin = margin(t = 15)),
+  plot.caption.position = "plot"
+)
+```
+
+## The Data Set
+
+```{r, echo=3:22}
+#| label: data
+#| code-line-numbers: "1,2|4"
+sf_world <- readr::read_rds("./data/urban-gdp-pop-sf.rds")
+df_world <- readr::read_csv("./data/urban-gdp-pop.csv")
+
+dplyr::glimpse(df_world)
+```
+
+
+## The Chart
+
+```{r}
+#| label: plot-urban-gdp
+#| echo: false
+#| fig-width: 12
+p <- 
+  ggplot(data = df_world, 
+         mapping = aes(x = gdp_per_capita, y = urban_pop, size = pop_est)) + 
+  coord_cartesian(expand = FALSE, clip = "off") +
+  scale_x_log10(labels = scales::label_dollar()) + 
+  scale_y_continuous(labels = function(y) paste0(y, "%"), limits = c(0, 100)) + 
+  scale_size_area(max_size = 15, breaks = c(10, 100, 500, 1000) * 10^6,
+                  labels = scales::label_number(scale = 1/10^6, suffix = "M")) +
+  labs(x = NULL, y = NULL,
+       fill = "Continent:", size = "Population:",
+       title = "Urban population vs. GDP per capita, 2016",
+       caption = "Sources: ourworldindata.org/urbanization; NaturalEarth | x-axis on log scale") +
+  guides(fill = guide_legend(override.aes = list(size = 3)),
+         size = guide_legend(override.aes = list(color = "black", fill = "grey85")))
+
+p + geom_point(aes(fill = region_un), shape = 21, alpha = .5, stroke = .7)
+```
+
+## The Chart
+
+```{r}
+#| label: plot-urban-gdp
+#| eval: false
+#| code-line-numbers: "1|2,3|4|5|6|7,8|9,10,11,12|13,14|16"
+```
+
+
+# Using Pre-Defined Scales
+
+## [{viridis}](https://sjmgarnier.github.io/viridis/)
+
+```{r}
+#| label: viridis-disc
+#| output-location: column
+#| code-line-numbers: "6"
+p +
+  geom_point(
+    aes(fill = region_un), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_viridis_d()
+```
+
+## [{viridis}](https://sjmgarnier.github.io/viridis/)
+
+```{r}
+#| label: demo-viridis
+#| echo: false
+#| fig-width: 14
+#| purl: false
+plot(color(viridis::viridis(n = 5)))
+```
+
+## [{viridis}](https://sjmgarnier.github.io/viridis/)
+
+```{r}
+#| label: viridis-cont
+#| output-location: column
+#| code-line-numbers: "3|6"
+p +
+  geom_point(
+    aes(fill = urban_pop), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_viridis_c()
+```
+
+## [{viridis}](https://sjmgarnier.github.io/viridis/)
+
+```{r}
+#| label: viridis-cont-styled
+#| output-location: column
+#| code-line-numbers: "6,7,8,9|10"
+p +
+  geom_point(
+    aes(fill = urban_pop), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_viridis_c(
+    name = "Urban share:", 
+    labels = function(x) paste0(x, "%")
+  ) +
+  guides(fill = guide_colorbar())
+```
+
+## [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+
+```{r}
+#| label: rcarto-disc
+#| output-location: column
+#| code-line-numbers: "6"
+p +
+  geom_point(
+    aes(fill = region_un), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  rcartocolor::scale_fill_carto_d()
+```
+
+## [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+
+```{r}
+#| label: demo-rcarto-bold
+#| echo: false
+#| fig-width: 14
+#| purl: false
+plot(color(rcartocolor::carto_pal(name = "Bold", n = 5)))
+```
+
+## [{rcartocolor}](https://jakubnowosad.com/rcartocolor/)
+
+```{r}
+#| label: rcarto-disc-2
+#| output-location: column
+#| code-line-numbers: "6,7,8"
+p +
+  geom_point(
+    aes(fill = region_un), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  rcartocolor::scale_fill_carto_d(
+    palette = "Bold"
+  )
+```
+
+## `scale_color|fill_manual()`
+
+```{r}
+#| label: rcarto-disc-custom
+#| output-location: column
+#| code-line-numbers: "1,2,3|10,12|11"
+pal <- rcartocolor::carto_pal(
+  name = "Bold", n = 5
+)
+
+p +
+  geom_point(
+    aes(fill = region_un), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = pal
+  )
+```
+
+# Customize Palettes
+
+## Customize Palette
+
+```{r}
+#| label: rcarto-disc-custom-2
+#| output-location: column
+#| code-line-numbers: "2"
+pal <- rcartocolor::carto_pal(
+  name = "Bold", n = 6
+)
+
+p +
+  geom_point(
+    aes(fill = region_un), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = pal
+  )
+```
+
+## Customize Palette
+
+```{r}
+#| label: rcarto-disc-custom-3
+#| output-location: column
+#| code-line-numbers: "2,3"
+pal <- rcartocolor::carto_pal(
+  name = "Bold", n = 8
+)[c(1:3,5,7)]
+
+p +
+  geom_point(
+    aes(fill = region_un), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = pal
+  )
+```
+
+## Customize Palette
+
+```{r}
+#| label: rcarto-disc-custom-4
+#| output-location: column
+#| code-line-numbers: "1|9"
+pal_dark <- clr_darken(pal, .4)
+
+p +
+  geom_point(
+    aes(fill = region_un), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = pal_dark
+  )
+```
+
+# `after_scale()`
+
+## Re-use Palettes
+
+```{r}
+#| label: after-scale
+#| output-location: column
+#| code-line-numbers: "3,4|4"
+p +
+  geom_point(
+    aes(fill = region_un,
+        color = after_scale(fill)), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = pal
+  )
+```
+
+## Re-use Palettes
+
+```{r}
+#| label: after-scale-2
+#| output-location: column
+#| code-line-numbers: "4,5,6"
+p +
+  geom_point(
+    aes(fill = region_un,
+        color = after_scale(
+          clr_darken(fill, .6)
+        )), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = pal
+  )
+```
+
+## Re-use Palettes
+
+```{r}
+#| label: after-scale-boxplot
+#| output-location: column
+#| code-line-numbers: "1,2,3,4,5,6,7,8,9,10,11,12,13,14|4,5,6,7|16,17,18,19,20,21"
+b <- ggplot(
+    data = df_world, 
+    mapping = aes(
+      x = gdp_per_capita, 
+      y = forcats::fct_reorder(
+        region_un, -gdp_per_capita
+      )
+    )
+  ) +
+  scale_x_continuous(
+    labels = scales::dollar_format()
+  ) +
+  guides(color = "none") +
+  labs(x = "GDP per capita", y = NULL) +
+  theme(panel.grid.major.y = element_blank())
+
+b +
+  geom_boxplot(
+    aes(color = region_un), 
+    width = .7
+  ) +
+  scale_color_manual(values = pal) 
+```
+
+## Re-use Palettes
+
+```{r}
+#| label: after-scale-boxplot-2
+#| output-location: column
+#| code-line-numbers: "4,5,6"
+b +
+  geom_boxplot(
+    aes(color = region_un, 
+        fill = after_scale(
+          clr_lighten(color, .65)
+        )), 
+    width = .7
+  ) +
+  scale_color_manual(values = pal)
+```
+
+# Use Colors for Highlighting
+
+## Highlight Colors
+
+```{r}
+#| label: highlight-colors
+#| output-location: column
+#| code-line-numbers: "3|7"
+p +
+  geom_point(
+    aes(fill = region_un != "Africa"), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = c("#D00000", "grey80")
+  )
+```
+
+## Highlight Colors
+
+```{r}
+#| label: highlight-colors-styled
+#| output-location: column
+#| code-line-numbers: "8,9"
+p +
+  geom_point(
+    aes(fill = region_un != "Africa"), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = c("#D00000", "grey80"),
+    labels = c("African countries", "Other countries"),
+    name = NULL
+  )
+```
+
+## Highlight Colors
+
+```{r}
+#| label: highlight-colors-styled-alt
+#| output-location: column
+#| code-line-numbers: "9|10|12"
+p +
+  geom_point(
+    aes(fill = region_un != "Africa"), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = c("#D00000", "grey80")
+  ) +
+  guides(fill = "none") +
+  labs(subtitle = "of <b style='color:#D00000;'>African</b> and <b style='color:grey70;'>non-African</b> countries") +
+  theme(
+    plot.subtitle = ggtext::element_markdown(
+      margin = margin(t = -15, b = 20),
+      size = rel(1.3)
+    )
+  )
+```
+
+## Highlight Colors
+
+```{r}
+#| label: highlight-colors-styled-alt-afterscale
+#| output-location: column
+#| code-line-numbers: "4"
+p +
+  geom_point(
+    aes(fill = region_un != "Africa",
+        color = after_scale(fill)), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(
+    values = c("#D00000", "grey80")
+  ) +
+  labs(subtitle = "of <b style='color:#D00000;'>African</b> and <b style='color:grey70;'>non-African</b> countries") +
+  guides(fill = "none") +
+  theme(
+    plot.subtitle = ggtext::element_markdown(
+      margin = margin(t = -15, b = 20),
+      size = rel(1.3)
+    )
+  )
+```
+
+## Highlight Colors
+
+```{r}
+#| label: highlight-colors-prep2
+#| code-line-numbers: "1,2,3,4,5,7,8,9|3,4,5|6,7,8"
+df_world <- df_world %>% 
+  mutate(
+    cont_lumped = ifelse(
+      continent %in% c("Asia", "Europe"), continent, "Other"
+    ),
+    cont_lumped = forcats::fct_relevel(
+      cont_lumped, "Other", after = Inf
+    )
+  )
+```
+
+## Highlight Colors
+
+```{r}
+#| label: highlight-colors-2
+#| output-location: column
+#| code-line-numbers: "1|6,7|10"
+pal_hl <- c("#7754BF", "#28A74D", "grey80")
+
+p +
+  geom_point(
+    data = df_world,
+    aes(fill = cont_lumped,
+        color = after_scale(clr_darken(fill, .3))), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(values = pal_hl) +
+  labs(subtitle = "of <b style='color:#7754BF;'>Asian</b> and <b style='color:#28A74D;'>European</b> countries compared to all <span style='color:grey60;'>other countries</span>") +
+  guides(fill = "none") +
+  theme(
+    plot.subtitle = ggtext::element_markdown(
+      margin = margin(t = -15, b = 20),
+      size = rel(1.3)
+    )
+  )
+```
+
+
+## The Map
+
+```{r}
+#| label: map-urban-gdp
+#| echo: false
+#| fig-width: 12
+#| fig-height: 7
+m <- 
+  ggplot(data = sf_world) +
+  geom_sf(aes(fill = urban_pop), color = "white", lwd = .3) +
+  coord_sf(crs = "+proj=eqearth") +
+  labs(
+    title = "Share of people living in urban areas, 2016",
+    caption = "Sources: ourworldindata.org/urbanization; NaturalEarth",
+    fill = NULL
+  ) +
+  theme(
+    axis.text = element_blank(),
+    panel.grid.major = element_blank(),
+    legend.key.width = unit(2.5, "lines"),
+    legend.key.height = unit(.6, "lines"),
+    legend.position = "bottom"
+  )
+
+m
+```
+
+## The Map
+
+```{r}
+#| label: map-urban-gdp
+#| eval: false
+#| code-line-numbers: "1|2|2,3|4|5,6,7,8,9|10,11,12,13,14,15,16"
+```
+
+## A Sequential Palette
+
+```{r}
+#| label: map-sequential
+#| fig-width: 12
+#| fig-height: 7
+m + scale_fill_distiller(palette = "YlGnBu")
+```
+
+## A (Reversed) Sequential Palette
+
+```{r}
+#| label: map-sequential-reversed
+#| fig-width: 12
+#| fig-height: 7
+m + scale_fill_distiller(palette = "YlGnBu", direction = 1)
+```
+
+## A Diverging Palette
+
+```{r}
+#| label: map-diverging
+#| fig-width: 12
+#| fig-height: 7
+m + scale_fill_distiller(palette = "RdYlBu", direction = 1)
+```
+
+## A (Reversed) Diverging Palette
+
+```{r}
+#| label: map-diverging-reversed
+#| fig-width: 12
+#| fig-height: 7
+m + scale_fill_distiller(palette = "RdYlBu", direction = 1)
+```
+
+## A (Fixed) Diverging Palette
+
+```{r}
+#| label: map-diverging-midpoint
+#| fig-width: 12
+#| fig-height: 7
+m + scale_fill_distiller(palette = "RdYlBu", direction = 1, limits = c(0, 100))
+```
+
+## A (Styled) Diverging Palette
+
+```{r}
+#| label: map-diverging-styled
+#| fig-width: 12
+#| fig-height: 7
+m + scale_fill_distiller(palette = "RdYlBu", direction = 1, limits = c(0, 100),
+                         na.value = "grey85", labels = function(x) paste0(x, "%"))
+```
+
+## A (Custom) Diverging Palette
+
+```{r}
+#| label: map-diverging-manually
+#| fig-width: 12
+#| fig-height: 7
+m + scale_fill_gradient2(low = "#7754BF", mid = "grey90", high = "#208462", midpoint = 50, 
+                         na.value = "grey85", labels = function(x) paste0(x, "%"))
+```
+
+
+# Test Color Palettes
+
+## Test Color Palettes 
+
+```{r}
+#| label: test-plots
+pt <- p +
+  geom_point(
+    data = df_world,
+    aes(fill = cont_lumped,
+        color = after_scale(clr_darken(fill, .3))), 
+    shape = 21, alpha = .5, stroke = .7
+  ) +
+  scale_fill_manual(values = pal_hl)
+
+mt <- m + scale_fill_gradient2(
+  low = "#7754BF", mid = "grey90", high = "#208462", midpoint = 50, 
+  na.value = "grey85", labels = function(x) paste0(x, "%")
+)
+```
+
+## Test Color Palettes 
+
+```{r}
+#| label: test-bubble-highlight
+#| fig-width: 16
+#| fig-height: 8
+colorblindr::cvd_grid(pt)
+```
+
+## Test Color Palettes 
+
+```{r}
+#| label: test-map-div
+#| fig-width: 16
+#| fig-height: 12
+colorblindr::cvd_grid(mt)
+```
+
+
+
+
+# Evaluate Color Palettes
+
+## Create Some Palettes
+
+```{r}
+#| label: specplot
+#| fig-width: 14
+pal_seq_1 <- viridis::cividis(n = 7)
+pal_seq_2 <- scico::scico(palette = "bamako", n = 7)
+
+pal_div_1 <- RColorBrewer::brewer.pal(name = "RdYlBu", n = 7)
+pal_div_2 <- MetBrewer::met.brewer(name = "Hiroshige", n = 7)
+
+pal_cat_1 <- rcartocolor::carto_pal(name = "Prism", n = 7)
+pal_cat_2 <- ggthemes::excel_pal()(7)
+```
+
+## Evaluate HCL Space
+
+::: {layout-ncol="2"}
+```{r}
+#| label: eval-seq-1
+#| fig-height: 5.3
+colorspace::specplot(pal_seq_1)
+```
+```{r}
+#| label: eval-seq-2
+#| fig-height: 5.3
+colorspace::specplot(pal_seq_2)
+```
+:::
+
+## Evaluate HCL Space
+
+::: {layout-ncol="2"}
+```{r}
+#| label: eval-div-1
+#| fig-height: 5.3
+colorspace::specplot(pal_div_1)
+```
+```{r}
+#| label: eval-div-2
+#| fig-height: 5.3
+colorspace::specplot(pal_div_2)
+```
+:::
+
+## Evaluate HCL Space
+
+::: {layout-ncol="2"}
+```{r}
+#| label: eval-cat-1
+#| fig-height: 5.3
+colorspace::specplot(pal_cat_1)
+```
+```{r}
+#| label: eval-cat-2
+#| fig-height: 5.3
+colorspace::specplot(pal_cat_2)
+```
+:::
+
+## Color Tools
+
+```{r}
+#| label: color-tool-1
+#| eval: false
+#| fig-width: 14
+colorspace::hcl_color_picker()
+```
+
+![](img/tool-hcl-color-picker.png){fig-align="center" fig-size="80%"}
+
+## Color Tools
+
+```{r}
+#| label: color-tool-2
+#| eval: false
+#| fig-width: 14
+colorspace::choose_color()
+```
+
+![](img/tool-choose-color.png){fig-align="center" fig-size="65%"}
+
+
+## Color Palette Tools
+
+```{r}
+#| label: palette-tool-1
+#| eval: false
+#| fig-width: 14
+colorspace::hcl_wizard()
+```
+
+![](img/tool-hcl-wizard.png){fig-align="center" fig-size="80%"}
+
+## Color Palette Tools
+
+```{r}
+#| label: palette-tool-2
+#| eval: false
+#| fig-width: 14
+colorspace::choose_palette()
+```
+
+![](img/tool-choose-palette.png){fig-align="center" fig-size="50%"}
+
+
+## CVD Tool
+
+```{r}
+#| label: cvd-tool
+#| eval: false
+#| fig-width: 14
+colorspace::cvd_emulator()
+```
+
+![](img/tool-cvd-emulator.png){fig-align="center" fig-size="70%"}
+
+
+## [Viz Palette Tool](https://projects.susielu.com/viz-palette)
+
+![](img/viz-palette-owid-bars.png){fig-align="center" fig-size="70%"}
+
+## [Viz Palette](https://projects.susielu.com/viz-palette)
+
+![](img/viz-palette-owid-bars-deuteranopia.png){fig-align="center" fig-size="70%"}
+
+
+## [Palettte App](https://palettte.app/)
+
+![](img/palettte.jpg){fig-align="center" fig-size="70%"}
+
+## [Chroma.js](https://gka.github.io/palettes/) 
+
+![](img/chroma-js.png){fig-align="center" fig-size="70%"}
+
+
+
+# Resources
+
+## Resources
+
+* [{prismatic} package vignette](https://emilhvitfeldt.github.io/prismatic/)
+* [{colorspace} package vignette](https://colorspace.r-forge.r-project.org/index.html)
+* [{paleteer} package vignette](https://emilhvitfeldt.github.io/paletteer/)
+* [Type-sorted list of R color palettes](https://emilhvitfeldt.github.io/prismatic/) (not updated since a while)
+* [DataWrapper's "What to Consider when Choosing Colors for Data Visualization"](https://academy.datawrapper.de/article/140-what-to-consider-when-choosing-colors-for-data-visualization)
+* [DataWrapper's "How to Pick More Beautiful Colors for Your Data Visualizations"](https://blog.datawrapper.de/beautifulcolors/)
+* [DataWrapper's "A Detailed Guide to Colors for Data Vis Style Guides"](https://blog.datawrapper.de/colors-for-data-vis-style-guides/)
+* [DataWrapper's "An Alternative to Pink & Blue: Colors for Gender Data"](https://blog.datawrapper.de/gendercolor/)
+* [My "Colors and Emotions in Data Visualization" blog post for SWD](https://www.storytellingwithdata.com/blog/2021/6/8/colors-and-emotions-in-data-visualization)
+
+
+
+# Thank You!
+
+
+# Appendix
+
+## Data Preparation
+
+```{r, echo=3:22}
+#| label: data-prep
+#| code-line-numbers: "1,2|4|5,11|6,7,8,9|10|12,13,14,15|16|17|19|20|21"
+library(tidyverse)
+
+sf_world_raw <- rnaturalearth::ne_countries(scale = 110, returnclass = "sf")
+owid_data <- readr::read_csv(here::here("data", "owid-urbanization-vs-gdp.csv"))
+
+sf_world <- sf_world_raw %>% 
+  left_join(
+    owid_data %>% 
+      janitor::clean_names() %>% 
+      rename(urban_pop = "urban_population_percent_long_run_to_2016_owid") %>% 
+      filter(year == 2016), 
+    by = c("iso_a3" = "code")
+  ) %>% 
+  dplyr::select(
+    sovereignt, iso_a3, type, continent = continent.x, region_un, subregion, 
+    gdp_per_capita, urban_pop, pop_est, economy, income_grp
+  ) %>% 
+  mutate(pop_est = as.numeric(pop_est)) %>% 
+  filter(!sovereignt == "Antarctica")
+
+df_world <- sf_world %>% 
+  sf::st_drop_geometry() %>% 
+  filter(!is.na(gdp_per_capita), !is.na(urban_pop))
+
+readr::write_rds(sf_world, here::here("data", "urban-gdp-pop-sf.rds"))
+readr::write_csv(df_world, here::here("data", "urban-gdp-pop.csv"))
+```

@@ -1,0 +1,162 @@
+sovereignt,iso_a3,type,continent,region_un,subregion,gdp_per_capita,urban_pop,pop_est,economy,income_grp
+United Republic of Tanzania,TZA,Sovereign country,Africa,Africa,Eastern Africa,2660,32.333,53950935,7. Least developed region,5. Low income
+Canada,CAN,Sovereign country,North America,Americas,Northern America,43745,81.3,35623680,1. Developed region: G7,1. High income: OECD
+United States of America,USA,Country,North America,Americas,Northern America,53015,81.862,326625791,1. Developed region: G7,1. High income: OECD
+Kazakhstan,KAZ,Sovereign country,Asia,Asia,Central Asia,23842,57.264,18556698,6. Developing region,3. Upper middle income
+Uzbekistan,UZB,Sovereign country,Asia,Asia,Central Asia,10381,50.65,29748859,6. Developing region,4. Lower middle income
+Indonesia,IDN,Sovereign country,Asia,Asia,South-Eastern Asia,10911,53.989,260580739,4. Emerging region: MIKT,4. Lower middle income
+Argentina,ARG,Sovereign country,South America,Americas,South America,18875,91.627,44293293,5. Emerging region: G20,3. Upper middle income
+Chile,CHL,Sovereign country,South America,Americas,South America,21696,87.422,17789267,5. Emerging region: G20,3. Upper middle income
+Democratic Republic of the Congo,COD,Sovereign country,Africa,Africa,Middle Africa,836,43.307,83301151,7. Least developed region,5. Low income
+Kenya,KEN,Sovereign country,Africa,Africa,Eastern Africa,3169,26.105,47615739,5. Emerging region: G20,5. Low income
+Chad,TCD,Sovereign country,Africa,Africa,Middle Africa,2189,22.677,12075985,7. Least developed region,5. Low income
+Haiti,HTI,Sovereign country,North America,Americas,Caribbean,1728,53.396,10646714,7. Least developed region,5. Low income
+Dominican Republic,DOM,Sovereign country,North America,Americas,Caribbean,14489,79.436,10734247,6. Developing region,3. Upper middle income
+Russia,RUS,Sovereign country,Europe,Europe,Eastern Europe,23635,74.164,142257519,3. Emerging region: BRIC,3. Upper middle income
+Norway,NA,Sovereign country,Europe,Europe,Northern Europe,19446.352,69.37599183265039,5320045,2. Developed region: nonG7,1. High income: OECD
+Norway,NA,Sovereign country,Europe,Europe,Northern Europe,38511.332,79.53617443903455,5320045,2. Developed region: nonG7,1. High income: OECD
+South Africa,ZAF,Sovereign country,Africa,Africa,Southern Africa,12139,65.341,54841552,5. Emerging region: G20,3. Upper middle income
+Lesotho,LSO,Sovereign country,Africa,Africa,Southern Africa,2767,27.317,1958042,7. Least developed region,4. Lower middle income
+Mexico,MEX,Sovereign country,North America,Americas,Central America,16133,79.577,124574795,4. Emerging region: MIKT,3. Upper middle income
+Uruguay,URY,Sovereign country,South America,Americas,South America,19468,95.144,3360148,5. Emerging region: G20,3. Upper middle income
+Brazil,BRA,Sovereign country,South America,Americas,South America,13873,86.042,207353391,3. Emerging region: BRIC,3. Upper middle income
+Bolivia,BOL,Sovereign country,South America,Americas,South America,6355,68.738,11138234,5. Emerging region: G20,4. Lower middle income
+Peru,PER,Sovereign country,South America,Americas,South America,11776,77.539,31036656,5. Emerging region: G20,3. Upper middle income
+Colombia,COL,Sovereign country,South America,Americas,South America,13326,80.108,47698524,6. Developing region,3. Upper middle income
+Panama,PAN,Sovereign country,North America,Americas,Central America,21449,67.027,3753142,6. Developing region,3. Upper middle income
+Costa Rica,CRI,Sovereign country,North America,Americas,Central America,14098,77.735,4930258,5. Emerging region: G20,3. Upper middle income
+Nicaragua,NIC,Sovereign country,North America,Americas,Central America,5045,58.09,6025951,6. Developing region,4. Lower middle income
+Honduras,HND,Sovereign country,North America,Americas,Central America,4796,55.813,9038741,6. Developing region,4. Lower middle income
+El Salvador,SLV,Sovereign country,North America,Americas,Central America,8280,70.501,6172011,6. Developing region,4. Lower middle income
+Guatemala,GTM,Sovereign country,North America,Americas,Central America,7221,50.319,15460732,6. Developing region,4. Lower middle income
+Venezuela,VEN,Sovereign country,South America,Americas,South America,15219,88.165,31304016,5. Emerging region: G20,3. Upper middle income
+France,NA,Country,Europe,Europe,Western Europe,19446.352,69.37599183265039,67106161,1. Developed region: G7,1. High income: OECD
+France,NA,Country,Europe,Europe,Western Europe,38511.332,79.53617443903455,67106161,1. Developed region: G7,1. High income: OECD
+Ecuador,ECU,Sovereign country,South America,Americas,South America,10527,63.534,16290913,6. Developing region,3. Upper middle income
+United States of America,PRI,Dependency,North America,Americas,Caribbean,35082,93.602,3351827,6. Developing region,2. High income: nonOECD
+Jamaica,JAM,Sovereign country,North America,Americas,Caribbean,7084,55.098,2990561,6. Developing region,3. Upper middle income
+Cuba,CUB,Sovereign country,North America,Americas,Caribbean,8000,76.93,11147407,5. Emerging region: G20,3. Upper middle income
+Zimbabwe,ZWE,Sovereign country,Africa,Africa,Eastern Africa,1534,32.296,13805084,5. Emerging region: G20,5. Low income
+Botswana,BWA,Sovereign country,Africa,Africa,Southern Africa,15198,67.933,2214858,6. Developing region,3. Upper middle income
+Namibia,"NAM",Sovereign country,Africa,Africa,Southern Africa,9376,47.961,2484780,6. Developing region,3. Upper middle income
+Senegal,SEN,Sovereign country,Africa,Africa,Western Africa,2403,46.296,14668522,7. Least developed region,4. Lower middle income
+Mali,MLI,Sovereign country,Africa,Africa,Western Africa,1594,40.783,17885245,7. Least developed region,5. Low income
+Mauritania,MRT,Sovereign country,Africa,Africa,Western Africa,3407,51.962,3758571,7. Least developed region,5. Low income
+Benin,BEN,Sovereign country,Africa,Africa,Western Africa,2080,46.229,11038805,7. Least developed region,5. Low income
+Niger,NER,Sovereign country,Africa,Africa,Western Africa,925,16.29,19245344,7. Least developed region,5. Low income
+Nigeria,NGA,Sovereign country,Africa,Africa,Western Africa,5360,48.683,190632261,5. Emerging region: G20,4. Lower middle income
+Cameroon,CMR,Sovereign country,Africa,Africa,Middle Africa,2828,55.179,24994885,6. Developing region,4. Lower middle income
+Togo,TGO,Sovereign country,Africa,Africa,Western Africa,1400,40.628,7965055,7. Least developed region,5. Low income
+Ghana,GHA,Sovereign country,Africa,Africa,Western Africa,3878,54.749,27499924,6. Developing region,4. Lower middle income
+Ivory Coast,CIV,Sovereign country,Africa,Africa,Western Africa,3395,49.881,24184810,6. Developing region,4. Lower middle income
+Guinea,GIN,Sovereign country,Africa,Africa,Western Africa,1417,35.46,12413867,7. Least developed region,5. Low income
+Guinea-Bissau,GNB,Sovereign country,Africa,Africa,Western Africa,1436,42.533,1792338,7. Least developed region,5. Low income
+Liberia,LBR,Sovereign country,Africa,Africa,Western Africa,829,50.254,4689021,7. Least developed region,5. Low income
+Sierra Leone,SLE,Sovereign country,Africa,Africa,Western Africa,1619,41.228,6163195,7. Least developed region,5. Low income
+Burkina Faso,BFA,Sovereign country,Africa,Africa,Western Africa,1483,28.134,20107509,7. Least developed region,5. Low income
+Central African Republic,CAF,Sovereign country,Africa,Africa,Middle Africa,589,40.618,5625118,7. Least developed region,5. Low income
+Republic of the Congo,COG,Sovereign country,Africa,Africa,Middle Africa,5974,66.001,4954674,6. Developing region,4. Lower middle income
+Gabon,GAB,Sovereign country,Africa,Africa,Middle Africa,18413,88.559,1772255,6. Developing region,3. Upper middle income
+Equatorial Guinea,GNQ,Sovereign country,Africa,Africa,Middle Africa,33317,71.138,778358,7. Least developed region,2. High income: nonOECD
+Zambia,ZMB,Sovereign country,Africa,Africa,Eastern Africa,3479,42.438,15972000,7. Least developed region,4. Lower middle income
+Malawi,MWI,Sovereign country,Africa,Africa,Eastern Africa,1112,16.506,19196246,7. Least developed region,5. Low income
+Mozambique,MOZ,Sovereign country,Africa,Africa,Eastern Africa,1113,34.926,26573706,7. Least developed region,5. Low income
+eSwatini,SWZ,Sovereign country,Africa,Africa,Southern Africa,7881,23.459,1467152,6. Developing region,4. Lower middle income
+Angola,AGO,Sovereign country,Africa,Africa,Middle Africa,8453,64.149,29310273,7. Least developed region,3. Upper middle income
+Burundi,BDI,Sovereign country,Africa,Africa,Eastern Africa,665,12.388,11466756,7. Least developed region,5. Low income
+Israel,ISR,Country,Asia,Asia,Western Asia,31701,92.256,8299706,2. Developed region: nonG7,1. High income: OECD
+Lebanon,LBN,Sovereign country,Asia,Asia,Western Asia,12972,88.266,6229794,6. Developing region,3. Upper middle income
+Madagascar,MDG,Sovereign country,Africa,Africa,Eastern Africa,1381,35.856,25054161,7. Least developed region,5. Low income
+Israel,PSE,Disputed,Asia,Asia,Western Asia,5321.383,75.628,4543126,6. Developing region,4. Lower middle income
+Gambia,GMB,Sovereign country,Africa,Africa,Western Africa,1788,59.918,2051363,7. Least developed region,5. Low income
+Tunisia,TUN,Sovereign country,Africa,Africa,Northern Africa,11073,68.346,11403800,6. Developing region,3. Upper middle income
+Algeria,DZA,Sovereign country,Africa,Africa,Northern Africa,14331,71.459,40969443,6. Developing region,3. Upper middle income
+Jordan,JOR,Sovereign country,Asia,Asia,Western Asia,11529,90.506,10248069,6. Developing region,3. Upper middle income
+United Arab Emirates,ARE,Sovereign country,Asia,Asia,Western Asia,75876,85.965,6072475,6. Developing region,2. High income: nonOECD
+Qatar,QAT,Sovereign country,Asia,Asia,Western Asia,156299,99.015,2314307,6. Developing region,2. High income: nonOECD
+Kuwait,KWT,Sovereign country,Asia,Asia,Western Asia,71010,100,2875422,6. Developing region,2. High income: nonOECD
+Iraq,IRQ,Sovereign country,Asia,Asia,Western Asia,13898,70.094,39192111,6. Developing region,4. Lower middle income
+Oman,OMN,Sovereign country,Asia,Asia,Western Asia,38515,82.5,3424386,6. Developing region,2. High income: nonOECD
+Cambodia,KHM,Sovereign country,Asia,Asia,South-Eastern Asia,3251,22.582,16204486,7. Least developed region,5. Low income
+Thailand,THA,Sovereign country,Asia,Asia,South-Eastern Asia,15454,48.448,68414135,5. Emerging region: G20,3. Upper middle income
+Laos,LAO,Sovereign country,Asia,Asia,South-Eastern Asia,5859,33.736,7126706,7. Least developed region,4. Lower middle income
+Myanmar,MMR,Sovereign country,Asia,Asia,South-Eastern Asia,5284,30.082,55123814,7. Least developed region,5. Low income
+Vietnam,VNM,Sovereign country,Asia,Asia,South-Eastern Asia,6062,34.51,96160163,5. Emerging region: G20,4. Lower middle income
+North Korea,PRK,Sovereign country,Asia,Asia,Eastern Asia,1742.0223,61.471,25248140,7. Least developed region,5. Low income
+South Korea,KOR,Sovereign country,Asia,Asia,Eastern Asia,36103,81.562,51181299,4. Emerging region: MIKT,1. High income: OECD
+Mongolia,MNG,Sovereign country,Asia,Asia,Eastern Asia,12360,68.297,3068243,6. Developing region,4. Lower middle income
+India,IND,Sovereign country,Asia,Asia,Southern Asia,6125,33.182,1281935911,3. Emerging region: BRIC,4. Lower middle income
+Bangladesh,BGD,Sovereign country,Asia,Asia,Southern Asia,3604,35.083,157826578,7. Least developed region,5. Low income
+Nepal,NPL,Sovereign country,Asia,Asia,Southern Asia,2435,18.942,29384297,7. Least developed region,5. Low income
+Pakistan,PAK,Sovereign country,Asia,Asia,Southern Asia,5223,36.234,204924861,5. Emerging region: G20,4. Lower middle income
+Afghanistan,AFG,Sovereign country,Asia,Asia,Southern Asia,1929,25.02,34124811,7. Least developed region,5. Low income
+Tajikistan,TJK,Sovereign country,Asia,Asia,Central Asia,3991,26.851,8468555,6. Developing region,5. Low income
+Kyrgyzstan,KGZ,Sovereign country,Asia,Asia,Central Asia,4879,35.944,5789122,6. Developing region,5. Low income
+Turkmenistan,TKM,Sovereign country,Asia,Asia,Central Asia,23813,50.728,5351277,6. Developing region,3. Upper middle income
+Iran,IRN,Sovereign country,Asia,Asia,Southern Asia,16783,73.88,82021564,5. Emerging region: G20,3. Upper middle income
+Syria,SYR,Sovereign country,Asia,Asia,Western Asia,3091,52.835,18028549,6. Developing region,4. Lower middle income
+Armenia,ARM,Sovereign country,Asia,Asia,Western Asia,10080,63.082,3045191,6. Developing region,4. Lower middle income
+Sweden,SWE,Sovereign country,Europe,Europe,Northern Europe,44659,86.852,9960487,2. Developed region: nonG7,1. High income: OECD
+Belarus,BLR,Sovereign country,Europe,Europe,Eastern Europe,17628,77.661,9549747,6. Developing region,3. Upper middle income
+Ukraine,UKR,Sovereign country,Europe,Europe,Eastern Europe,9214,69.154,44033874,6. Developing region,4. Lower middle income
+Poland,POL,Sovereign country,Europe,Europe,Eastern Europe,24838,60.178,38476269,2. Developed region: nonG7,1. High income: OECD
+Austria,AUT,Sovereign country,Europe,Europe,Western Europe,41445,57.905,8754413,2. Developed region: nonG7,1. High income: OECD
+Hungary,HUN,Sovereign country,Europe,Europe,Eastern Europe,23279,70.779,9850845,2. Developed region: nonG7,1. High income: OECD
+Moldova,MDA,Sovereign country,Europe,Europe,Eastern Europe,6068,42.511,3474121,6. Developing region,4. Lower middle income
+Romania,ROU,Sovereign country,Europe,Europe,Eastern Europe,17782,53.9,21529967,2. Developed region: nonG7,3. Upper middle income
+Lithuania,LTU,Sovereign country,Europe,Europe,Northern Europe,24743,67.366,2823859,2. Developed region: nonG7,3. Upper middle income
+Latvia,LVA,Sovereign country,Europe,Europe,Northern Europe,22092,68.021,1944643,2. Developed region: nonG7,3. Upper middle income
+Estonia,EST,Sovereign country,Europe,Europe,Northern Europe,24857,68.563,1251581,2. Developed region: nonG7,1. High income: OECD
+Germany,DEU,Sovereign country,Europe,Europe,Western Europe,44689,77.224,80594017,1. Developed region: G7,1. High income: OECD
+Bulgaria,BGR,Sovereign country,Europe,Europe,Eastern Europe,17037,74.329,7101510,2. Developed region: nonG7,3. Upper middle income
+Greece,GRC,Sovereign country,Europe,Europe,Southern Europe,22574,78.387,10768477,2. Developed region: nonG7,1. High income: OECD
+Turkey,TUR,Sovereign country,Asia,Asia,Western Asia,17906,74.134,80845215,4. Emerging region: MIKT,3. Upper middle income
+Albania,ALB,Sovereign country,Europe,Europe,Southern Europe,10342,58.421,3047987,6. Developing region,4. Lower middle income
+Croatia,HRV,Sovereign country,Europe,Europe,Southern Europe,20376,56.403,4292095,2. Developed region: nonG7,2. High income: nonOECD
+Switzerland,CHE,Sovereign country,Europe,Europe,Western Europe,59662,73.739,8236303,2. Developed region: nonG7,1. High income: OECD
+Luxembourg,LUX,Sovereign country,Europe,Europe,Western Europe,57006,90.46,594130,2. Developed region: nonG7,1. High income: OECD
+Belgium,BEL,Sovereign country,Europe,Europe,Western Europe,38766,97.919,11491346,2. Developed region: nonG7,1. High income: OECD
+Netherlands,NLD,Country,Europe,Europe,Western Europe,45600,90.635,17084719,2. Developed region: nonG7,1. High income: OECD
+Portugal,PRT,Sovereign country,Europe,Europe,Southern Europe,25346,64.086,10839514,2. Developed region: nonG7,1. High income: OECD
+Spain,ESP,Sovereign country,Europe,Europe,Southern Europe,30110,79.84,48958159,2. Developed region: nonG7,1. High income: OECD
+Ireland,IRL,Sovereign country,Europe,Europe,Northern Europe,56597,62.737,5011102,2. Developed region: nonG7,1. High income: OECD
+New Zealand,NZL,Country,Oceania,Oceania,Australia and New Zealand,34295,86.4,4510327,2. Developed region: nonG7,1. High income: OECD
+Australia,AUS,Country,Oceania,Oceania,Australia and New Zealand,48845,85.8,23232413,2. Developed region: nonG7,1. High income: OECD
+Sri Lanka,LKA,Sovereign country,Asia,Asia,Southern Asia,11149,18.311,22409381,6. Developing region,4. Lower middle income
+China,CHN,Country,Asia,Asia,Eastern Asia,12569,56.736,1379302771,3. Emerging region: BRIC,3. Upper middle income
+Taiwan,TWN,Sovereign country,Asia,Asia,Eastern Asia,42165,77.337,23508428,2. Developed region: nonG7,2. High income: nonOECD
+Italy,ITA,Sovereign country,Europe,Europe,Southern Europe,33419,69.855,62137802,1. Developed region: G7,1. High income: OECD
+Denmark,DNK,Country,Europe,Europe,Northern Europe,44836,87.642,5605948,2. Developed region: nonG7,1. High income: OECD
+United Kingdom,GBR,Country,Europe,Europe,Northern Europe,37334,82.886,64769452,1. Developed region: G7,1. High income: OECD
+Iceland,ISL,Sovereign country,Europe,Europe,Northern Europe,42085,93.735,339747,2. Developed region: nonG7,1. High income: OECD
+Azerbaijan,AZE,Sovereign country,Asia,Asia,Western Asia,16645,55.021,9961396,6. Developing region,3. Upper middle income
+Georgia,GEO,Sovereign country,Asia,Asia,Western Asia,10899,57.837,4926330,6. Developing region,4. Lower middle income
+Philippines,PHL,Sovereign country,Asia,Asia,South-Eastern Asia,7410,46.475,104256076,5. Emerging region: G20,4. Lower middle income
+Malaysia,MYS,Sovereign country,Asia,Asia,South-Eastern Asia,23053,74.84,31381992,6. Developing region,3. Upper middle income
+Slovenia,SVN,Sovereign country,Europe,Europe,Southern Europe,26908,54.02,1972126,2. Developed region: nonG7,1. High income: OECD
+Finland,FIN,Country,Europe,Europe,Northern Europe,37239,85.275,5491218,2. Developed region: nonG7,1. High income: OECD
+Slovakia,SVK,Sovereign country,Europe,Europe,Eastern Europe,25364,53.806,5445829,2. Developed region: nonG7,1. High income: OECD
+Czechia,CZE,Sovereign country,Europe,Europe,Eastern Europe,28823,73.57,10674723,2. Developed region: nonG7,1. High income: OECD
+Japan,JPN,Sovereign country,Asia,Asia,Eastern Asia,37465,91.457,126451398,1. Developed region: G7,1. High income: OECD
+Paraguay,PRY,Sovereign country,South America,Americas,South America,8786,61.026,6943739,5. Emerging region: G20,4. Lower middle income
+Yemen,YEM,Sovereign country,Asia,Asia,Western Asia,2506,35.394,28036829,7. Least developed region,4. Lower middle income
+Saudi Arabia,SAU,Sovereign country,Asia,Asia,Western Asia,51397,83.401,28571770,2. Developed region: nonG7,2. High income: nonOECD
+Northern Cyprus,NA,Sovereign country,Asia,Asia,Western Asia,19446.352,69.37599183265039,265100,6. Developing region,3. Upper middle income
+Northern Cyprus,NA,Sovereign country,Asia,Asia,Western Asia,38511.332,79.53617443903455,265100,6. Developing region,3. Upper middle income
+Cyprus,CYP,Sovereign country,Asia,Asia,Western Asia,25577,66.881,1221549,6. Developing region,2. High income: nonOECD
+Morocco,MAR,Sovereign country,Africa,Africa,Northern Africa,8039,61.36,33986655,6. Developing region,4. Lower middle income
+Egypt,EGY,Sovereign country,Africa,Africa,Northern Africa,11351,42.732,97041072,5. Emerging region: G20,4. Lower middle income
+Libya,LBY,Sovereign country,Africa,Africa,Northern Africa,8096,79.54,6653210,6. Developing region,3. Upper middle income
+Ethiopia,ETH,Sovereign country,Africa,Africa,Eastern Africa,1635,19.866,105350020,7. Least developed region,5. Low income
+Djibouti,DJI,Sovereign country,Africa,Africa,Eastern Africa,3064,77.528,865267,7. Least developed region,4. Lower middle income
+Somaliland,NA,Indeterminate,Africa,Africa,Eastern Africa,19446.352,69.37599183265039,3500000,6. Developing region,4. Lower middle income
+Somaliland,NA,Indeterminate,Africa,Africa,Eastern Africa,38511.332,79.53617443903455,3500000,6. Developing region,4. Lower middle income
+Uganda,UGA,Sovereign country,Africa,Africa,Eastern Africa,1980,22.624,39570125,7. Least developed region,5. Low income
+Rwanda,RWA,Sovereign country,Africa,Africa,Eastern Africa,1758,17.056,11901484,7. Least developed region,5. Low income
+Bosnia and Herzegovina,BIH,Sovereign country,Europe,Europe,Southern Europe,9746,47.518,3856181,6. Developing region,3. Upper middle income
+Macedonia,MKD,Sovereign country,Europe,Europe,Southern Europe,12644,57.563,2103721,6. Developing region,3. Upper middle income
+Republic of Serbia,SRB,Sovereign country,Europe,Europe,Southern Europe,13184,55.81,7111024,6. Developing region,3. Upper middle income
+Montenegro,MNE,Sovereign country,Europe,Europe,Southern Europe,17741,66.141,642550,6. Developing region,3. Upper middle income
+Kosovo,NA,Sovereign country,Europe,Europe,Southern Europe,19446.352,69.37599183265039,1895250,6. Developing region,4. Lower middle income
+Kosovo,NA,Sovereign country,Europe,Europe,Southern Europe,38511.332,79.53617443903455,1895250,6. Developing region,4. Lower middle income
+Trinidad and Tobago,TTO,Sovereign country,North America,Americas,Caribbean,29178,53.25,1218208,6. Developing region,2. High income: nonOECD
