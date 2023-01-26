@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="working_with_colors_files/libs/clipboard/clipboard.min.js"></script>
+<script src="working_with_colors_files/libs/quarto-html/tabby.min.js"></script>
+<script src="working_with_colors_files/libs/quarto-html/popper.min.js"></script>
+<script src="working_with_colors_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="working_with_colors_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="working_with_colors_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet">
+<link href="working_with_colors_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-0.9.566">
+
+  <meta name="author" content="Cédric Scherer // Jan 26, 2023">
+  <title>Color Palette Choice and Customization in R and ggplot2</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="working_with_colors_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="working_with_colors_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #000000; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #000000; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; } /* BuiltIn */
+    code span.cf { color: #000000; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #644a9b; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #000000; font-weight: bold; } /* Keyword */
+    code span.op { color: #000000; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #ff5500; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="working_with_colors_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="working_with_colors_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="working_with_colors_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="working_with_colors_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="working_with_colors_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="working_with_colors_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="working_with_colors_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+  <h1 class="title">Color Palette Choice and Customization in R and ggplot2</h1>
+  <p class="subtitle"><span style="font-size:1.75em;line-height:1.1;">Workshops for Ukraine</span></p>
+  <p class="author"><b style="color:#28a87d;"><a href="https://www.cedricscherer.com">Cédric Scherer</a></b> <strong>//</strong> Jan 26, 2023</p>
+</section>
+
+<section id="section" class="slide level2" data-background-image="img/avatars.png" data-background-position="center" data-background-size="77%">
+<h2></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="section-1" class="slide level2" data-background-image="img/projects-clients.png" data-background-position="center" data-background-size="77%" data-background-color="#606060">
+<h2></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="section-2" class="slide level2" data-background-image="img/projects-personal.png" data-background-position="center" data-background-size="77%" data-background-color="#606060">
+<h2></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="section-3" class="slide level2" data-background-image="img/color_wall.jpeg" data-background-position="center">
+<h2></h2>
+<div class="footer">
+<p>Photo by <a href="https://unsplash.com/@mariogogh?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mario Gogh</a> on Unsplash</p>
+</div>
+</section>
+<section>
+<section id="working-with-colors" class="title-slide slide level1 center">
+<h1>Working with Colors</h1>
+
+</section>
+<section id="section-4" class="slide level2" data-background-image="img/rgb.png" data-background-position="center" data-background-size="70%">
+<h2></h2>
+</section>
+<section id="section-5" class="slide level2" data-background-image="img/hcl.png" data-background-position="center" data-background-size="70%">
+<h2></h2>
+</section>
+<section id="section-6" class="slide level2" data-background-image="img/palettes-1.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section>
+<section id="section-7" class="slide level2" data-background-image="img/palettes-1-multi.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section>
+<section id="section-8" class="slide level2" data-background-image="img/palettes-2.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section>
+<section id="section-9" class="slide level2" data-background-image="img/palettes-3.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section></section>
+<section>
+<section id="working-with-colors-in-r" class="title-slide slide level1 center">
+<h1>Working with Colors in R</h1>
+
+</section>
+<section id="color-definitions" class="slide level2">
+<h2>Color Definitions</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-defs-a_06ce03f58a91379616c4f33f910a4a7a">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>pal_a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-a-pie_4b001423e4b0c18a1a0a9cfd884df7ca" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-a-pie-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-a-bar_3b912bb7b175c9a7a377b79a06d246bd" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-a-bar-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-definitions-1" class="slide level2">
+<h2>Color Definitions</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-defs-b_ebd7991b1aa6bad3e59b4fadae82d2a4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>pal_b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"olivedrab"</span>, <span class="st">"salmon3"</span>, <span class="st">"slateblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-b-pie_a827129159ace2f1815e5d8e3d762edb" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-b-pie-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-b-bars_457a74a30256f3a96a748ab9337faac4" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-b-bars-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-definitions-2" class="slide level2">
+<h2>Color Definitions</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-defs-c_25a410d009da4015c4e7a895f5d2e161">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>pal_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#28A87D"</span>, <span class="st">"#A83D28"</span>, <span class="st">"#2853a8"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-c-pie_19105ebdccfaf22b208bbe867e92fa01" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-c-pie-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-c-bars_58352c6a87f00f6846aa81b15927c856" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-c-bars-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-definitions-3" class="slide level2">
+<h2>Color Definitions</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-defs-d_f516d5edc808f7b8a10e4bcf3cfe4576">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>pal_d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rgb</span>(<span class="dv">40</span>, <span class="dv">168</span>, <span class="dv">125</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>), <span class="fu">rgb</span>(<span class="dv">168</span>, <span class="dv">61</span>, <span class="dv">40</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>), <span class="fu">rgb</span>(<span class="dv">40</span>, <span class="dv">83</span>, <span class="dv">168</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-d-pie_6a2005e1527acfc5f8a4ab3c66cc2ad2" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-d-pie-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-d-bars_1fb53d34e097d14ee2be5782d0736eeb" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-d-bars-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="demonstrate-colors" class="slide level2">
+<h2>Demonstrate Colors</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demoplot-a_f97a6273b33819cb12f49669461352cc" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>colorspace<span class="sc">::</span><span class="fu">demoplot</span>(pal_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demoplot-a-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demoplot-b_485d57acaa34cd2e18cb53d89e2b7d11" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>colorspace<span class="sc">::</span><span class="fu">demoplot</span>(pal_d, <span class="at">type =</span> <span class="st">"scatter"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demoplot-b-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-sequential-color-palettes" class="slide level2">
+<h2>Create Sequential Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-multi_3d4cc1cf6e596a87c70ef2c2528601f4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">colorRampPalette</span>(pal_d)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#28A87D" "#2FA178" "#379B72" "#3E956D" "#468E69" "#4D8864" "#55825F"
+ [8] "#5C7B59" "#647555" "#6B6F50" "#73694A" "#7A6245" "#825C41" "#89563C"
+[15] "#914F37" "#984932" "#A0432C" "#A83D28" "#A03E2F" "#983F37" "#91403E"
+[22] "#894246" "#82434D" "#7A4455" "#73465C" "#6B4764" "#64486B" "#5C4973"
+[29] "#554B7A" "#4D4C82" "#464D89" "#3E4F91" "#375098" "#2F51A0" "#2853A8"</code></pre>
+</div>
+</div>
+</section>
+<section id="create-sequential-color-palettes-1" class="slide level2">
+<h2>Create Sequential Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-multi-define_a7f6484899f1e09148c991ecb43e1ab0">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>pal_seq_multi <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal_d)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-multi-pie_41beb4e10149b090b62bb9c2919a9fa5" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-multi-pie-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-multi-bars_3bf68f2d9f3d6d95d4f6bf63c9b33510" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-multi-bars-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-sequential-color-palettes-2" class="slide level2">
+<h2>Create Sequential Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-multi-again_26a16c53fd74a93ae7839578436311af">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>pal_seq_multi <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal_d)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-multi-map-again_6210a2c0391d76efb88d9cbef00ca8cd" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-multi-map-again-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-multi-heat_700fa30f8ad8553cc5ac2173eed0c864" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-multi-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-sequential-color-palettes-3" class="slide level2">
+<h2>Create Sequential Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-single_a9daf872b199d685196ff3474c0bdb6f">
+<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#28A87D"</span>, <span class="st">"grey98"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a>pal_seq <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-single-map_49a7d488a769fc632334145b661d6d5c" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-single-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-single-heat_7d818e0ad1d2817498a7db214f1a77fa" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-single-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-diverging-color-palettes" class="slide level2">
+<h2>Create Diverging Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-div_25b39ee727159e05cf577e2e77b406de">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#7754BF"</span>, <span class="st">"grey98"</span>, <span class="st">"#208462"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2"></a>pal_div <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-map_66cf942e3652630de58a946f22064b0a" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-heat_4648b8bd8c95ce81acb04e26131921e7" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-diverging-color-palettes-1" class="slide level2">
+<h2>Create Diverging Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-div-dark_0190c45fa9fada314787542828734883">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#AA89F6"</span>, <span class="st">"grey5"</span>, <span class="st">"#49BD92"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a>pal_div_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-dark-map_bc61fb479613a07ebdd7236d612938b0" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-dark-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-dark-heat_4716871619180a92d5b88b23bd67d256" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-dark-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-darken_41c9ed1a7ab296bbfaac836a02843817">
+<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>colors <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="fu">c</span>(<span class="st">"#28A87D"</span>, <span class="st">"grey98"</span>), .<span class="dv">35</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-map_c698548f36f7b03761c4cb3961c9a731" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-heat_e15546c71010d8d502bb872f812fee34" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors-1" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-darken-extd_016b41c9e60e0cfac548fa7a85f29c3f">
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-extd-map_25cf33825964f3d85874b31b755a84e7" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-extd-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-extd-heat_31e5266a76bde95a58ca64f330a52e18" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-extd-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors-2" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-darken-extd-hls_9c2b4670f3f533c57996e79cd29c0123">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>, <span class="at">space =</span> <span class="st">"HLS"</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a>pal_seq_dark_hls <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-extd-hls-map_06fd5c003064b9f3f758acfc38be0395" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-extd-hls-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-extd-hcl-heat_b0eb1df3a1decf0fbaafd36e21ab9f54" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-extd-hcl-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors-3" class="slide level2">
+<h2>Adjust Colors</h2>
+<blockquote>
+<p>The color adjustment can be calculated in three different color spaces.</p>
+<ul>
+<li><p>If <code>space = "HCL"</code>, the colors are transformed to HCL, (polarLUV), the luminance component L is adjusted, and then the colors are transformed back to a hexadecimal RGB string.</p></li>
+<li><p>If <code>space = "HLS"</code>, the colors are transformed to HLS, the lightness component L is adjusted, and then the color is transformed back to a hexadecimal RGB string.</p></li>
+<li><p>If <code>space = "combined"</code>, the colors are first adjusted in both the HCL and HLS spaces. Then, the adjusted HLS colors are converted into HCL, and then the chroma components of the adjusted HLS colors are copied to the adjusted HCL colors. Thus, in effect, the combined model adjusts luminance in HCL space but chroma in HLS space.</p></li>
+</ul>
+</blockquote>
+</section>
+<section id="adjust-colors-4" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-reverse_2e295bbb3dc879545ec27072cee1ce5b">
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"grey5"</span>, colorspace<span class="sc">::</span><span class="fu">lighten</span>(<span class="st">"#28A87D"</span>, .<span class="dv">85</span>))</span>
+<span id="cb17-2"><a href="#cb17-2"></a>pal_seq_rev <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-reverse-map_820d599967c2c862f418405d2153f68f" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-reverse-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-reverse-heat_67486381ee24e557ee83aa7f285670f6" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-reverse-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors-5" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-div-intense_8b9f0af626bbf85aa504a44edddf41ff">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"grey98"</span>, <span class="st">"blue"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a>pal_div_raw <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-intense-map_aae2f25a59c239fe2d453f5692b34369" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-intense-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-intense-heat_52f4935c8478f5614e82e265d5d7663e" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-intense-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors-6" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-div-desaturate_14cd8e72c565c75bbba8bdfbf6118aac">
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>colors_des <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">desaturate</span>(colors, .<span class="dv">7</span>)</span>
+<span id="cb19-2"><a href="#cb19-2"></a>pal_div_des <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors_des)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-desaturate-map_9f0c46e6291761e3b0c80b6e12e861e9" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-desaturate-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-desaturate-heat_4a90f9b28b8550c016002e0b8f35d82e" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-desaturate-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors-7" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-div-desaturate-prismatic_7444cfc68979abc851eb9d545b7909a1">
+<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>colors_des <span class="ot">&lt;-</span> prismatic<span class="sc">::</span><span class="fu">clr_desaturate</span>(colors, .<span class="dv">7</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a>pal_div_des <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors_des)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-desaturate-map-prismatic_df5ed0f823afe3f18a203517799cdc43" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-desaturate-map-prismatic-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-div-desaturate-heat-prismatic_ed8ee3273eef199fdcb8eb0b20d6c91f" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-div-desaturate-heat-prismatic-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adjust-colors-8" class="slide level2">
+<h2>Adjust Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-seq-darken-extd-prismatic_91cad70958dbe094f4ff45ac93b2c9ef">
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(prismatic<span class="sc">::</span><span class="fu">clr_darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-extd-map-prismatic_88d41a586e0a5db58fb2a5f0020f6449" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-extd-map-prismatic-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-seq-darken-extd-heat-prismatic_ba53c004aad69593e3d097b011daaa10" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-seq-darken-extd-heat-prismatic-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="mix-colors" class="slide level2">
+<h2>Mix Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-pal-mix_312ee689617aaea3378f7b4c85216041">
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(prismatic<span class="sc">::</span><span class="fu">clr_mix</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a>pal_seq_mix <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-prismatic-mix-map_d55dbb52341d0bff57cac544388d0e6f" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-prismatic-mix-map-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/demo-pal-prismatic-mix-heat_2089e40d3bd8d7b2f97dad69b6a0f015" style="flex-basis: 50.0%;justify-content: center;">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/demo-pal-prismatic-mix-heat-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="pre-defined-color-palettes" class="title-slide slide level1 center">
+<h1>Pre-Defined Color Palettes</h1>
+
+</section>
+<section id="colorspace" class="slide level2">
+<h2>{colorspace}</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-colorspace_a2143566fdec03a92b0b78e74356eec9">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-colorspace-1.png" width="2800" class="r-stretch"></section>
+<section id="colorspace-1" class="slide level2">
+<h2>{colorspace}</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-colorspace-pubugn_015ab50e1ee4ddf99184860076988b31">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="at">palette =</span> <span class="st">"PuBuGn"</span>, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-colorspace-pubugn-1.png" width="2800" class="r-stretch"></section>
+<section id="colorspace-2" class="slide level2">
+<h2>{colorspace}</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-colorspace-pubugn-plot-prismatic_d06f507e774ae26d3bc3088cbaef926f">
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>pal <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">sequential_hcl</span>(<span class="at">palette =</span> <span class="st">"PuBuGn"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-colorspace-pubugn-plot-prismatic-1.png" width="2800" class="r-stretch"></section>
+<section id="rcolorbrewer" class="slide level2">
+<h2><a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">{RColorBrewer}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-colorbrewer_8ef345471d3f5b9e7c63bd461aeebd71">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-colorbrewer-1.png" width="2800" class="r-stretch"></section>
+<section id="rcolorbrewer-1" class="slide level2">
+<h2><a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">{RColorBrewer}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-colorbrewer-cvd_fc104dd4c43aa6e3dac023b49aa62edc">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">colorblindFriendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-colorbrewer-cvd-1.png" width="2800" class="r-stretch"></section>
+<section id="rcolorbrewer-2" class="slide level2">
+<h2><a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">{RColorBrewer}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-colorbrewer-rdylbu_53dca8a847952580f475a94933ccc266">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>pal <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">name =</span> <span class="st">"RdYlBu"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-colorbrewer-rdylbu-1.png" width="2800" class="r-stretch"></section>
+<section id="scico" class="slide level2">
+<h2><a href="https://github.com/thomasp85/scico">{scico}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-scico_83d397c7fe048024b3a6ab53b6ff7f5d">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>scico<span class="sc">::</span><span class="fu">scico_palette_show</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-scico-1.png" width="2800" class="r-stretch"></section>
+<section id="scico-1" class="slide level2">
+<h2><a href="https://github.com/thomasp85/scico">{scico}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-scico-rdylbu_02c131a197e13a06f8adff0f12352c04">
+<div class="sourceCode cell-code" id="cb30" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>pal <span class="ot">&lt;-</span> scico<span class="sc">::</span><span class="fu">scico</span>(<span class="at">palette =</span> <span class="st">"tokyo"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-scico-rdylbu-1.png" width="2800" class="r-stretch"></section>
+<section id="rcartocolor" class="slide level2">
+<h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-rcartocolor_8c82d603c51ce13ca3eed8584f80635b">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>rcartocolor<span class="sc">::</span><span class="fu">display_carto_all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-rcartocolor-1.png" width="2800" class="r-stretch"></section>
+<section id="rcartocolor-1" class="slide level2">
+<h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-rcartocolor-cvd_620604c44d05d4e2c7f1f4dacda07e35">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>rcartocolor<span class="sc">::</span><span class="fu">display_carto_all</span>(<span class="at">colorblind_friendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-rcartocolor-cvd-1.png" width="2800" class="r-stretch"></section>
+<section id="rcartocolor-2" class="slide level2">
+<h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-rcartocolor-sunset_3c9e19cdb8992a56d1f9a413a9ab5e81">
+<div class="sourceCode cell-code" id="cb33" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(<span class="at">name =</span> <span class="st">"ag_Sunset"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-rcartocolor-sunset-1.png" width="2800" class="r-stretch"></section>
+<section id="rcartocolor-3" class="slide level2">
+<h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/pals-rcartocolor-rdylbu_226c78e2b1f5b4a02d29fbcaf276a075">
+<div class="sourceCode cell-code" id="cb34" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>pal_extd <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal)(<span class="dv">20</span>)</span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal_extd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/pals-rcartocolor-rdylbu-1.png" width="2800" class="r-stretch"></section>
+<section id="more-color-packages" class="slide level2">
+<h2>More Color Packages</h2>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/dichromat/dichromat.pdf"><code>{dichromat}</code></a> – for dichromats *</li>
+<li><a href="https://nschiett.github.io/fishualize/index.html"><code>{fishualize}</code></a> – based on teleost fishes</li>
+<li><a href="https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html"><code>{ggsci}</code></a> – based on scientific journal and Sci-Fi movies</li>
+<li><a href="https://jrnold.github.io/ggthemes/"><code>{ggthemes}</code></a> – based on popular news rooms and software</li>
+<li><a href="https://ewenme.github.io/ghibli/"><code>{ghibli}</code></a> – based on Studio Ghibli movies</li>
+<li><a href="https://github.com/BlakeRMills/MetBrewer"><code>{MetBrewer}</code></a> – inspired by the Metropolitan Museum of Art</li>
+<li><a href="https://cran.r-project.org/web/packages/nord/readme/README.html"><code>{nord}</code></a> – collection of northern inspired palettes</li>
+<li><a href="https://cran.r-project.org/web/packages/pals/vignettes/pals_examples.html"><code>{pals}</code></a> – comprehensive collection of recommended palettes *</li>
+<li><a href="https://cran.r-project.org/web/packages/Redmonder/Redmonder.pdf"><code>{Redmonder}</code></a> – inspired by Microsoft products *</li>
+<li><a href="https://github.com/karthik/wesanderson"><code>{wesanderson}</code></a> – based on movies by Wes Anderson *</li>
+</ul>
+</section></section>
+<section>
+<section id="working-with-colors-in-ggplot2" class="title-slide slide level1 center">
+<h1>Working with Colors in ggplot2</h1>
+
+</section>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/prep_802cb3ba578816e06e40b9137dcab8a4">
+<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="1,2,3|5|7,17|8,9,10,11,12,13,14,15,16|8|9,10,11,12|13,14,15,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">library</span>(prismatic)</span>
+<span id="cb35-4"><a href="#cb35-4"></a></span>
+<span id="cb35-5"><a href="#cb35-5"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Asap Condensed"</span>, <span class="at">base_size =</span> <span class="dv">15</span>, <span class="at">base_line_size =</span> .<span class="dv">5</span>))</span>
+<span id="cb35-6"><a href="#cb35-6"></a></span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="fu">theme_update</span>(</span>
+<span id="cb35-8"><a href="#cb35-8"></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb35-9"><a href="#cb35-9"></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(</span>
+<span id="cb35-10"><a href="#cb35-10"></a>    <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>), <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>)</span>
+<span id="cb35-11"><a href="#cb35-11"></a>  ),</span>
+<span id="cb35-12"><a href="#cb35-12"></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb35-13"><a href="#cb35-13"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(</span>
+<span id="cb35-14"><a href="#cb35-14"></a>    <span class="at">color =</span> <span class="st">"grey45"</span>, <span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">7</span>), <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>)</span>
+<span id="cb35-15"><a href="#cb35-15"></a>  ),</span>
+<span id="cb35-16"><a href="#cb35-16"></a>  <span class="at">plot.caption.position =</span> <span class="st">"plot"</span></span>
+<span id="cb35-17"><a href="#cb35-17"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-data-set" class="slide level2">
+<h2>The Data Set</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/data_e63fdc130b431d195198f967b2a63452">
+<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="1,2|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>sf_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">"./data/urban-gdp-pop-sf.rds"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a>df_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"./data/urban-gdp-pop.csv"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(df_world)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 161
+Columns: 11
+$ sovereignt     &lt;chr&gt; "United Republic of Tanzania", "Canada", "United States~
+$ iso_a3         &lt;chr&gt; "TZA", "CAN", "USA", "KAZ", "UZB", "IDN", "ARG", "CHL",~
+$ type           &lt;chr&gt; "Sovereign country", "Sovereign country", "Country", "S~
+$ continent      &lt;chr&gt; "Africa", "North America", "North America", "Asia", "As~
+$ region_un      &lt;chr&gt; "Africa", "Americas", "Americas", "Asia", "Asia", "Asia~
+$ subregion      &lt;chr&gt; "Eastern Africa", "Northern America", "Northern America~
+$ gdp_per_capita &lt;dbl&gt; 2660.00, 43745.00, 53015.00, 23842.00, 10381.00, 10911.~
+$ urban_pop      &lt;dbl&gt; 32.33300, 81.30000, 81.86200, 57.26400, 50.65000, 53.98~
+$ pop_est        &lt;dbl&gt; 53950935, 35623680, 326625791, 18556698, 29748859, 2605~
+$ economy        &lt;chr&gt; "7. Least developed region", "1. Developed region: G7",~
+$ income_grp     &lt;chr&gt; "5. Low income", "1. High income: OECD", "1. High incom~</code></pre>
+</div>
+</div>
+</section>
+<section id="the-chart" class="slide level2">
+<h2>The Chart</h2>
+
+<img data-src="working_with_colors_files/figure-revealjs/plot-urban-gdp-1.png" width="2400" class="r-stretch"></section>
+<section id="the-chart-1" class="slide level2">
+<h2>The Chart</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/plot-urban-gdp_4c9b50e4b1c5c3b7210c15a0d7052967">
+<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="1|2,3|4|5|6|7,8|9,10,11,12|13,14|16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>p <span class="ot">&lt;-</span> </span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> df_world, </span>
+<span id="cb38-3"><a href="#cb38-3"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdp_per_capita, <span class="at">y =</span> urban_pop, <span class="at">size =</span> pop_est)) <span class="sc">+</span> </span>
+<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">coord_cartesian</span>(<span class="at">expand =</span> <span class="cn">FALSE</span>, <span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>()) <span class="sc">+</span> </span>
+<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="cf">function</span>(y) <span class="fu">paste0</span>(y, <span class="st">"%"</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
+<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">15</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">500</span>, <span class="dv">1000</span>) <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>,</span>
+<span id="cb38-8"><a href="#cb38-8"></a>                  <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">scale =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>, <span class="at">suffix =</span> <span class="st">"M"</span>)) <span class="sc">+</span></span>
+<span id="cb38-9"><a href="#cb38-9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb38-10"><a href="#cb38-10"></a>       <span class="at">fill =</span> <span class="st">"Continent:"</span>, <span class="at">size =</span> <span class="st">"Population:"</span>,</span>
+<span id="cb38-11"><a href="#cb38-11"></a>       <span class="at">title =</span> <span class="st">"Urban population vs. GDP per capita, 2016"</span>,</span>
+<span id="cb38-12"><a href="#cb38-12"></a>       <span class="at">caption =</span> <span class="st">"Sources: ourworldindata.org/urbanization; NaturalEarth | x-axis on log scale"</span>) <span class="sc">+</span></span>
+<span id="cb38-13"><a href="#cb38-13"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>)),</span>
+<span id="cb38-14"><a href="#cb38-14"></a>         <span class="at">size =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"grey85"</span>)))</span>
+<span id="cb38-15"><a href="#cb38-15"></a></span>
+<span id="cb38-16"><a href="#cb38-16"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> region_un), <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="using-pre-defined-scales" class="title-slide slide level1 center">
+<h1>Using Pre-Defined Scales</h1>
+
+</section>
+<section id="viridis" class="slide level2">
+<h2><a href="https://sjmgarnier.github.io/viridis/">{viridis}</a></h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/viridis-disc_1b4bfd6b2802337ffa488901ffe3268e">
+<div class="column">
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>p <span class="sc">+</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb39-3"><a href="#cb39-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb39-4"><a href="#cb39-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb39-5"><a href="#cb39-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/viridis-disc-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="viridis-1" class="slide level2">
+<h2><a href="https://sjmgarnier.github.io/viridis/">{viridis}</a></h2>
+
+<img data-src="working_with_colors_files/figure-revealjs/demo-viridis-1.png" width="2800" class="r-stretch"></section>
+<section id="viridis-2" class="slide level2">
+<h2><a href="https://sjmgarnier.github.io/viridis/">{viridis}</a></h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/viridis-cont_48f3a8d4e90816402fa14ec32e969e5e">
+<div class="column">
+<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="3|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>p <span class="sc">+</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb40-3"><a href="#cb40-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), </span>
+<span id="cb40-4"><a href="#cb40-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/viridis-cont-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="viridis-3" class="slide level2">
+<h2><a href="https://sjmgarnier.github.io/viridis/">{viridis}</a></h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/viridis-cont-styled_70e2e2cca22257fa40dd6dc9595c6b28">
+<div class="column">
+<div class="sourceCode cell-code" id="cb41" data-code-line-numbers="6,7,8,9|10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>p <span class="sc">+</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb41-3"><a href="#cb41-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), </span>
+<span id="cb41-4"><a href="#cb41-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb41-7"><a href="#cb41-7"></a>    <span class="at">name =</span> <span class="st">"Urban share:"</span>, </span>
+<span id="cb41-8"><a href="#cb41-8"></a>    <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)</span>
+<span id="cb41-9"><a href="#cb41-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb41-10"><a href="#cb41-10"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/viridis-cont-styled-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="rcartocolor-4" class="slide level2">
+<h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/rcarto-disc_9adcf494683ca44b6c53862dd4cfd57c">
+<div class="column">
+<div class="sourceCode cell-code" id="cb42" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>p <span class="sc">+</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb42-3"><a href="#cb42-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb42-4"><a href="#cb42-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb42-6"><a href="#cb42-6"></a>  rcartocolor<span class="sc">::</span><span class="fu">scale_fill_carto_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/rcarto-disc-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="rcartocolor-5" class="slide level2">
+<h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
+
+<img data-src="working_with_colors_files/figure-revealjs/demo-rcarto-bold-1.png" width="2800" class="r-stretch"></section>
+<section id="rcartocolor-6" class="slide level2">
+<h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/rcarto-disc-2_9dd0e6c4b6a70f4bea79053a4eda79ac">
+<div class="column">
+<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>p <span class="sc">+</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb43-3"><a href="#cb43-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>  rcartocolor<span class="sc">::</span><span class="fu">scale_fill_carto_d</span>(</span>
+<span id="cb43-7"><a href="#cb43-7"></a>    <span class="at">palette =</span> <span class="st">"Bold"</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/rcarto-disc-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="scale_colorfill_manual" class="slide level2">
+<h2><code>scale_color|fill_manual()</code></h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/rcarto-disc-custom_5b987b04fa0ff793815ce1f7761e624c">
+<div class="column">
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="1,2,3|10,12|11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">5</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>)</span>
+<span id="cb44-4"><a href="#cb44-4"></a></span>
+<span id="cb44-5"><a href="#cb44-5"></a>p <span class="sc">+</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb44-7"><a href="#cb44-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb44-8"><a href="#cb44-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb44-9"><a href="#cb44-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb44-10"><a href="#cb44-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb44-11"><a href="#cb44-11"></a>    <span class="at">values =</span> pal</span>
+<span id="cb44-12"><a href="#cb44-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/rcarto-disc-custom-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="customize-palettes" class="title-slide slide level1 center">
+<h1>Customize Palettes</h1>
+
+</section>
+<section id="customize-palette" class="slide level2">
+<h2>Customize Palette</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/rcarto-disc-custom-2_b24da2bd313339b143740dcdf0d77868">
+<div class="column">
+<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">6</span></span>
+<span id="cb45-3"><a href="#cb45-3"></a>)</span>
+<span id="cb45-4"><a href="#cb45-4"></a></span>
+<span id="cb45-5"><a href="#cb45-5"></a>p <span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb45-7"><a href="#cb45-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb45-8"><a href="#cb45-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-10"><a href="#cb45-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb45-11"><a href="#cb45-11"></a>    <span class="at">values =</span> pal</span>
+<span id="cb45-12"><a href="#cb45-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/rcarto-disc-custom-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="customize-palette-1" class="slide level2">
+<h2>Customize Palette</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/rcarto-disc-custom-3_0c62c9b1f0b9aeff55fb77ea070076c5">
+<div class="column">
+<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">8</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>)[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>)]</span>
+<span id="cb46-4"><a href="#cb46-4"></a></span>
+<span id="cb46-5"><a href="#cb46-5"></a>p <span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb46-7"><a href="#cb46-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb46-8"><a href="#cb46-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb46-9"><a href="#cb46-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb46-10"><a href="#cb46-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb46-11"><a href="#cb46-11"></a>    <span class="at">values =</span> pal</span>
+<span id="cb46-12"><a href="#cb46-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/rcarto-disc-custom-3-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="customize-palette-2" class="slide level2">
+<h2>Customize Palette</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/rcarto-disc-custom-4_8140abadef4170cee26810b5b377361d">
+<div class="column">
+<div class="sourceCode cell-code" id="cb47" data-code-line-numbers="1|9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>pal_dark <span class="ot">&lt;-</span> <span class="fu">clr_darken</span>(pal, .<span class="dv">4</span>)</span>
+<span id="cb47-2"><a href="#cb47-2"></a></span>
+<span id="cb47-3"><a href="#cb47-3"></a>p <span class="sc">+</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb47-5"><a href="#cb47-5"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb47-6"><a href="#cb47-6"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>  ) <span class="sc">+</span></span>
+<span id="cb47-8"><a href="#cb47-8"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb47-9"><a href="#cb47-9"></a>    <span class="at">values =</span> pal_dark</span>
+<span id="cb47-10"><a href="#cb47-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/rcarto-disc-custom-4-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="after_scale" class="title-slide slide level1 center">
+<h1><code>after_scale()</code></h1>
+
+</section>
+<section id="re-use-palettes" class="slide level2">
+<h2>Re-use Palettes</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/after-scale_829ff16a4cb13a59bd63b74d17faf598">
+<div class="column">
+<div class="sourceCode cell-code" id="cb48" data-code-line-numbers="3,4|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>p <span class="sc">+</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb48-3"><a href="#cb48-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un,</span>
+<span id="cb48-4"><a href="#cb48-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(fill)), </span>
+<span id="cb48-5"><a href="#cb48-5"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a>  ) <span class="sc">+</span></span>
+<span id="cb48-7"><a href="#cb48-7"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb48-8"><a href="#cb48-8"></a>    <span class="at">values =</span> pal</span>
+<span id="cb48-9"><a href="#cb48-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/after-scale-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="re-use-palettes-1" class="slide level2">
+<h2>Re-use Palettes</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/after-scale-2_ec904eba7532db89ac3ceb3e3b5f0b6f">
+<div class="column">
+<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>p <span class="sc">+</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb49-3"><a href="#cb49-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un,</span>
+<span id="cb49-4"><a href="#cb49-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(</span>
+<span id="cb49-5"><a href="#cb49-5"></a>          <span class="fu">clr_darken</span>(fill, .<span class="dv">6</span>)</span>
+<span id="cb49-6"><a href="#cb49-6"></a>        )), </span>
+<span id="cb49-7"><a href="#cb49-7"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb49-8"><a href="#cb49-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb49-10"><a href="#cb49-10"></a>    <span class="at">values =</span> pal</span>
+<span id="cb49-11"><a href="#cb49-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/after-scale-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="re-use-palettes-2" class="slide level2">
+<h2>Re-use Palettes</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/after-scale-boxplot_50d80c36d2ba55687a2606c3c4e84244">
+<div class="column">
+<div class="sourceCode cell-code" id="cb50" data-code-line-numbers="1,2,3,4,5,6,7,8,9,10,11,12,13,14|4,5,6,7|16,17,18,19,20,21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>b <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb50-2"><a href="#cb50-2"></a>    <span class="at">data =</span> df_world, </span>
+<span id="cb50-3"><a href="#cb50-3"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb50-4"><a href="#cb50-4"></a>      <span class="at">x =</span> gdp_per_capita, </span>
+<span id="cb50-5"><a href="#cb50-5"></a>      <span class="at">y =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(</span>
+<span id="cb50-6"><a href="#cb50-6"></a>        region_un, <span class="sc">-</span>gdp_per_capita</span>
+<span id="cb50-7"><a href="#cb50-7"></a>      )</span>
+<span id="cb50-8"><a href="#cb50-8"></a>    )</span>
+<span id="cb50-9"><a href="#cb50-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb50-10"><a href="#cb50-10"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb50-11"><a href="#cb50-11"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()</span>
+<span id="cb50-12"><a href="#cb50-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb50-13"><a href="#cb50-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb50-14"><a href="#cb50-14"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb50-15"><a href="#cb50-15"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb50-16"><a href="#cb50-16"></a></span>
+<span id="cb50-17"><a href="#cb50-17"></a>b <span class="sc">+</span></span>
+<span id="cb50-18"><a href="#cb50-18"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb50-19"><a href="#cb50-19"></a>    <span class="fu">aes</span>(<span class="at">color =</span> region_un), </span>
+<span id="cb50-20"><a href="#cb50-20"></a>    <span class="at">width =</span> .<span class="dv">7</span></span>
+<span id="cb50-21"><a href="#cb50-21"></a>  ) <span class="sc">+</span></span>
+<span id="cb50-22"><a href="#cb50-22"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> pal) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/after-scale-boxplot-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="re-use-palettes-3" class="slide level2">
+<h2>Re-use Palettes</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/after-scale-boxplot-2_2c0c6a16d095a4e72c66425ffb506870">
+<div class="column">
+<div class="sourceCode cell-code" id="cb51" data-code-line-numbers="4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>b <span class="sc">+</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb51-3"><a href="#cb51-3"></a>    <span class="fu">aes</span>(<span class="at">color =</span> region_un, </span>
+<span id="cb51-4"><a href="#cb51-4"></a>        <span class="at">fill =</span> <span class="fu">after_scale</span>(</span>
+<span id="cb51-5"><a href="#cb51-5"></a>          <span class="fu">clr_lighten</span>(color, .<span class="dv">65</span>)</span>
+<span id="cb51-6"><a href="#cb51-6"></a>        )), </span>
+<span id="cb51-7"><a href="#cb51-7"></a>    <span class="at">width =</span> .<span class="dv">7</span></span>
+<span id="cb51-8"><a href="#cb51-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb51-9"><a href="#cb51-9"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> pal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/after-scale-boxplot-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="use-colors-for-highlighting" class="title-slide slide level1 center">
+<h1>Use Colors for Highlighting</h1>
+
+</section>
+<section id="highlight-colors" class="slide level2">
+<h2>Highlight Colors</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/highlight-colors_d355432cd0b6a9870ffb6e3782b8e552">
+<div class="column">
+<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="3|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>p <span class="sc">+</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb52-3"><a href="#cb52-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
+<span id="cb52-4"><a href="#cb52-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb52-6"><a href="#cb52-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb52-7"><a href="#cb52-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb52-8"><a href="#cb52-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/highlight-colors-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="highlight-colors-1" class="slide level2">
+<h2>Highlight Colors</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/highlight-colors-styled_083f07a9b40c5389b6b9d9e5b05a07ee">
+<div class="column">
+<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="8,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>p <span class="sc">+</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb53-3"><a href="#cb53-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
+<span id="cb53-4"><a href="#cb53-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb53-6"><a href="#cb53-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb53-7"><a href="#cb53-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>),</span>
+<span id="cb53-8"><a href="#cb53-8"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"African countries"</span>, <span class="st">"Other countries"</span>),</span>
+<span id="cb53-9"><a href="#cb53-9"></a>    <span class="at">name =</span> <span class="cn">NULL</span></span>
+<span id="cb53-10"><a href="#cb53-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/highlight-colors-styled-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="highlight-colors-2" class="slide level2">
+<h2>Highlight Colors</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/highlight-colors-styled-alt_abde4a8b546a1b9347ea69dfb9687059">
+<div class="column">
+<div class="sourceCode cell-code" id="cb54" data-code-line-numbers="9|10|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>p <span class="sc">+</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb54-3"><a href="#cb54-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
+<span id="cb54-4"><a href="#cb54-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb54-7"><a href="#cb54-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb54-8"><a href="#cb54-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb54-9"><a href="#cb54-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb54-10"><a href="#cb54-10"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#D00000;'&gt;African&lt;/b&gt; and &lt;b style='color:grey70;'&gt;non-African&lt;/b&gt; countries"</span>) <span class="sc">+</span></span>
+<span id="cb54-11"><a href="#cb54-11"></a>  <span class="fu">theme</span>(</span>
+<span id="cb54-12"><a href="#cb54-12"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
+<span id="cb54-13"><a href="#cb54-13"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
+<span id="cb54-14"><a href="#cb54-14"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
+<span id="cb54-15"><a href="#cb54-15"></a>    )</span>
+<span id="cb54-16"><a href="#cb54-16"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/highlight-colors-styled-alt-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="highlight-colors-3" class="slide level2">
+<h2>Highlight Colors</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/highlight-colors-styled-alt-afterscale_17a40fe05d2b7cfdbed435cb1cedee39">
+<div class="column">
+<div class="sourceCode cell-code" id="cb55" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>p <span class="sc">+</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb55-3"><a href="#cb55-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>,</span>
+<span id="cb55-4"><a href="#cb55-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(fill)), </span>
+<span id="cb55-5"><a href="#cb55-5"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a>  ) <span class="sc">+</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb55-8"><a href="#cb55-8"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb55-9"><a href="#cb55-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb55-10"><a href="#cb55-10"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#D00000;'&gt;African&lt;/b&gt; and &lt;b style='color:grey70;'&gt;non-African&lt;/b&gt; countries"</span>) <span class="sc">+</span></span>
+<span id="cb55-11"><a href="#cb55-11"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb55-12"><a href="#cb55-12"></a>  <span class="fu">theme</span>(</span>
+<span id="cb55-13"><a href="#cb55-13"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
+<span id="cb55-14"><a href="#cb55-14"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
+<span id="cb55-15"><a href="#cb55-15"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
+<span id="cb55-16"><a href="#cb55-16"></a>    )</span>
+<span id="cb55-17"><a href="#cb55-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/highlight-colors-styled-alt-afterscale-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="highlight-colors-4" class="slide level2">
+<h2>Highlight Colors</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/highlight-colors-prep2_e519b55a5c6a7e4de10185fb7b31bf1c">
+<div class="sourceCode cell-code" id="cb56" data-code-line-numbers="1,2,3,4,5,7,8,9|3,4,5|6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>df_world <span class="ot">&lt;-</span> df_world <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="#cb56-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb56-3"><a href="#cb56-3"></a>    <span class="at">cont_lumped =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb56-4"><a href="#cb56-4"></a>      continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Asia"</span>, <span class="st">"Europe"</span>), continent, <span class="st">"Other"</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>    ),</span>
+<span id="cb56-6"><a href="#cb56-6"></a>    <span class="at">cont_lumped =</span> forcats<span class="sc">::</span><span class="fu">fct_relevel</span>(</span>
+<span id="cb56-7"><a href="#cb56-7"></a>      cont_lumped, <span class="st">"Other"</span>, <span class="at">after =</span> <span class="cn">Inf</span></span>
+<span id="cb56-8"><a href="#cb56-8"></a>    )</span>
+<span id="cb56-9"><a href="#cb56-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="highlight-colors-5" class="slide level2">
+<h2>Highlight Colors</h2>
+<div class="cell columns column-output-location" data-hash="working_with_colors_cache/revealjs/highlight-colors-2_7cdbe1b7e47888d60258efff33ddb1f7">
+<div class="column">
+<div class="sourceCode cell-code" id="cb57" data-code-line-numbers="1|6,7|10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>pal_hl <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#7754BF"</span>, <span class="st">"#28A74D"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb57-2"><a href="#cb57-2"></a></span>
+<span id="cb57-3"><a href="#cb57-3"></a>p <span class="sc">+</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb57-5"><a href="#cb57-5"></a>    <span class="at">data =</span> df_world,</span>
+<span id="cb57-6"><a href="#cb57-6"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> cont_lumped,</span>
+<span id="cb57-7"><a href="#cb57-7"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(<span class="fu">clr_darken</span>(fill, .<span class="dv">3</span>))), </span>
+<span id="cb57-8"><a href="#cb57-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb57-9"><a href="#cb57-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb57-10"><a href="#cb57-10"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> pal_hl) <span class="sc">+</span></span>
+<span id="cb57-11"><a href="#cb57-11"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#7754BF;'&gt;Asian&lt;/b&gt; and &lt;b style='color:#28A74D;'&gt;European&lt;/b&gt; countries compared to all &lt;span style='color:grey60;'&gt;other countries&lt;/span&gt;"</span>) <span class="sc">+</span></span>
+<span id="cb57-12"><a href="#cb57-12"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb57-13"><a href="#cb57-13"></a>  <span class="fu">theme</span>(</span>
+<span id="cb57-14"><a href="#cb57-14"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
+<span id="cb57-15"><a href="#cb57-15"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
+<span id="cb57-16"><a href="#cb57-16"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
+<span id="cb57-17"><a href="#cb57-17"></a>    )</span>
+<span id="cb57-18"><a href="#cb57-18"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/highlight-colors-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-map" class="slide level2">
+<h2>The Map</h2>
+
+<img data-src="working_with_colors_files/figure-revealjs/map-urban-gdp-1.png" width="2400" class="r-stretch"></section>
+<section id="the-map-1" class="slide level2">
+<h2>The Map</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-urban-gdp_12003758f533defac339f31ea816ec9d">
+<div class="sourceCode cell-code" id="cb58" data-code-line-numbers="1|2|2,3|4|5,6,7,8,9|10,11,12,13,14,15,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>m <span class="ot">&lt;-</span> </span>
+<span id="cb58-2"><a href="#cb58-2"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> sf_world) <span class="sc">+</span></span>
+<span id="cb58-3"><a href="#cb58-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">lwd =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="#cb58-4"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=eqearth"</span>) <span class="sc">+</span></span>
+<span id="cb58-5"><a href="#cb58-5"></a>  <span class="fu">labs</span>(</span>
+<span id="cb58-6"><a href="#cb58-6"></a>    <span class="at">title =</span> <span class="st">"Share of people living in urban areas, 2016"</span>,</span>
+<span id="cb58-7"><a href="#cb58-7"></a>    <span class="at">caption =</span> <span class="st">"Sources: ourworldindata.org/urbanization; NaturalEarth"</span>,</span>
+<span id="cb58-8"><a href="#cb58-8"></a>    <span class="at">fill =</span> <span class="cn">NULL</span></span>
+<span id="cb58-9"><a href="#cb58-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-10"><a href="#cb58-10"></a>  <span class="fu">theme</span>(</span>
+<span id="cb58-11"><a href="#cb58-11"></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb58-12"><a href="#cb58-12"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb58-13"><a href="#cb58-13"></a>    <span class="at">legend.key.width =</span> <span class="fu">unit</span>(<span class="fl">2.5</span>, <span class="st">"lines"</span>),</span>
+<span id="cb58-14"><a href="#cb58-14"></a>    <span class="at">legend.key.height =</span> <span class="fu">unit</span>(.<span class="dv">6</span>, <span class="st">"lines"</span>),</span>
+<span id="cb58-15"><a href="#cb58-15"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb58-16"><a href="#cb58-16"></a>  )</span>
+<span id="cb58-17"><a href="#cb58-17"></a></span>
+<span id="cb58-18"><a href="#cb58-18"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="a-sequential-palette" class="slide level2">
+<h2>A Sequential Palette</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-sequential_bcb161f3f61134f23370f61531f3f02c">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/map-sequential-1.png" width="2400" class="r-stretch"></section>
+<section id="a-reversed-sequential-palette" class="slide level2">
+<h2>A (Reversed) Sequential Palette</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-sequential-reversed_6c68b13f0a26cd7cdae5547af3b59b95">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/map-sequential-reversed-1.png" width="2400" class="r-stretch"></section>
+<section id="a-diverging-palette" class="slide level2">
+<h2>A Diverging Palette</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-diverging_a34f743fbcedd5701a2fc0db1dc2d16e">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/map-diverging-1.png" width="2400" class="r-stretch"></section>
+<section id="a-reversed-diverging-palette" class="slide level2">
+<h2>A (Reversed) Diverging Palette</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-diverging-reversed_5bd5e963deae66151e568d40e7f1cc7f">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/map-diverging-reversed-1.png" width="2400" class="r-stretch"></section>
+<section id="a-fixed-diverging-palette" class="slide level2">
+<h2>A (Fixed) Diverging Palette</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-diverging-midpoint_594cb70c5cff6378487f3709767fc63e">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/map-diverging-midpoint-1.png" width="2400" class="r-stretch"></section>
+<section id="a-styled-diverging-palette" class="slide level2">
+<h2>A (Styled) Diverging Palette</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-diverging-styled_728f66002407b816f8d3ddab81a0f55d">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
+<span id="cb64-2"><a href="#cb64-2"></a>                         <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/map-diverging-styled-1.png" width="2400" class="r-stretch"></section>
+<section id="a-custom-diverging-palette" class="slide level2">
+<h2>A (Custom) Diverging Palette</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/map-diverging-manually_609487f88c0ab443fa92bf5740d91b66">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"#7754BF"</span>, <span class="at">mid =</span> <span class="st">"grey90"</span>, <span class="at">high =</span> <span class="st">"#208462"</span>, <span class="at">midpoint =</span> <span class="dv">50</span>, </span>
+<span id="cb65-2"><a href="#cb65-2"></a>                         <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/map-diverging-manually-1.png" width="2400" class="r-stretch"></section></section>
+<section>
+<section id="test-color-palettes" class="title-slide slide level1 center">
+<h1>Test Color Palettes</h1>
+
+</section>
+<section id="test-color-palettes-1" class="slide level2">
+<h2>Test Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/test-plots_cac9dd7c7dc1a4bb6b24121f265fce3f">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>pt <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb66-3"><a href="#cb66-3"></a>    <span class="at">data =</span> df_world,</span>
+<span id="cb66-4"><a href="#cb66-4"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> cont_lumped,</span>
+<span id="cb66-5"><a href="#cb66-5"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(<span class="fu">clr_darken</span>(fill, .<span class="dv">3</span>))), </span>
+<span id="cb66-6"><a href="#cb66-6"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb66-7"><a href="#cb66-7"></a>  ) <span class="sc">+</span></span>
+<span id="cb66-8"><a href="#cb66-8"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> pal_hl)</span>
+<span id="cb66-9"><a href="#cb66-9"></a></span>
+<span id="cb66-10"><a href="#cb66-10"></a>mt <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">scale_fill_gradient2</span>(</span>
+<span id="cb66-11"><a href="#cb66-11"></a>  <span class="at">low =</span> <span class="st">"#7754BF"</span>, <span class="at">mid =</span> <span class="st">"grey90"</span>, <span class="at">high =</span> <span class="st">"#208462"</span>, <span class="at">midpoint =</span> <span class="dv">50</span>, </span>
+<span id="cb66-12"><a href="#cb66-12"></a>  <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)</span>
+<span id="cb66-13"><a href="#cb66-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="test-color-palettes-2" class="slide level2">
+<h2>Test Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/test-bubble-highlight_4416c82acbb30cad87641cbb72f22210">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>colorblindr<span class="sc">::</span><span class="fu">cvd_grid</span>(pt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/test-bubble-highlight-1.png" width="3200" class="r-stretch"></section>
+<section id="test-color-palettes-3" class="slide level2">
+<h2>Test Color Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/test-map-div_fe14a1bbe44803eb0fbe6dd4110c1f47">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>colorblindr<span class="sc">::</span><span class="fu">cvd_grid</span>(mt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="working_with_colors_files/figure-revealjs/test-map-div-1.png" width="3200" class="r-stretch"></section></section>
+<section>
+<section id="evaluate-color-palettes" class="title-slide slide level1 center">
+<h1>Evaluate Color Palettes</h1>
+
+</section>
+<section id="create-some-palettes" class="slide level2">
+<h2>Create Some Palettes</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/specplot_f71b9561076a4586248b5c018aaa9dfe">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>pal_seq_1 <span class="ot">&lt;-</span> viridis<span class="sc">::</span><span class="fu">cividis</span>(<span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb69-2"><a href="#cb69-2"></a>pal_seq_2 <span class="ot">&lt;-</span> scico<span class="sc">::</span><span class="fu">scico</span>(<span class="at">palette =</span> <span class="st">"bamako"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb69-3"><a href="#cb69-3"></a></span>
+<span id="cb69-4"><a href="#cb69-4"></a>pal_div_1 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">name =</span> <span class="st">"RdYlBu"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb69-5"><a href="#cb69-5"></a>pal_div_2 <span class="ot">&lt;-</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="at">name =</span> <span class="st">"Hiroshige"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb69-6"><a href="#cb69-6"></a></span>
+<span id="cb69-7"><a href="#cb69-7"></a>pal_cat_1 <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(<span class="at">name =</span> <span class="st">"Prism"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb69-8"><a href="#cb69-8"></a>pal_cat_2 <span class="ot">&lt;-</span> ggthemes<span class="sc">::</span><span class="fu">excel_pal</span>()(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="evaluate-hcl-space" class="slide level2">
+<h2>Evaluate HCL Space</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/eval-seq-1_cb3a6d70c94cc6defc6f93e645ea2302" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_seq_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/eval-seq-1-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/eval-seq-2_8c0a5413dbfbd2fc069cbbf6fa9780f5" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_seq_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/eval-seq-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluate-hcl-space-1" class="slide level2">
+<h2>Evaluate HCL Space</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/eval-div-1_8240c440571be259dc830b30bfa2be3e" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_div_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/eval-div-1-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/eval-div-2_c700ea95f9634c424013ad05b5a68e44" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_div_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/eval-div-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluate-hcl-space-2" class="slide level2">
+<h2>Evaluate HCL Space</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/eval-cat-1_ab5350105e1ec39138c089f14d87369d" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_cat_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/eval-cat-1-1.png" width="1000"></p>
+</div>
+</div>
+<div class="cell quarto-layout-cell" data-hash="working_with_colors_cache/revealjs/eval-cat-2_a5fabbd6ad5809a9ead4d96517f77cf4" style="flex-basis: 50.0%;justify-content: center;">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_cat_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img data-src="working_with_colors_files/figure-revealjs/eval-cat-2-1.png" width="1000"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="color-tools" class="slide level2">
+<h2>Color Tools</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-tool-1_aef2aeaa403e169c36ed833052641b49">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_color_picker</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/tool-hcl-color-picker.png" class="r-stretch quarto-figure-center"></section>
+<section id="color-tools-1" class="slide level2">
+<h2>Color Tools</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/color-tool-2_af3c61486dca5d934e12e6262287929b">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>colorspace<span class="sc">::</span><span class="fu">choose_color</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/tool-choose-color.png" class="r-stretch quarto-figure-center"></section>
+<section id="color-palette-tools" class="slide level2">
+<h2>Color Palette Tools</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/palette-tool-1_eaae8daaa3fe59df18681b2bae257580">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_wizard</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/tool-hcl-wizard.png" class="r-stretch quarto-figure-center"></section>
+<section id="color-palette-tools-1" class="slide level2">
+<h2>Color Palette Tools</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/palette-tool-2_86873e533843180e7cd675e3fc831550">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a>colorspace<span class="sc">::</span><span class="fu">choose_palette</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/tool-choose-palette.png" class="r-stretch quarto-figure-center"></section>
+<section id="cvd-tool" class="slide level2">
+<h2>CVD Tool</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/cvd-tool_ac9834533594ee3c9b5e6383ee4da235">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>colorspace<span class="sc">::</span><span class="fu">cvd_emulator</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="img/tool-cvd-emulator.png" class="r-stretch quarto-figure-center"></section>
+<section id="viz-palette-tool" class="slide level2">
+<h2><a href="https://projects.susielu.com/viz-palette">Viz Palette Tool</a></h2>
+
+<img data-src="img/viz-palette-owid-bars.png" class="r-stretch quarto-figure-center"></section>
+<section id="viz-palette" class="slide level2">
+<h2><a href="https://projects.susielu.com/viz-palette">Viz Palette</a></h2>
+
+<img data-src="img/viz-palette-owid-bars-deuteranopia.png" class="r-stretch quarto-figure-center"></section>
+<section id="palettte-app" class="slide level2">
+<h2><a href="https://palettte.app/">Palettte App</a></h2>
+
+<img data-src="img/palettte.jpg" class="r-stretch quarto-figure-center"></section>
+<section id="chroma.js" class="slide level2">
+<h2><a href="https://gka.github.io/palettes/">Chroma.js</a></h2>
+
+<img data-src="img/chroma-js.png" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="resources" class="title-slide slide level1 center">
+<h1>Resources</h1>
+
+</section>
+<section id="resources-1" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://emilhvitfeldt.github.io/prismatic/">{prismatic} package vignette</a></li>
+<li><a href="https://colorspace.r-forge.r-project.org/index.html">{colorspace} package vignette</a></li>
+<li><a href="https://emilhvitfeldt.github.io/paletteer/">{paleteer} package vignette</a></li>
+<li><a href="https://emilhvitfeldt.github.io/prismatic/">Type-sorted list of R color palettes</a> (not updated since a while)</li>
+<li><a href="https://academy.datawrapper.de/article/140-what-to-consider-when-choosing-colors-for-data-visualization">DataWrapper’s “What to Consider when Choosing Colors for Data Visualization”</a></li>
+<li><a href="https://blog.datawrapper.de/beautifulcolors/">DataWrapper’s “How to Pick More Beautiful Colors for Your Data Visualizations”</a></li>
+<li><a href="https://blog.datawrapper.de/colors-for-data-vis-style-guides/">DataWrapper’s “A Detailed Guide to Colors for Data Vis Style Guides”</a></li>
+<li><a href="https://blog.datawrapper.de/gendercolor/">DataWrapper’s “An Alternative to Pink &amp; Blue: Colors for Gender Data”</a></li>
+<li><a href="https://www.storytellingwithdata.com/blog/2021/6/8/colors-and-emotions-in-data-visualization">My “Colors and Emotions in Data Visualization” blog post for SWD</a></li>
+</ul>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank You!</h1>
+
+</section>
+
+<section>
+<section id="appendix" class="title-slide slide level1 center">
+<h1>Appendix</h1>
+
+</section>
+<section id="data-preparation" class="slide level2">
+<h2>Data Preparation</h2>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/data-prep_83c34e4b5d17ed27592ac5f651be8e51">
+<div class="sourceCode cell-code" id="cb81" data-code-line-numbers="1,2|4|5,11|6,7,8,9|10|12,13,14,15|16|17|19|20|21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb81-2"><a href="#cb81-2"></a></span>
+<span id="cb81-3"><a href="#cb81-3"></a>sf_world_raw <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="dv">110</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb81-4"><a href="#cb81-4"></a>owid_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"owid-urbanization-vs-gdp.csv"</span>))</span>
+<span id="cb81-5"><a href="#cb81-5"></a><span class="do">## via https://ourworldindata.org/urbanization</span></span>
+<span id="cb81-6"><a href="#cb81-6"></a></span>
+<span id="cb81-7"><a href="#cb81-7"></a>sf_world <span class="ot">&lt;-</span> sf_world_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb81-8"><a href="#cb81-8"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb81-9"><a href="#cb81-9"></a>    owid_data <span class="sc">%&gt;%</span> </span>
+<span id="cb81-10"><a href="#cb81-10"></a>      janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb81-11"><a href="#cb81-11"></a>      <span class="fu">rename</span>(<span class="at">urban_pop =</span> <span class="st">"urban_population_percent_long_run_to_2016_owid"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-12"><a href="#cb81-12"></a>      <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>), </span>
+<span id="cb81-13"><a href="#cb81-13"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"iso_a3"</span> <span class="ot">=</span> <span class="st">"code"</span>)</span>
+<span id="cb81-14"><a href="#cb81-14"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-15"><a href="#cb81-15"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb81-16"><a href="#cb81-16"></a>    sovereignt, iso_a3, type, <span class="at">continent =</span> continent.x, region_un, subregion, </span>
+<span id="cb81-17"><a href="#cb81-17"></a>    gdp_per_capita, urban_pop, pop_est, economy, income_grp</span>
+<span id="cb81-18"><a href="#cb81-18"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-19"><a href="#cb81-19"></a>  <span class="fu">mutate</span>(<span class="at">pop_est =</span> <span class="fu">as.numeric</span>(pop_est)) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-20"><a href="#cb81-20"></a>  <span class="fu">filter</span>(<span class="sc">!</span>sovereignt <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span>
+<span id="cb81-21"><a href="#cb81-21"></a></span>
+<span id="cb81-22"><a href="#cb81-22"></a>df_world <span class="ot">&lt;-</span> sf_world <span class="sc">%&gt;%</span> </span>
+<span id="cb81-23"><a href="#cb81-23"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb81-24"><a href="#cb81-24"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_per_capita), <span class="sc">!</span><span class="fu">is.na</span>(urban_pop))</span>
+<span id="cb81-25"><a href="#cb81-25"></a></span>
+<span id="cb81-26"><a href="#cb81-26"></a>readr<span class="sc">::</span><span class="fu">write_rds</span>(sf_world, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"urban-gdp-pop-sf.rds"</span>))</span>
+<span id="cb81-27"><a href="#cb81-27"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(df_world, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"urban-gdp-pop.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer footer-default">
+<p><strong><a href="https://cedricscherer.com">Cédric Scherer</a> //</strong> Workshops for Ukraine <strong>//</strong> Jan 26, 2022</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="working_with_colors_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="working_with_colors_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="working_with_colors_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="working_with_colors_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"theme":"whiteboard","boardmarkerWidth":4},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        setTimeout(function() {
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          let href = ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    });
+    </script>
+    
+
+</body></html>
