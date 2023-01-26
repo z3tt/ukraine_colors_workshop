@@ -556,8 +556,21 @@
 </section>
 <section id="create-sequential-color-palettes-1" class="slide level2">
 <h2>Create Sequential Color Palettes</h2>
+<div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-multi-unikn_eed7d851c52605dc67fad1d768a17b42">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>unikn<span class="sc">::</span><span class="fu">shades_of</span>(<span class="at">col_1 =</span> <span class="st">"#28A87D"</span>, <span class="at">col_n =</span> <span class="st">"red"</span>, <span class="at">n =</span> <span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "#28A87D" "#2EA379" "#349E75" "#3A9971" "#41946E" "#478F6A" "#4D8A66"
+ [8] "#548563" "#5A805F" "#607B5B" "#677658" "#6D7154" "#736C50" "#7A674D"
+[15] "#806249" "#865D45" "#8D5842" "#93543E" "#994F3A" "#A04A37" "#A64533"
+[22] "#AC402F" "#B33B2C" "#B93628" "#BF3124" "#C62C21" "#CC271D" "#D22219"
+[29] "#D91D16" "#DF1812" "#E5130E" "#EC0E0B" "#F20907" "#F80403" "#FF0000"</code></pre>
+</div>
+</div>
+</section>
+<section id="create-sequential-color-palettes-2" class="slide level2">
+<h2>Create Sequential Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-multi-define_90034c311317e01bbcee02a550b44660">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>pal_seq_multi <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal_d)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>pal_seq_multi <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal_d)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -574,10 +587,10 @@
 </div>
 </div>
 </section>
-<section id="create-sequential-color-palettes-2" class="slide level2">
+<section id="create-sequential-color-palettes-3" class="slide level2">
 <h2>Create Sequential Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-multi-again_1235161ab8b1b99e478fb46ede587d10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>pal_seq_multi <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal_d)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>pal_seq_multi <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal_d)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -594,11 +607,11 @@
 </div>
 </div>
 </section>
-<section id="create-sequential-color-palettes-3" class="slide level2">
+<section id="create-sequential-color-palettes-4" class="slide level2">
 <h2>Create Sequential Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-single_204aac920b64632646f0271e55278aff">
-<div class="sourceCode cell-code" id="cb11" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#28A87D"</span>, <span class="st">"grey98"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>pal_seq <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#28A87D"</span>, <span class="st">"grey98"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a>pal_seq <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -618,8 +631,8 @@
 <section id="create-diverging-color-palettes" class="slide level2">
 <h2>Create Diverging Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-div_bf2ecc7fb2d6918f2a7985ebf150ebf6">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#7754BF"</span>, <span class="st">"grey98"</span>, <span class="st">"#208462"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2"></a>pal_div <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#7754BF"</span>, <span class="st">"grey98"</span>, <span class="st">"#208462"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a>pal_div <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -639,8 +652,8 @@
 <section id="create-diverging-color-palettes-1" class="slide level2">
 <h2>Create Diverging Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-div-dark_448f63fbdaa4bc0d43480a5dd68d833d">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#AA89F6"</span>, <span class="st">"grey5"</span>, <span class="st">"#49BD92"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a>pal_div_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#AA89F6"</span>, <span class="st">"grey5"</span>, <span class="st">"#49BD92"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>pal_div_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -660,8 +673,8 @@
 <section id="adjust-colors" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-darken_83b0a69fefb9bfc2c7d63c90f76fdd74">
-<div class="sourceCode cell-code" id="cb14" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>colors <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="fu">c</span>(<span class="st">"#28A87D"</span>, <span class="st">"grey98"</span>), .<span class="dv">35</span>)</span>
-<span id="cb14-2"><a href="#cb14-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>colors <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="fu">c</span>(<span class="st">"#28A87D"</span>, <span class="st">"grey98"</span>), .<span class="dv">35</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -681,8 +694,8 @@
 <section id="adjust-colors-1" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-darken-extd_12a3a7a6466407667f28c27efb82af3d">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>), <span class="st">"grey98"</span>)</span>
-<span id="cb15-2"><a href="#cb15-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -702,8 +715,8 @@
 <section id="adjust-colors-2" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-darken-extd-hls_bd13958d9e6dd1f5fab834e71038afc7">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>, <span class="at">space =</span> <span class="st">"HLS"</span>), <span class="st">"grey98"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2"></a>pal_seq_dark_hls <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>, <span class="at">space =</span> <span class="st">"HLS"</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a>pal_seq_dark_hls <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -734,8 +747,8 @@
 <section id="adjust-colors-4" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-reverse_8aa5a805d54417de95cdfc5e5e9cc5ee">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"grey5"</span>, colorspace<span class="sc">::</span><span class="fu">lighten</span>(<span class="st">"#28A87D"</span>, .<span class="dv">85</span>))</span>
-<span id="cb17-2"><a href="#cb17-2"></a>pal_seq_rev <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"grey5"</span>, colorspace<span class="sc">::</span><span class="fu">lighten</span>(<span class="st">"#28A87D"</span>, .<span class="dv">85</span>))</span>
+<span id="cb19-2"><a href="#cb19-2"></a>pal_seq_rev <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -755,8 +768,8 @@
 <section id="adjust-colors-5" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-div-intense_a94188fd6a8fbd0bd135d8fcaf120bfd">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"grey98"</span>, <span class="st">"blue"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a>pal_div_raw <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"grey98"</span>, <span class="st">"blue"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2"></a>pal_div_raw <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -776,8 +789,8 @@
 <section id="adjust-colors-6" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-div-desaturate_b0081ebe7a93508d6ed7dbcde622c919">
-<div class="sourceCode cell-code" id="cb19" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>colors_des <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">desaturate</span>(colors, .<span class="dv">7</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a>pal_div_des <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors_des)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>colors_des <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">desaturate</span>(colors, .<span class="dv">7</span>)</span>
+<span id="cb21-2"><a href="#cb21-2"></a>pal_div_des <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors_des)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -797,8 +810,8 @@
 <section id="adjust-colors-7" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-div-desaturate-prismatic_ad625ef470c6f5a5f6e7ac1ce8a0e45e">
-<div class="sourceCode cell-code" id="cb20" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>colors_des <span class="ot">&lt;-</span> prismatic<span class="sc">::</span><span class="fu">clr_desaturate</span>(colors, .<span class="dv">7</span>)</span>
-<span id="cb20-2"><a href="#cb20-2"></a>pal_div_des <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors_des)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>colors_des <span class="ot">&lt;-</span> prismatic<span class="sc">::</span><span class="fu">clr_desaturate</span>(colors, .<span class="dv">7</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a>pal_div_des <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors_des)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -818,8 +831,8 @@
 <section id="adjust-colors-8" class="slide level2">
 <h2>Adjust Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-seq-darken-extd-prismatic_07d8cfda178d50bd919fb60f9ad5882a">
-<div class="sourceCode cell-code" id="cb21" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(prismatic<span class="sc">::</span><span class="fu">clr_darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>), <span class="st">"grey98"</span>)</span>
-<span id="cb21-2"><a href="#cb21-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(prismatic<span class="sc">::</span><span class="fu">clr_darken</span>(<span class="st">"#28A87D"</span>, .<span class="dv">35</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>pal_seq_dark <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -839,8 +852,8 @@
 <section id="mix-colors" class="slide level2">
 <h2>Mix Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-pal-mix_9e66d84fa40f75880bd52ad8f0e23332">
-<div class="sourceCode cell-code" id="cb22" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(prismatic<span class="sc">::</span><span class="fu">clr_mix</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>), <span class="st">"grey98"</span>)</span>
-<span id="cb22-2"><a href="#cb22-2"></a>pal_seq_mix <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(prismatic<span class="sc">::</span><span class="fu">clr_mix</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>), <span class="st">"grey98"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2"></a>pal_seq_mix <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(colors)(<span class="dv">35</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -865,89 +878,97 @@
 <section id="colorspace" class="slide level2">
 <h2>{colorspace}</h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-colorspace_9f51fe3d41ae2eb766845e60e18eddf7">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-colorspace-1.png" width="2800" class="r-stretch"></section>
 <section id="colorspace-1" class="slide level2">
 <h2>{colorspace}</h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-colorspace-pubugn_787ae73c6c322eb8a8a33386a2730d67">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="at">palette =</span> <span class="st">"PuBuGn"</span>, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_palettes</span>(<span class="at">palette =</span> <span class="st">"PuBuGn"</span>, <span class="at">n =</span> <span class="dv">10</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-colorspace-pubugn-1.png" width="2800" class="r-stretch"></section>
 <section id="colorspace-2" class="slide level2">
 <h2>{colorspace}</h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-colorspace-pubugn-plot-prismatic_be8a8f1bf1a80583000c9eb67c3b5365">
-<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>pal <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">sequential_hcl</span>(<span class="at">palette =</span> <span class="st">"PuBuGn"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27" data-code-line-numbers="1|2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>pal <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">sequential_hcl</span>(<span class="at">palette =</span> <span class="st">"PuBuGn"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-colorspace-pubugn-plot-prismatic-1.png" width="2800" class="r-stretch"></section>
+<section id="colorspace-3" class="slide level2">
+<h2>{colorspace}</h2>
+<div class="cell" data-hash="slides_cache/revealjs/pals-colorspace-pubugn-plot-scales_1ab4d532934386283c84e9265156d061">
+<div class="sourceCode cell-code" id="cb28" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>pal <span class="ot">&lt;-</span> colorspace<span class="sc">::</span><span class="fu">sequential_hcl</span>(<span class="at">palette =</span> <span class="st">"PuBuGn"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a>scales<span class="sc">::</span><span class="fu">show_col</span>(pal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="slides_files/figure-revealjs/pals-colorspace-pubugn-plot-scales-1.png" width="2800" class="r-stretch"></section>
 <section id="rcolorbrewer" class="slide level2">
 <h2><a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">{RColorBrewer}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-colorbrewer_7c1b727e59674e79ffe292fc6984d3d6">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-colorbrewer-1.png" width="2800" class="r-stretch"></section>
 <section id="rcolorbrewer-1" class="slide level2">
 <h2><a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">{RColorBrewer}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-colorbrewer-cvd_eea05d7680c3479d85cf5c6def653978">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">colorblindFriendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>RColorBrewer<span class="sc">::</span><span class="fu">display.brewer.all</span>(<span class="at">colorblindFriendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-colorbrewer-cvd-1.png" width="2800" class="r-stretch"></section>
 <section id="rcolorbrewer-2" class="slide level2">
 <h2><a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html">{RColorBrewer}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-colorbrewer-rdylbu_fe9b644f5c399d7b45f734ca9ac0df8d">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>pal <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">name =</span> <span class="st">"RdYlBu"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>pal <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">name =</span> <span class="st">"RdYlBu"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-colorbrewer-rdylbu-1.png" width="2800" class="r-stretch"></section>
 <section id="scico" class="slide level2">
 <h2><a href="https://github.com/thomasp85/scico">{scico}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-scico_e8a4b6e9696ece4c521223dd1afe6137">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>scico<span class="sc">::</span><span class="fu">scico_palette_show</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>scico<span class="sc">::</span><span class="fu">scico_palette_show</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-scico-1.png" width="2800" class="r-stretch"></section>
 <section id="scico-1" class="slide level2">
 <h2><a href="https://github.com/thomasp85/scico">{scico}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-scico-rdylbu_ba325ed491e48ab5fa0e43a11dbb6799">
-<div class="sourceCode cell-code" id="cb30" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>pal <span class="ot">&lt;-</span> scico<span class="sc">::</span><span class="fu">scico</span>(<span class="at">palette =</span> <span class="st">"tokyo"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>pal <span class="ot">&lt;-</span> scico<span class="sc">::</span><span class="fu">scico</span>(<span class="at">palette =</span> <span class="st">"tokyo"</span>, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-scico-rdylbu-1.png" width="2800" class="r-stretch"></section>
 <section id="rcartocolor" class="slide level2">
 <h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-rcartocolor_39d73ea1eb4b0e6b05872e43a492f2cf">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>rcartocolor<span class="sc">::</span><span class="fu">display_carto_all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>rcartocolor<span class="sc">::</span><span class="fu">display_carto_all</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-rcartocolor-1.png" width="2800" class="r-stretch"></section>
 <section id="rcartocolor-1" class="slide level2">
 <h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-rcartocolor-cvd_10149847a5bebeba6f22509875292211">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>rcartocolor<span class="sc">::</span><span class="fu">display_carto_all</span>(<span class="at">colorblind_friendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>rcartocolor<span class="sc">::</span><span class="fu">display_carto_all</span>(<span class="at">colorblind_friendly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-rcartocolor-cvd-1.png" width="2800" class="r-stretch"></section>
 <section id="rcartocolor-2" class="slide level2">
 <h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-rcartocolor-sunset_ee15171076a676304339fd6bb0813140">
-<div class="sourceCode cell-code" id="cb33" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(<span class="at">name =</span> <span class="st">"ag_Sunset"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(<span class="at">name =</span> <span class="st">"ag_Sunset"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-rcartocolor-sunset-1.png" width="2800" class="r-stretch"></section>
 <section id="rcartocolor-3" class="slide level2">
 <h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
 <div class="cell" data-hash="slides_cache/revealjs/pals-rcartocolor-rdylbu_117620f7c61d9c6d7fa1c1c33db55bfa">
-<div class="sourceCode cell-code" id="cb34" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>pal_extd <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal)(<span class="dv">20</span>)</span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal_extd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-code-line-numbers="1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>pal_extd <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(pal)(<span class="dv">20</span>)</span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">plot</span>(prismatic<span class="sc">::</span><span class="fu">color</span>(pal_extd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/pals-rcartocolor-rdylbu-1.png" width="2800" class="r-stretch"></section>
@@ -974,44 +995,44 @@
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
 <div class="cell" data-hash="slides_cache/revealjs/prep_6ee5afad4c333e30f8f7fc55bfd573c0">
-<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="1,2,3|5|7,17|8,9,10,11,12,13,14,15,16|8|9,10,11,12|13,14,15,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb35-3"><a href="#cb35-3"></a><span class="fu">library</span>(prismatic)</span>
-<span id="cb35-4"><a href="#cb35-4"></a></span>
-<span id="cb35-5"><a href="#cb35-5"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Asap Condensed"</span>, <span class="at">base_size =</span> <span class="dv">15</span>, <span class="at">base_line_size =</span> .<span class="dv">5</span>))</span>
-<span id="cb35-6"><a href="#cb35-6"></a></span>
-<span id="cb35-7"><a href="#cb35-7"></a><span class="fu">theme_update</span>(</span>
-<span id="cb35-8"><a href="#cb35-8"></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb35-9"><a href="#cb35-9"></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(</span>
-<span id="cb35-10"><a href="#cb35-10"></a>    <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>), <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>)</span>
-<span id="cb35-11"><a href="#cb35-11"></a>  ),</span>
-<span id="cb35-12"><a href="#cb35-12"></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb35-13"><a href="#cb35-13"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(</span>
-<span id="cb35-14"><a href="#cb35-14"></a>    <span class="at">color =</span> <span class="st">"grey45"</span>, <span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">7</span>), <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>)</span>
-<span id="cb35-15"><a href="#cb35-15"></a>  ),</span>
-<span id="cb35-16"><a href="#cb35-16"></a>  <span class="at">plot.caption.position =</span> <span class="st">"plot"</span></span>
-<span id="cb35-17"><a href="#cb35-17"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="1,2,3|5|7,17|8,9,10,11,12,13,14,15,16|8|9,10,11,12|13,14,15,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="fu">library</span>(prismatic)</span>
+<span id="cb38-4"><a href="#cb38-4"></a></span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>(<span class="at">base_family =</span> <span class="st">"Asap Condensed"</span>, <span class="at">base_size =</span> <span class="dv">15</span>, <span class="at">base_line_size =</span> .<span class="dv">5</span>))</span>
+<span id="cb38-6"><a href="#cb38-6"></a></span>
+<span id="cb38-7"><a href="#cb38-7"></a><span class="fu">theme_update</span>(</span>
+<span id="cb38-8"><a href="#cb38-8"></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb38-9"><a href="#cb38-9"></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(</span>
+<span id="cb38-10"><a href="#cb38-10"></a>    <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>), <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>)</span>
+<span id="cb38-11"><a href="#cb38-11"></a>  ),</span>
+<span id="cb38-12"><a href="#cb38-12"></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb38-13"><a href="#cb38-13"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(</span>
+<span id="cb38-14"><a href="#cb38-14"></a>    <span class="at">color =</span> <span class="st">"grey45"</span>, <span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">7</span>), <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>)</span>
+<span id="cb38-15"><a href="#cb38-15"></a>  ),</span>
+<span id="cb38-16"><a href="#cb38-16"></a>  <span class="at">plot.caption.position =</span> <span class="st">"plot"</span></span>
+<span id="cb38-17"><a href="#cb38-17"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="the-data-set" class="slide level2">
 <h2>The Data Set</h2>
 <div class="cell" data-hash="slides_cache/revealjs/data_8fe2c2465eadf9ad28c677873c3ff76c">
-<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="1,2|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>sf_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">"data/urban-gdp-pop-sf.rds"</span>)</span>
-<span id="cb36-2"><a href="#cb36-2"></a>df_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/urban-gdp-pop.csv"</span>)</span>
-<span id="cb36-3"><a href="#cb36-3"></a></span>
-<span id="cb36-4"><a href="#cb36-4"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(df_world)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="1,2|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>sf_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">"data/urban-gdp-pop-sf.rds"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2"></a>df_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/urban-gdp-pop.csv"</span>)</span>
+<span id="cb39-3"><a href="#cb39-3"></a></span>
+<span id="cb39-4"><a href="#cb39-4"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(df_world)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 146
+<pre><code>Rows: 159
 Columns: 11
-$ sovereignt     &lt;chr&gt; "Cuba", "Denmark", "Saudi Arabia", "Yemen", "Italy", "G~
-$ iso_a3         &lt;chr&gt; "CUB", "DNK", "SAU", "YEM", "ITA", "GAB", "KGZ", "MDG",~
+$ sovereignt     &lt;chr&gt; "Cuba", "Denmark", "Saudi Arabia", "Yemen", "Italy", "C~
+$ iso_a3         &lt;chr&gt; "CUB", "DNK", "SAU", "YEM", "ITA", "COM", "GAB", "NOR",~
 $ type           &lt;chr&gt; "Sovereign country", "Country", "Sovereign country", "S~
-$ continent      &lt;chr&gt; "North America", "Europe", "Asia", "Asia", "Europe", "A~
-$ region_un      &lt;chr&gt; "Americas", "Europe", "Asia", "Asia", "Europe", "Africa~
+$ continent      &lt;chr&gt; "North America", "Europe", "Asia", "Asia", "Europe", NA~
+$ region_un      &lt;chr&gt; "Americas", "Europe", "Asia", "Asia", "Europe", NA, "Af~
 $ subregion      &lt;chr&gt; "Caribbean", "Northern Europe", "Western Asia", "Wester~
-$ gdp_per_capita &lt;dbl&gt; 8000, 44836, 51397, 2506, 33419, 18413, 4879, 1381, 809~
-$ urban_pop      &lt;dbl&gt; 76.930, 87.642, 83.401, 35.394, 69.855, 88.559, 35.944,~
-$ pop_est        &lt;dbl&gt; 11147407, 5605948, 28571770, 28036829, 62137802, 177225~
+$ gdp_per_capita &lt;dbl&gt; 8000, 44836, 51397, 2506, 33419, 1702, 18413, 82814, 48~
+$ urban_pop      &lt;dbl&gt; 76.930, 87.642, 83.401, 35.394, 69.855, 28.619, 88.559,~
+$ pop_est        &lt;dbl&gt; 11147407, 5605948, 28571770, 28036829, 62137802, NA, 17~
 $ economy        &lt;chr&gt; "5. Emerging region: G20", "2. Developed region: nonG7"~
 $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "2. H~</code></pre>
 </div>
@@ -1024,22 +1045,22 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <section id="the-chart-1" class="slide level2">
 <h2>The Chart</h2>
 <div class="cell" data-hash="slides_cache/revealjs/plot-urban-gdp_11455c02ab698a3815eccaa3ac497c39">
-<div class="sourceCode cell-code" id="cb38" data-code-line-numbers="1|2,3|4|5|6|7,8|9,10,11,12|13,14|16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>p <span class="ot">&lt;-</span> </span>
-<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> df_world, </span>
-<span id="cb38-3"><a href="#cb38-3"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdp_per_capita, <span class="at">y =</span> urban_pop, <span class="at">size =</span> pop_est)) <span class="sc">+</span> </span>
-<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">coord_cartesian</span>(<span class="at">expand =</span> <span class="cn">FALSE</span>, <span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>()) <span class="sc">+</span> </span>
-<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="cf">function</span>(y) <span class="fu">paste0</span>(y, <span class="st">"%"</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
-<span id="cb38-7"><a href="#cb38-7"></a>  <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">15</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">500</span>, <span class="dv">1000</span>) <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>,</span>
-<span id="cb38-8"><a href="#cb38-8"></a>                  <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">scale =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>, <span class="at">suffix =</span> <span class="st">"M"</span>)) <span class="sc">+</span></span>
-<span id="cb38-9"><a href="#cb38-9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
-<span id="cb38-10"><a href="#cb38-10"></a>       <span class="at">fill =</span> <span class="st">"Continent:"</span>, <span class="at">size =</span> <span class="st">"Population:"</span>,</span>
-<span id="cb38-11"><a href="#cb38-11"></a>       <span class="at">title =</span> <span class="st">"Urban population vs. GDP per capita, 2016"</span>,</span>
-<span id="cb38-12"><a href="#cb38-12"></a>       <span class="at">caption =</span> <span class="st">"Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API | x-axis on log scale"</span>) <span class="sc">+</span></span>
-<span id="cb38-13"><a href="#cb38-13"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>)),</span>
-<span id="cb38-14"><a href="#cb38-14"></a>         <span class="at">size =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"grey85"</span>)))</span>
-<span id="cb38-15"><a href="#cb38-15"></a></span>
-<span id="cb38-16"><a href="#cb38-16"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> region_un), <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41" data-code-line-numbers="1|2,3|4|5|6|7,8|9,10,11,12|13,14|16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>p <span class="ot">&lt;-</span> </span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> df_world, </span>
+<span id="cb41-3"><a href="#cb41-3"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdp_per_capita, <span class="at">y =</span> urban_pop, <span class="at">size =</span> pop_est)) <span class="sc">+</span> </span>
+<span id="cb41-4"><a href="#cb41-4"></a>  <span class="fu">coord_cartesian</span>(<span class="at">expand =</span> <span class="cn">FALSE</span>, <span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_dollar</span>()) <span class="sc">+</span> </span>
+<span id="cb41-6"><a href="#cb41-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="cf">function</span>(y) <span class="fu">paste0</span>(y, <span class="st">"%"</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
+<span id="cb41-7"><a href="#cb41-7"></a>  <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">15</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">500</span>, <span class="dv">1000</span>) <span class="sc">*</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>,</span>
+<span id="cb41-8"><a href="#cb41-8"></a>                  <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_number</span>(<span class="at">scale =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span><span class="sc">^</span><span class="dv">6</span>, <span class="at">suffix =</span> <span class="st">"M"</span>)) <span class="sc">+</span></span>
+<span id="cb41-9"><a href="#cb41-9"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb41-10"><a href="#cb41-10"></a>       <span class="at">fill =</span> <span class="st">"Continent:"</span>, <span class="at">size =</span> <span class="st">"Population:"</span>,</span>
+<span id="cb41-11"><a href="#cb41-11"></a>       <span class="at">title =</span> <span class="st">"Urban population vs. GDP per capita, 2016"</span>,</span>
+<span id="cb41-12"><a href="#cb41-12"></a>       <span class="at">caption =</span> <span class="st">"Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API | x-axis on log scale"</span>) <span class="sc">+</span></span>
+<span id="cb41-13"><a href="#cb41-13"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>)),</span>
+<span id="cb41-14"><a href="#cb41-14"></a>         <span class="at">size =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"grey85"</span>)))</span>
+<span id="cb41-15"><a href="#cb41-15"></a></span>
+<span id="cb41-16"><a href="#cb41-16"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> region_un), <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -1051,12 +1072,12 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2><a href="https://sjmgarnier.github.io/viridis/">{viridis}</a></h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/viridis-disc_5ac811f5dd4c3e8741b11eae36d3d526">
 <div class="column">
-<div class="sourceCode cell-code" id="cb39" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>p <span class="sc">+</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb39-3"><a href="#cb39-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
-<span id="cb39-4"><a href="#cb39-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb39-6"><a href="#cb39-6"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>p <span class="sc">+</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb42-3"><a href="#cb42-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb42-4"><a href="#cb42-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb42-6"><a href="#cb42-6"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/viridis-disc-1.png" width="1000"></p>
@@ -1072,12 +1093,12 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2><a href="https://sjmgarnier.github.io/viridis/">{viridis}</a></h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/viridis-cont_5e8b9b01961ebc34ac36ee238945afc6">
 <div class="column">
-<div class="sourceCode cell-code" id="cb40" data-code-line-numbers="3|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>p <span class="sc">+</span></span>
-<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb40-3"><a href="#cb40-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), </span>
-<span id="cb40-4"><a href="#cb40-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb40-5"><a href="#cb40-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb40-6"><a href="#cb40-6"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="3|6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>p <span class="sc">+</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb43-3"><a href="#cb43-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), </span>
+<span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>  <span class="fu">scale_fill_viridis_c</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/viridis-cont-1.png" width="1000"></p>
@@ -1089,16 +1110,16 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2><a href="https://sjmgarnier.github.io/viridis/">{viridis}</a></h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/viridis-cont-styled_e78aa3b0766737eddfc906af0ffeb25b">
 <div class="column">
-<div class="sourceCode cell-code" id="cb41" data-code-line-numbers="6,7,8,9|10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>p <span class="sc">+</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb41-3"><a href="#cb41-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), </span>
-<span id="cb41-4"><a href="#cb41-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb41-6"><a href="#cb41-6"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
-<span id="cb41-7"><a href="#cb41-7"></a>    <span class="at">name =</span> <span class="st">"Urban share:"</span>, </span>
-<span id="cb41-8"><a href="#cb41-8"></a>    <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)</span>
-<span id="cb41-9"><a href="#cb41-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb41-10"><a href="#cb41-10"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="6,7,8,9|10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>p <span class="sc">+</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb44-3"><a href="#cb44-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), </span>
+<span id="cb44-4"><a href="#cb44-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb44-7"><a href="#cb44-7"></a>    <span class="at">name =</span> <span class="st">"Urban share:"</span>, </span>
+<span id="cb44-8"><a href="#cb44-8"></a>    <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)</span>
+<span id="cb44-9"><a href="#cb44-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb44-10"><a href="#cb44-10"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_colorbar</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/viridis-cont-styled-1.png" width="1000"></p>
@@ -1110,12 +1131,12 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/rcarto-disc_07a148b545185e04df9095c8f7c80446">
 <div class="column">
-<div class="sourceCode cell-code" id="cb42" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>p <span class="sc">+</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb42-3"><a href="#cb42-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
-<span id="cb42-4"><a href="#cb42-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb42-5"><a href="#cb42-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb42-6"><a href="#cb42-6"></a>  rcartocolor<span class="sc">::</span><span class="fu">scale_fill_carto_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>p <span class="sc">+</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb45-3"><a href="#cb45-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb45-4"><a href="#cb45-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>  rcartocolor<span class="sc">::</span><span class="fu">scale_fill_carto_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/rcarto-disc-1.png" width="1000"></p>
@@ -1131,14 +1152,14 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2><a href="https://jakubnowosad.com/rcartocolor/">{rcartocolor}</a></h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/rcarto-disc-2_23f26289f4128f418b0c618de3728a80">
 <div class="column">
-<div class="sourceCode cell-code" id="cb43" data-code-line-numbers="6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>p <span class="sc">+</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb43-3"><a href="#cb43-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
-<span id="cb43-4"><a href="#cb43-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb43-5"><a href="#cb43-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb43-6"><a href="#cb43-6"></a>  rcartocolor<span class="sc">::</span><span class="fu">scale_fill_carto_d</span>(</span>
-<span id="cb43-7"><a href="#cb43-7"></a>    <span class="at">palette =</span> <span class="st">"Bold"</span></span>
-<span id="cb43-8"><a href="#cb43-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>p <span class="sc">+</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb46-3"><a href="#cb46-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb46-4"><a href="#cb46-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>  rcartocolor<span class="sc">::</span><span class="fu">scale_fill_carto_d</span>(</span>
+<span id="cb46-7"><a href="#cb46-7"></a>    <span class="at">palette =</span> <span class="st">"Bold"</span></span>
+<span id="cb46-8"><a href="#cb46-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/rcarto-disc-2-1.png" width="1000"></p>
@@ -1150,18 +1171,18 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2><code>scale_color|fill_manual()</code></h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/rcarto-disc-custom_388abcd02758840aaf9eb86d6a099aeb">
 <div class="column">
-<div class="sourceCode cell-code" id="cb44" data-code-line-numbers="1,2,3|10,12|11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
-<span id="cb44-2"><a href="#cb44-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">5</span></span>
-<span id="cb44-3"><a href="#cb44-3"></a>)</span>
-<span id="cb44-4"><a href="#cb44-4"></a></span>
-<span id="cb44-5"><a href="#cb44-5"></a>p <span class="sc">+</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb44-7"><a href="#cb44-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
-<span id="cb44-8"><a href="#cb44-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb44-9"><a href="#cb44-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb44-10"><a href="#cb44-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb44-11"><a href="#cb44-11"></a>    <span class="at">values =</span> pal</span>
-<span id="cb44-12"><a href="#cb44-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47" data-code-line-numbers="1,2,3|10,12|11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">5</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>)</span>
+<span id="cb47-4"><a href="#cb47-4"></a></span>
+<span id="cb47-5"><a href="#cb47-5"></a>p <span class="sc">+</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb47-7"><a href="#cb47-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb47-8"><a href="#cb47-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb47-9"><a href="#cb47-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb47-10"><a href="#cb47-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb47-11"><a href="#cb47-11"></a>    <span class="at">values =</span> pal</span>
+<span id="cb47-12"><a href="#cb47-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/rcarto-disc-custom-1.png" width="1000"></p>
@@ -1178,18 +1199,18 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Customize Palette</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/rcarto-disc-custom-2_5140501cc4e577a7cc1972ad5f52668c">
 <div class="column">
-<div class="sourceCode cell-code" id="cb45" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
-<span id="cb45-2"><a href="#cb45-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">6</span></span>
-<span id="cb45-3"><a href="#cb45-3"></a>)</span>
-<span id="cb45-4"><a href="#cb45-4"></a></span>
-<span id="cb45-5"><a href="#cb45-5"></a>p <span class="sc">+</span></span>
-<span id="cb45-6"><a href="#cb45-6"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb45-7"><a href="#cb45-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
-<span id="cb45-8"><a href="#cb45-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb45-9"><a href="#cb45-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb45-10"><a href="#cb45-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb45-11"><a href="#cb45-11"></a>    <span class="at">values =</span> pal</span>
-<span id="cb45-12"><a href="#cb45-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">6</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>)</span>
+<span id="cb48-4"><a href="#cb48-4"></a></span>
+<span id="cb48-5"><a href="#cb48-5"></a>p <span class="sc">+</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb48-7"><a href="#cb48-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb48-8"><a href="#cb48-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb48-9"><a href="#cb48-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb48-10"><a href="#cb48-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb48-11"><a href="#cb48-11"></a>    <span class="at">values =</span> pal</span>
+<span id="cb48-12"><a href="#cb48-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/rcarto-disc-custom-2-1.png" width="1000"></p>
@@ -1201,18 +1222,18 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Customize Palette</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/rcarto-disc-custom-3_bd28324cac70e64a7dbebdbda72de756">
 <div class="column">
-<div class="sourceCode cell-code" id="cb46" data-code-line-numbers="2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
-<span id="cb46-2"><a href="#cb46-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">8</span></span>
-<span id="cb46-3"><a href="#cb46-3"></a>)[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>)]</span>
-<span id="cb46-4"><a href="#cb46-4"></a></span>
-<span id="cb46-5"><a href="#cb46-5"></a>p <span class="sc">+</span></span>
-<span id="cb46-6"><a href="#cb46-6"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb46-7"><a href="#cb46-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
-<span id="cb46-8"><a href="#cb46-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb46-9"><a href="#cb46-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb46-10"><a href="#cb46-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb46-11"><a href="#cb46-11"></a>    <span class="at">values =</span> pal</span>
-<span id="cb46-12"><a href="#cb46-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="2,3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>pal <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(</span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="at">name =</span> <span class="st">"Bold"</span>, <span class="at">n =</span> <span class="dv">8</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a>)[<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>)]</span>
+<span id="cb49-4"><a href="#cb49-4"></a></span>
+<span id="cb49-5"><a href="#cb49-5"></a>p <span class="sc">+</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb49-7"><a href="#cb49-7"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb49-8"><a href="#cb49-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb49-10"><a href="#cb49-10"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb49-11"><a href="#cb49-11"></a>    <span class="at">values =</span> pal</span>
+<span id="cb49-12"><a href="#cb49-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/rcarto-disc-custom-3-1.png" width="1000"></p>
@@ -1224,16 +1245,16 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Customize Palette</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/rcarto-disc-custom-4_1ea27fc1c82968e28030ac1e6048a0a4">
 <div class="column">
-<div class="sourceCode cell-code" id="cb47" data-code-line-numbers="1|9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>pal_dark <span class="ot">&lt;-</span> <span class="fu">clr_darken</span>(pal, .<span class="dv">4</span>)</span>
-<span id="cb47-2"><a href="#cb47-2"></a></span>
-<span id="cb47-3"><a href="#cb47-3"></a>p <span class="sc">+</span></span>
-<span id="cb47-4"><a href="#cb47-4"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb47-5"><a href="#cb47-5"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
-<span id="cb47-6"><a href="#cb47-6"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb47-7"><a href="#cb47-7"></a>  ) <span class="sc">+</span></span>
-<span id="cb47-8"><a href="#cb47-8"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb47-9"><a href="#cb47-9"></a>    <span class="at">values =</span> pal_dark</span>
-<span id="cb47-10"><a href="#cb47-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50" data-code-line-numbers="1|9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>pal_dark <span class="ot">&lt;-</span> <span class="fu">clr_darken</span>(pal, .<span class="dv">4</span>)</span>
+<span id="cb50-2"><a href="#cb50-2"></a></span>
+<span id="cb50-3"><a href="#cb50-3"></a>p <span class="sc">+</span></span>
+<span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb50-5"><a href="#cb50-5"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un), </span>
+<span id="cb50-6"><a href="#cb50-6"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb50-7"><a href="#cb50-7"></a>  ) <span class="sc">+</span></span>
+<span id="cb50-8"><a href="#cb50-8"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb50-9"><a href="#cb50-9"></a>    <span class="at">values =</span> pal_dark</span>
+<span id="cb50-10"><a href="#cb50-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/rcarto-disc-custom-4-1.png" width="1000"></p>
@@ -1250,15 +1271,15 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Re-use Palettes</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/after-scale_bfd1ba29c2a6b5b38dadf3d5ece64754">
 <div class="column">
-<div class="sourceCode cell-code" id="cb48" data-code-line-numbers="3,4|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>p <span class="sc">+</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb48-3"><a href="#cb48-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un,</span>
-<span id="cb48-4"><a href="#cb48-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(fill)), </span>
-<span id="cb48-5"><a href="#cb48-5"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb48-6"><a href="#cb48-6"></a>  ) <span class="sc">+</span></span>
-<span id="cb48-7"><a href="#cb48-7"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb48-8"><a href="#cb48-8"></a>    <span class="at">values =</span> pal</span>
-<span id="cb48-9"><a href="#cb48-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51" data-code-line-numbers="3,4|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>p <span class="sc">+</span></span>
+<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb51-3"><a href="#cb51-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un,</span>
+<span id="cb51-4"><a href="#cb51-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(fill)), </span>
+<span id="cb51-5"><a href="#cb51-5"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb51-6"><a href="#cb51-6"></a>  ) <span class="sc">+</span></span>
+<span id="cb51-7"><a href="#cb51-7"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb51-8"><a href="#cb51-8"></a>    <span class="at">values =</span> pal</span>
+<span id="cb51-9"><a href="#cb51-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/after-scale-1.png" width="1000"></p>
@@ -1270,17 +1291,17 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Re-use Palettes</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/after-scale-2_3df4360c392f6a7b51c8b4edea8f5ee1">
 <div class="column">
-<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>p <span class="sc">+</span></span>
-<span id="cb49-2"><a href="#cb49-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb49-3"><a href="#cb49-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un,</span>
-<span id="cb49-4"><a href="#cb49-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(</span>
-<span id="cb49-5"><a href="#cb49-5"></a>          <span class="fu">clr_darken</span>(fill, .<span class="dv">6</span>)</span>
-<span id="cb49-6"><a href="#cb49-6"></a>        )), </span>
-<span id="cb49-7"><a href="#cb49-7"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb49-8"><a href="#cb49-8"></a>  ) <span class="sc">+</span></span>
-<span id="cb49-9"><a href="#cb49-9"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb49-10"><a href="#cb49-10"></a>    <span class="at">values =</span> pal</span>
-<span id="cb49-11"><a href="#cb49-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>p <span class="sc">+</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb52-3"><a href="#cb52-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un,</span>
+<span id="cb52-4"><a href="#cb52-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(</span>
+<span id="cb52-5"><a href="#cb52-5"></a>          <span class="fu">clr_darken</span>(fill, .<span class="dv">6</span>)</span>
+<span id="cb52-6"><a href="#cb52-6"></a>        )), </span>
+<span id="cb52-7"><a href="#cb52-7"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb52-8"><a href="#cb52-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb52-9"><a href="#cb52-9"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb52-10"><a href="#cb52-10"></a>    <span class="at">values =</span> pal</span>
+<span id="cb52-11"><a href="#cb52-11"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/after-scale-2-1.png" width="1000"></p>
@@ -1292,28 +1313,28 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Re-use Palettes</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/after-scale-boxplot_fae9db820cf47bcf342e1ef707cd0eee">
 <div class="column">
-<div class="sourceCode cell-code" id="cb50" data-code-line-numbers="1,2,3,4,5,6,7,8,9,10,11,12,13,14|4,5,6,7|16,17,18,19,20,21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>b <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
-<span id="cb50-2"><a href="#cb50-2"></a>    <span class="at">data =</span> df_world, </span>
-<span id="cb50-3"><a href="#cb50-3"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
-<span id="cb50-4"><a href="#cb50-4"></a>      <span class="at">x =</span> gdp_per_capita, </span>
-<span id="cb50-5"><a href="#cb50-5"></a>      <span class="at">y =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(</span>
-<span id="cb50-6"><a href="#cb50-6"></a>        region_un, <span class="sc">-</span>gdp_per_capita</span>
-<span id="cb50-7"><a href="#cb50-7"></a>      )</span>
-<span id="cb50-8"><a href="#cb50-8"></a>    )</span>
-<span id="cb50-9"><a href="#cb50-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb50-10"><a href="#cb50-10"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb50-11"><a href="#cb50-11"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()</span>
-<span id="cb50-12"><a href="#cb50-12"></a>  ) <span class="sc">+</span></span>
-<span id="cb50-13"><a href="#cb50-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb50-14"><a href="#cb50-14"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb50-15"><a href="#cb50-15"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb50-16"><a href="#cb50-16"></a></span>
-<span id="cb50-17"><a href="#cb50-17"></a>b <span class="sc">+</span></span>
-<span id="cb50-18"><a href="#cb50-18"></a>  <span class="fu">geom_boxplot</span>(</span>
-<span id="cb50-19"><a href="#cb50-19"></a>    <span class="fu">aes</span>(<span class="at">color =</span> region_un), </span>
-<span id="cb50-20"><a href="#cb50-20"></a>    <span class="at">width =</span> .<span class="dv">7</span></span>
-<span id="cb50-21"><a href="#cb50-21"></a>  ) <span class="sc">+</span></span>
-<span id="cb50-22"><a href="#cb50-22"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> pal) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="1,2,3,4,5,6,7,8,9,10,11,12,13,14|4,5,6,7|16,17,18,19,20,21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>b <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb53-2"><a href="#cb53-2"></a>    <span class="at">data =</span> df_world, </span>
+<span id="cb53-3"><a href="#cb53-3"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb53-4"><a href="#cb53-4"></a>      <span class="at">x =</span> gdp_per_capita, </span>
+<span id="cb53-5"><a href="#cb53-5"></a>      <span class="at">y =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(</span>
+<span id="cb53-6"><a href="#cb53-6"></a>        region_un, <span class="sc">-</span>gdp_per_capita</span>
+<span id="cb53-7"><a href="#cb53-7"></a>      )</span>
+<span id="cb53-8"><a href="#cb53-8"></a>    )</span>
+<span id="cb53-9"><a href="#cb53-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb53-10"><a href="#cb53-10"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb53-11"><a href="#cb53-11"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">dollar_format</span>()</span>
+<span id="cb53-12"><a href="#cb53-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb53-13"><a href="#cb53-13"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb53-14"><a href="#cb53-14"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb53-15"><a href="#cb53-15"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb53-16"><a href="#cb53-16"></a></span>
+<span id="cb53-17"><a href="#cb53-17"></a>b <span class="sc">+</span></span>
+<span id="cb53-18"><a href="#cb53-18"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb53-19"><a href="#cb53-19"></a>    <span class="fu">aes</span>(<span class="at">color =</span> region_un), </span>
+<span id="cb53-20"><a href="#cb53-20"></a>    <span class="at">width =</span> .<span class="dv">7</span></span>
+<span id="cb53-21"><a href="#cb53-21"></a>  ) <span class="sc">+</span></span>
+<span id="cb53-22"><a href="#cb53-22"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> pal) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/after-scale-boxplot-1.png" width="1000"></p>
@@ -1325,15 +1346,15 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Re-use Palettes</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/after-scale-boxplot-2_8b170fe2759a8efe6455d1bc668175e4">
 <div class="column">
-<div class="sourceCode cell-code" id="cb51" data-code-line-numbers="4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>b <span class="sc">+</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">geom_boxplot</span>(</span>
-<span id="cb51-3"><a href="#cb51-3"></a>    <span class="fu">aes</span>(<span class="at">color =</span> region_un, </span>
-<span id="cb51-4"><a href="#cb51-4"></a>        <span class="at">fill =</span> <span class="fu">after_scale</span>(</span>
-<span id="cb51-5"><a href="#cb51-5"></a>          <span class="fu">clr_lighten</span>(color, .<span class="dv">65</span>)</span>
-<span id="cb51-6"><a href="#cb51-6"></a>        )), </span>
-<span id="cb51-7"><a href="#cb51-7"></a>    <span class="at">width =</span> .<span class="dv">7</span></span>
-<span id="cb51-8"><a href="#cb51-8"></a>  ) <span class="sc">+</span></span>
-<span id="cb51-9"><a href="#cb51-9"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> pal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54" data-code-line-numbers="4,5,6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>b <span class="sc">+</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb54-3"><a href="#cb54-3"></a>    <span class="fu">aes</span>(<span class="at">color =</span> region_un, </span>
+<span id="cb54-4"><a href="#cb54-4"></a>        <span class="at">fill =</span> <span class="fu">after_scale</span>(</span>
+<span id="cb54-5"><a href="#cb54-5"></a>          <span class="fu">clr_lighten</span>(color, .<span class="dv">65</span>)</span>
+<span id="cb54-6"><a href="#cb54-6"></a>        )), </span>
+<span id="cb54-7"><a href="#cb54-7"></a>    <span class="at">width =</span> .<span class="dv">7</span></span>
+<span id="cb54-8"><a href="#cb54-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb54-9"><a href="#cb54-9"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> pal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/after-scale-boxplot-2-1.png" width="1000"></p>
@@ -1350,14 +1371,14 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Highlight Colors</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/highlight-colors_a63e661eba20d87eb8c5c3c75774dc57">
 <div class="column">
-<div class="sourceCode cell-code" id="cb52" data-code-line-numbers="3|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>p <span class="sc">+</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb52-3"><a href="#cb52-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
-<span id="cb52-4"><a href="#cb52-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb52-5"><a href="#cb52-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb52-6"><a href="#cb52-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb52-7"><a href="#cb52-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
-<span id="cb52-8"><a href="#cb52-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55" data-code-line-numbers="3|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>p <span class="sc">+</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb55-3"><a href="#cb55-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
+<span id="cb55-4"><a href="#cb55-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb55-7"><a href="#cb55-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb55-8"><a href="#cb55-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/highlight-colors-1.png" width="1000"></p>
@@ -1369,16 +1390,16 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Highlight Colors</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/highlight-colors-styled_13caa9012725a18aa7d10e8f84b0c3e4">
 <div class="column">
-<div class="sourceCode cell-code" id="cb53" data-code-line-numbers="8,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>p <span class="sc">+</span></span>
-<span id="cb53-2"><a href="#cb53-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb53-3"><a href="#cb53-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
-<span id="cb53-4"><a href="#cb53-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb53-5"><a href="#cb53-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb53-6"><a href="#cb53-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb53-7"><a href="#cb53-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>),</span>
-<span id="cb53-8"><a href="#cb53-8"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"African countries"</span>, <span class="st">"Other countries"</span>),</span>
-<span id="cb53-9"><a href="#cb53-9"></a>    <span class="at">name =</span> <span class="cn">NULL</span></span>
-<span id="cb53-10"><a href="#cb53-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56" data-code-line-numbers="8,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>p <span class="sc">+</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb56-3"><a href="#cb56-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
+<span id="cb56-4"><a href="#cb56-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb56-6"><a href="#cb56-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb56-7"><a href="#cb56-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>),</span>
+<span id="cb56-8"><a href="#cb56-8"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"African countries"</span>, <span class="st">"Other countries"</span>),</span>
+<span id="cb56-9"><a href="#cb56-9"></a>    <span class="at">name =</span> <span class="cn">NULL</span></span>
+<span id="cb56-10"><a href="#cb56-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/highlight-colors-styled-1.png" width="1000"></p>
@@ -1390,22 +1411,22 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Highlight Colors</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/highlight-colors-styled-alt_81102cef14222c786726094f31ecd417">
 <div class="column">
-<div class="sourceCode cell-code" id="cb54" data-code-line-numbers="9|10|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>p <span class="sc">+</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb54-3"><a href="#cb54-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
-<span id="cb54-4"><a href="#cb54-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb54-5"><a href="#cb54-5"></a>  ) <span class="sc">+</span></span>
-<span id="cb54-6"><a href="#cb54-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb54-7"><a href="#cb54-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
-<span id="cb54-8"><a href="#cb54-8"></a>  ) <span class="sc">+</span></span>
-<span id="cb54-9"><a href="#cb54-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb54-10"><a href="#cb54-10"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#D00000;'&gt;African&lt;/b&gt; and &lt;b style='color:grey70;'&gt;non-African&lt;/b&gt; countries"</span>) <span class="sc">+</span></span>
-<span id="cb54-11"><a href="#cb54-11"></a>  <span class="fu">theme</span>(</span>
-<span id="cb54-12"><a href="#cb54-12"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
-<span id="cb54-13"><a href="#cb54-13"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
-<span id="cb54-14"><a href="#cb54-14"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
-<span id="cb54-15"><a href="#cb54-15"></a>    )</span>
-<span id="cb54-16"><a href="#cb54-16"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57" data-code-line-numbers="9|10|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>p <span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb57-3"><a href="#cb57-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>), </span>
+<span id="cb57-4"><a href="#cb57-4"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb57-5"><a href="#cb57-5"></a>  ) <span class="sc">+</span></span>
+<span id="cb57-6"><a href="#cb57-6"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb57-7"><a href="#cb57-7"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb57-8"><a href="#cb57-8"></a>  ) <span class="sc">+</span></span>
+<span id="cb57-9"><a href="#cb57-9"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb57-10"><a href="#cb57-10"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#D00000;'&gt;African&lt;/b&gt; and &lt;b style='color:grey70;'&gt;non-African&lt;/b&gt; countries"</span>) <span class="sc">+</span></span>
+<span id="cb57-11"><a href="#cb57-11"></a>  <span class="fu">theme</span>(</span>
+<span id="cb57-12"><a href="#cb57-12"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
+<span id="cb57-13"><a href="#cb57-13"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
+<span id="cb57-14"><a href="#cb57-14"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
+<span id="cb57-15"><a href="#cb57-15"></a>    )</span>
+<span id="cb57-16"><a href="#cb57-16"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/highlight-colors-styled-alt-1.png" width="1000"></p>
@@ -1417,23 +1438,23 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <h2>Highlight Colors</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/highlight-colors-styled-alt-afterscale_d8c00f6920c54df7fbb36f0bb3a1cd36">
 <div class="column">
-<div class="sourceCode cell-code" id="cb55" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>p <span class="sc">+</span></span>
-<span id="cb55-2"><a href="#cb55-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb55-3"><a href="#cb55-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>,</span>
-<span id="cb55-4"><a href="#cb55-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(fill)), </span>
-<span id="cb55-5"><a href="#cb55-5"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb55-6"><a href="#cb55-6"></a>  ) <span class="sc">+</span></span>
-<span id="cb55-7"><a href="#cb55-7"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb55-8"><a href="#cb55-8"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
-<span id="cb55-9"><a href="#cb55-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb55-10"><a href="#cb55-10"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#D00000;'&gt;African&lt;/b&gt; and &lt;b style='color:grey70;'&gt;non-African&lt;/b&gt; countries"</span>) <span class="sc">+</span></span>
-<span id="cb55-11"><a href="#cb55-11"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb55-12"><a href="#cb55-12"></a>  <span class="fu">theme</span>(</span>
-<span id="cb55-13"><a href="#cb55-13"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
-<span id="cb55-14"><a href="#cb55-14"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
-<span id="cb55-15"><a href="#cb55-15"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
-<span id="cb55-16"><a href="#cb55-16"></a>    )</span>
-<span id="cb55-17"><a href="#cb55-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58" data-code-line-numbers="4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>p <span class="sc">+</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb58-3"><a href="#cb58-3"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> region_un <span class="sc">!=</span> <span class="st">"Africa"</span>,</span>
+<span id="cb58-4"><a href="#cb58-4"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(fill)), </span>
+<span id="cb58-5"><a href="#cb58-5"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb58-6"><a href="#cb58-6"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-7"><a href="#cb58-7"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb58-8"><a href="#cb58-8"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D00000"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb58-9"><a href="#cb58-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-10"><a href="#cb58-10"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#D00000;'&gt;African&lt;/b&gt; and &lt;b style='color:grey70;'&gt;non-African&lt;/b&gt; countries"</span>) <span class="sc">+</span></span>
+<span id="cb58-11"><a href="#cb58-11"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb58-12"><a href="#cb58-12"></a>  <span class="fu">theme</span>(</span>
+<span id="cb58-13"><a href="#cb58-13"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
+<span id="cb58-14"><a href="#cb58-14"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
+<span id="cb58-15"><a href="#cb58-15"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
+<span id="cb58-16"><a href="#cb58-16"></a>    )</span>
+<span id="cb58-17"><a href="#cb58-17"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/highlight-colors-styled-alt-afterscale-1.png" width="1000"></p>
@@ -1444,39 +1465,39 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <section id="highlight-colors-4" class="slide level2">
 <h2>Highlight Colors</h2>
 <div class="cell" data-hash="slides_cache/revealjs/highlight-colors-prep2_4304c66ab308e45bd34469adebae8981">
-<div class="sourceCode cell-code" id="cb56" data-code-line-numbers="1,2,3,4,5,7,8,9|3,4,5|6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>df_world <span class="ot">&lt;-</span> df_world <span class="sc">%&gt;%</span> </span>
-<span id="cb56-2"><a href="#cb56-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb56-3"><a href="#cb56-3"></a>    <span class="at">cont_lumped =</span> <span class="fu">ifelse</span>(</span>
-<span id="cb56-4"><a href="#cb56-4"></a>      continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Asia"</span>, <span class="st">"Europe"</span>), continent, <span class="st">"Other"</span></span>
-<span id="cb56-5"><a href="#cb56-5"></a>    ),</span>
-<span id="cb56-6"><a href="#cb56-6"></a>    <span class="at">cont_lumped =</span> forcats<span class="sc">::</span><span class="fu">fct_relevel</span>(</span>
-<span id="cb56-7"><a href="#cb56-7"></a>      cont_lumped, <span class="st">"Other"</span>, <span class="at">after =</span> <span class="cn">Inf</span></span>
-<span id="cb56-8"><a href="#cb56-8"></a>    )</span>
-<span id="cb56-9"><a href="#cb56-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59" data-code-line-numbers="1,2,3,4,5,7,8,9|3,4,5|6,7,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>df_world <span class="ot">&lt;-</span> df_world <span class="sc">%&gt;%</span> </span>
+<span id="cb59-2"><a href="#cb59-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb59-3"><a href="#cb59-3"></a>    <span class="at">cont_lumped =</span> <span class="fu">ifelse</span>(</span>
+<span id="cb59-4"><a href="#cb59-4"></a>      continent <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Asia"</span>, <span class="st">"Europe"</span>), continent, <span class="st">"Other"</span></span>
+<span id="cb59-5"><a href="#cb59-5"></a>    ),</span>
+<span id="cb59-6"><a href="#cb59-6"></a>    <span class="at">cont_lumped =</span> forcats<span class="sc">::</span><span class="fu">fct_relevel</span>(</span>
+<span id="cb59-7"><a href="#cb59-7"></a>      cont_lumped, <span class="st">"Other"</span>, <span class="at">after =</span> <span class="cn">Inf</span></span>
+<span id="cb59-8"><a href="#cb59-8"></a>    )</span>
+<span id="cb59-9"><a href="#cb59-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="highlight-colors-5" class="slide level2">
 <h2>Highlight Colors</h2>
 <div class="cell columns column-output-location" data-hash="slides_cache/revealjs/highlight-colors-2_ff1bd8e6f7751ee39b57fe5af7a6d61e">
 <div class="column">
-<div class="sourceCode cell-code" id="cb57" data-code-line-numbers="1|6,7|10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>pal_hl <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#7754BF"</span>, <span class="st">"#28A74D"</span>, <span class="st">"grey80"</span>)</span>
-<span id="cb57-2"><a href="#cb57-2"></a></span>
-<span id="cb57-3"><a href="#cb57-3"></a>p <span class="sc">+</span></span>
-<span id="cb57-4"><a href="#cb57-4"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb57-5"><a href="#cb57-5"></a>    <span class="at">data =</span> df_world,</span>
-<span id="cb57-6"><a href="#cb57-6"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> cont_lumped,</span>
-<span id="cb57-7"><a href="#cb57-7"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(<span class="fu">clr_darken</span>(fill, .<span class="dv">3</span>))), </span>
-<span id="cb57-8"><a href="#cb57-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb57-9"><a href="#cb57-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb57-10"><a href="#cb57-10"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> pal_hl) <span class="sc">+</span></span>
-<span id="cb57-11"><a href="#cb57-11"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#7754BF;'&gt;Asian&lt;/b&gt; and &lt;b style='color:#28A74D;'&gt;European&lt;/b&gt; countries compared to all &lt;span style='color:grey60;'&gt;other countries&lt;/span&gt;"</span>) <span class="sc">+</span></span>
-<span id="cb57-12"><a href="#cb57-12"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb57-13"><a href="#cb57-13"></a>  <span class="fu">theme</span>(</span>
-<span id="cb57-14"><a href="#cb57-14"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
-<span id="cb57-15"><a href="#cb57-15"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
-<span id="cb57-16"><a href="#cb57-16"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
-<span id="cb57-17"><a href="#cb57-17"></a>    )</span>
-<span id="cb57-18"><a href="#cb57-18"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60" data-code-line-numbers="1|6,7|10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>pal_hl <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#7754BF"</span>, <span class="st">"#28A74D"</span>, <span class="st">"grey80"</span>)</span>
+<span id="cb60-2"><a href="#cb60-2"></a></span>
+<span id="cb60-3"><a href="#cb60-3"></a>p <span class="sc">+</span></span>
+<span id="cb60-4"><a href="#cb60-4"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb60-5"><a href="#cb60-5"></a>    <span class="at">data =</span> df_world,</span>
+<span id="cb60-6"><a href="#cb60-6"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> cont_lumped,</span>
+<span id="cb60-7"><a href="#cb60-7"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(<span class="fu">clr_darken</span>(fill, .<span class="dv">3</span>))), </span>
+<span id="cb60-8"><a href="#cb60-8"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb60-9"><a href="#cb60-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb60-10"><a href="#cb60-10"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> pal_hl) <span class="sc">+</span></span>
+<span id="cb60-11"><a href="#cb60-11"></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"of &lt;b style='color:#7754BF;'&gt;Asian&lt;/b&gt; and &lt;b style='color:#28A74D;'&gt;European&lt;/b&gt; countries compared to all &lt;span style='color:grey60;'&gt;other countries&lt;/span&gt;"</span>) <span class="sc">+</span></span>
+<span id="cb60-12"><a href="#cb60-12"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb60-13"><a href="#cb60-13"></a>  <span class="fu">theme</span>(</span>
+<span id="cb60-14"><a href="#cb60-14"></a>    <span class="at">plot.subtitle =</span> ggtext<span class="sc">::</span><span class="fu">element_markdown</span>(</span>
+<span id="cb60-15"><a href="#cb60-15"></a>      <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="sc">-</span><span class="dv">15</span>, <span class="at">b =</span> <span class="dv">20</span>),</span>
+<span id="cb60-16"><a href="#cb60-16"></a>      <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.3</span>)</span>
+<span id="cb60-17"><a href="#cb60-17"></a>    )</span>
+<span id="cb60-18"><a href="#cb60-18"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/highlight-colors-2-1.png" width="1000"></p>
@@ -1496,74 +1517,74 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <section id="the-map-1" class="slide level2">
 <h2>The Map</h2>
 <div class="cell" data-hash="slides_cache/revealjs/map-urban-gdp_fdde6a57c170bc1df78caeec6e5a30cc">
-<div class="sourceCode cell-code" id="cb58" data-code-line-numbers="1|2|2,3|4|5,6,7,8,9|10,11,12,13,14,15,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>m <span class="ot">&lt;-</span> </span>
-<span id="cb58-2"><a href="#cb58-2"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> sf_world) <span class="sc">+</span></span>
-<span id="cb58-3"><a href="#cb58-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">lwd =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb58-4"><a href="#cb58-4"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=eqearth"</span>) <span class="sc">+</span></span>
-<span id="cb58-5"><a href="#cb58-5"></a>  <span class="fu">labs</span>(</span>
-<span id="cb58-6"><a href="#cb58-6"></a>    <span class="at">title =</span> <span class="st">"Share of people living in urban areas, 2016"</span>,</span>
-<span id="cb58-7"><a href="#cb58-7"></a>    <span class="at">caption =</span> <span class="st">"Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API"</span>,</span>
-<span id="cb58-8"><a href="#cb58-8"></a>    <span class="at">fill =</span> <span class="cn">NULL</span></span>
-<span id="cb58-9"><a href="#cb58-9"></a>  ) <span class="sc">+</span></span>
-<span id="cb58-10"><a href="#cb58-10"></a>  <span class="fu">theme</span>(</span>
-<span id="cb58-11"><a href="#cb58-11"></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb58-12"><a href="#cb58-12"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb58-13"><a href="#cb58-13"></a>    <span class="at">legend.key.width =</span> <span class="fu">unit</span>(<span class="fl">2.5</span>, <span class="st">"lines"</span>),</span>
-<span id="cb58-14"><a href="#cb58-14"></a>    <span class="at">legend.key.height =</span> <span class="fu">unit</span>(.<span class="dv">6</span>, <span class="st">"lines"</span>),</span>
-<span id="cb58-15"><a href="#cb58-15"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb58-16"><a href="#cb58-16"></a>  )</span>
-<span id="cb58-17"><a href="#cb58-17"></a></span>
-<span id="cb58-18"><a href="#cb58-18"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61" data-code-line-numbers="1|2|2,3|4|5,6,7,8,9|10,11,12,13,14,15,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>m <span class="ot">&lt;-</span> </span>
+<span id="cb61-2"><a href="#cb61-2"></a>  <span class="fu">ggplot</span>(<span class="at">data =</span> sf_world) <span class="sc">+</span></span>
+<span id="cb61-3"><a href="#cb61-3"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> urban_pop), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">lwd =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb61-4"><a href="#cb61-4"></a>  <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=eqearth"</span>) <span class="sc">+</span></span>
+<span id="cb61-5"><a href="#cb61-5"></a>  <span class="fu">labs</span>(</span>
+<span id="cb61-6"><a href="#cb61-6"></a>    <span class="at">title =</span> <span class="st">"Share of people living in urban areas, 2016"</span>,</span>
+<span id="cb61-7"><a href="#cb61-7"></a>    <span class="at">caption =</span> <span class="st">"Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API"</span>,</span>
+<span id="cb61-8"><a href="#cb61-8"></a>    <span class="at">fill =</span> <span class="cn">NULL</span></span>
+<span id="cb61-9"><a href="#cb61-9"></a>  ) <span class="sc">+</span></span>
+<span id="cb61-10"><a href="#cb61-10"></a>  <span class="fu">theme</span>(</span>
+<span id="cb61-11"><a href="#cb61-11"></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb61-12"><a href="#cb61-12"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb61-13"><a href="#cb61-13"></a>    <span class="at">legend.key.width =</span> <span class="fu">unit</span>(<span class="fl">2.5</span>, <span class="st">"lines"</span>),</span>
+<span id="cb61-14"><a href="#cb61-14"></a>    <span class="at">legend.key.height =</span> <span class="fu">unit</span>(.<span class="dv">6</span>, <span class="st">"lines"</span>),</span>
+<span id="cb61-15"><a href="#cb61-15"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb61-16"><a href="#cb61-16"></a>  )</span>
+<span id="cb61-17"><a href="#cb61-17"></a></span>
+<span id="cb61-18"><a href="#cb61-18"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="a-sequential-palette" class="slide level2">
 <h2>A Sequential Palette</h2>
 <div class="cell" data-hash="slides_cache/revealjs/map-sequential_9a27ecc2dda67f5a01f4dd0148d01249">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/map-sequential-1.png" width="2400" class="r-stretch"></section>
 <section id="a-reversed-sequential-palette" class="slide level2">
 <h2>A (Reversed) Sequential Palette</h2>
 <div class="cell" data-hash="slides_cache/revealjs/map-sequential-reversed_5152b9998fdae61e215d7f842fe899de">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"YlGnBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/map-sequential-reversed-1.png" width="2400" class="r-stretch"></section>
 <section id="a-diverging-palette" class="slide level2">
 <h2>A Diverging Palette</h2>
-<div class="cell" data-hash="slides_cache/revealjs/map-diverging_159741d405a7b1a613b88f27d2b72873">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="slides_cache/revealjs/map-diverging_d788087eb961cbdccbfab4677aec7a8c">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/map-diverging-1.png" width="2400" class="r-stretch"></section>
 <section id="a-reversed-diverging-palette" class="slide level2">
 <h2>A (Reversed) Diverging Palette</h2>
 <div class="cell" data-hash="slides_cache/revealjs/map-diverging-reversed_523c7ea643e4f7e338943f1e7a19ecfa">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/map-diverging-reversed-1.png" width="2400" class="r-stretch"></section>
 <section id="a-fixed-diverging-palette" class="slide level2">
 <h2>A (Fixed) Diverging Palette</h2>
 <div class="cell" data-hash="slides_cache/revealjs/map-diverging-midpoint_bdad5ef2583cd818c074e4efe8c7fce0">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/map-diverging-midpoint-1.png" width="2400" class="r-stretch"></section>
 <section id="a-styled-diverging-palette" class="slide level2">
 <h2>A (Styled) Diverging Palette</h2>
 <div class="cell" data-hash="slides_cache/revealjs/map-diverging-styled_58cb1eee17af5c26ace4b4597175feb0">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
-<span id="cb64-2"><a href="#cb64-2"></a>                         <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="st">"RdYlBu"</span>, <span class="at">direction =</span> <span class="dv">1</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
+<span id="cb67-2"><a href="#cb67-2"></a>                         <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/map-diverging-styled-1.png" width="2400" class="r-stretch"></section>
 <section id="a-custom-diverging-palette" class="slide level2">
 <h2>A (Custom) Diverging Palette</h2>
 <div class="cell" data-hash="slides_cache/revealjs/map-diverging-manually_ae13e16f5d272fb854424f081c1a73a8">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"#7754BF"</span>, <span class="at">mid =</span> <span class="st">"grey90"</span>, <span class="at">high =</span> <span class="st">"#208462"</span>, <span class="at">midpoint =</span> <span class="dv">50</span>, </span>
-<span id="cb65-2"><a href="#cb65-2"></a>                         <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>m <span class="sc">+</span> <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"#7754BF"</span>, <span class="at">mid =</span> <span class="st">"grey90"</span>, <span class="at">high =</span> <span class="st">"#208462"</span>, <span class="at">midpoint =</span> <span class="dv">50</span>, </span>
+<span id="cb68-2"><a href="#cb68-2"></a>                         <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/map-diverging-manually-1.png" width="2400" class="r-stretch"></section></section>
@@ -1575,32 +1596,32 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <section id="test-color-palettes-1" class="slide level2">
 <h2>Test Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/test-plots_322c01d95947e00caf9615fb7c9eb21e">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>pt <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
-<span id="cb66-2"><a href="#cb66-2"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb66-3"><a href="#cb66-3"></a>    <span class="at">data =</span> df_world,</span>
-<span id="cb66-4"><a href="#cb66-4"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> cont_lumped,</span>
-<span id="cb66-5"><a href="#cb66-5"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(<span class="fu">clr_darken</span>(fill, .<span class="dv">3</span>))), </span>
-<span id="cb66-6"><a href="#cb66-6"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
-<span id="cb66-7"><a href="#cb66-7"></a>  ) <span class="sc">+</span></span>
-<span id="cb66-8"><a href="#cb66-8"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> pal_hl)</span>
-<span id="cb66-9"><a href="#cb66-9"></a></span>
-<span id="cb66-10"><a href="#cb66-10"></a>mt <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">scale_fill_gradient2</span>(</span>
-<span id="cb66-11"><a href="#cb66-11"></a>  <span class="at">low =</span> <span class="st">"#7754BF"</span>, <span class="at">mid =</span> <span class="st">"grey90"</span>, <span class="at">high =</span> <span class="st">"#208462"</span>, <span class="at">midpoint =</span> <span class="dv">50</span>, </span>
-<span id="cb66-12"><a href="#cb66-12"></a>  <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)</span>
-<span id="cb66-13"><a href="#cb66-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>pt <span class="ot">&lt;-</span> p <span class="sc">+</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb69-3"><a href="#cb69-3"></a>    <span class="at">data =</span> df_world,</span>
+<span id="cb69-4"><a href="#cb69-4"></a>    <span class="fu">aes</span>(<span class="at">fill =</span> cont_lumped,</span>
+<span id="cb69-5"><a href="#cb69-5"></a>        <span class="at">color =</span> <span class="fu">after_scale</span>(<span class="fu">clr_darken</span>(fill, .<span class="dv">3</span>))), </span>
+<span id="cb69-6"><a href="#cb69-6"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">stroke =</span> .<span class="dv">7</span></span>
+<span id="cb69-7"><a href="#cb69-7"></a>  ) <span class="sc">+</span></span>
+<span id="cb69-8"><a href="#cb69-8"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> pal_hl)</span>
+<span id="cb69-9"><a href="#cb69-9"></a></span>
+<span id="cb69-10"><a href="#cb69-10"></a>mt <span class="ot">&lt;-</span> m <span class="sc">+</span> <span class="fu">scale_fill_gradient2</span>(</span>
+<span id="cb69-11"><a href="#cb69-11"></a>  <span class="at">low =</span> <span class="st">"#7754BF"</span>, <span class="at">mid =</span> <span class="st">"grey90"</span>, <span class="at">high =</span> <span class="st">"#208462"</span>, <span class="at">midpoint =</span> <span class="dv">50</span>, </span>
+<span id="cb69-12"><a href="#cb69-12"></a>  <span class="at">na.value =</span> <span class="st">"grey85"</span>, <span class="at">labels =</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(x, <span class="st">"%"</span>)</span>
+<span id="cb69-13"><a href="#cb69-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="test-color-palettes-2" class="slide level2">
 <h2>Test Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/test-bubble-highlight_5d408bddf933715ea5e1de953c07a898">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>colorblindr<span class="sc">::</span><span class="fu">cvd_grid</span>(pt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>colorblindr<span class="sc">::</span><span class="fu">cvd_grid</span>(pt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/test-bubble-highlight-1.png" width="3200" class="r-stretch"></section>
 <section id="test-color-palettes-3" class="slide level2">
 <h2>Test Color Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/test-map-div_1435f9149b69de1dd292e8c3b18d21b2">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>colorblindr<span class="sc">::</span><span class="fu">cvd_grid</span>(mt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>colorblindr<span class="sc">::</span><span class="fu">cvd_grid</span>(mt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_files/figure-revealjs/test-map-div-1.png" width="3200" class="r-stretch"></section></section>
@@ -1612,14 +1633,14 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <section id="create-some-palettes" class="slide level2">
 <h2>Create Some Palettes</h2>
 <div class="cell" data-hash="slides_cache/revealjs/specplot_bf2e9502638d01a0ec3d686bd37de6ac">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>pal_seq_1 <span class="ot">&lt;-</span> viridis<span class="sc">::</span><span class="fu">cividis</span>(<span class="at">n =</span> <span class="dv">7</span>)</span>
-<span id="cb69-2"><a href="#cb69-2"></a>pal_seq_2 <span class="ot">&lt;-</span> scico<span class="sc">::</span><span class="fu">scico</span>(<span class="at">palette =</span> <span class="st">"bamako"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
-<span id="cb69-3"><a href="#cb69-3"></a></span>
-<span id="cb69-4"><a href="#cb69-4"></a>pal_div_1 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">name =</span> <span class="st">"RdYlBu"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
-<span id="cb69-5"><a href="#cb69-5"></a>pal_div_2 <span class="ot">&lt;-</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="at">name =</span> <span class="st">"Hiroshige"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
-<span id="cb69-6"><a href="#cb69-6"></a></span>
-<span id="cb69-7"><a href="#cb69-7"></a>pal_cat_1 <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(<span class="at">name =</span> <span class="st">"Prism"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
-<span id="cb69-8"><a href="#cb69-8"></a>pal_cat_2 <span class="ot">&lt;-</span> ggthemes<span class="sc">::</span><span class="fu">excel_pal</span>()(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>pal_seq_1 <span class="ot">&lt;-</span> viridis<span class="sc">::</span><span class="fu">cividis</span>(<span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb72-2"><a href="#cb72-2"></a>pal_seq_2 <span class="ot">&lt;-</span> scico<span class="sc">::</span><span class="fu">scico</span>(<span class="at">palette =</span> <span class="st">"bamako"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb72-3"><a href="#cb72-3"></a></span>
+<span id="cb72-4"><a href="#cb72-4"></a>pal_div_1 <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="at">name =</span> <span class="st">"RdYlBu"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb72-5"><a href="#cb72-5"></a>pal_div_2 <span class="ot">&lt;-</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="at">name =</span> <span class="st">"Hiroshige"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb72-6"><a href="#cb72-6"></a></span>
+<span id="cb72-7"><a href="#cb72-7"></a>pal_cat_1 <span class="ot">&lt;-</span> rcartocolor<span class="sc">::</span><span class="fu">carto_pal</span>(<span class="at">name =</span> <span class="st">"Prism"</span>, <span class="at">n =</span> <span class="dv">7</span>)</span>
+<span id="cb72-8"><a href="#cb72-8"></a>pal_cat_2 <span class="ot">&lt;-</span> ggthemes<span class="sc">::</span><span class="fu">excel_pal</span>()(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="evaluate-hcl-space" class="slide level2">
@@ -1627,13 +1648,13 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell quarto-layout-cell" data-hash="slides_cache/revealjs/eval-seq-1_54bf99803749d68ac6a57bc07d23c87a" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_seq_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_seq_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/eval-seq-1-1.png" width="1000"></p>
 </div>
 </div>
 <div class="cell quarto-layout-cell" data-hash="slides_cache/revealjs/eval-seq-2_9c813170830168b5ed1a2f733a4b6d76" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_seq_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_seq_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/eval-seq-2-1.png" width="1000"></p>
 </div>
@@ -1646,13 +1667,13 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell quarto-layout-cell" data-hash="slides_cache/revealjs/eval-div-1_075e1be7ee326f93ddba1f6566d21dac" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_div_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_div_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/eval-div-1-1.png" width="1000"></p>
 </div>
 </div>
 <div class="cell quarto-layout-cell" data-hash="slides_cache/revealjs/eval-div-2_f695a82e03a2addbf04122995916309e" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_div_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_div_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/eval-div-2-1.png" width="1000"></p>
 </div>
@@ -1665,13 +1686,13 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="cell quarto-layout-cell" data-hash="slides_cache/revealjs/eval-cat-1_f001e52ad1519679befdb7ba7e15a8a0" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_cat_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_cat_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/eval-cat-1-1.png" width="1000"></p>
 </div>
 </div>
 <div class="cell quarto-layout-cell" data-hash="slides_cache/revealjs/eval-cat-2_585d16dbfb9bbd4053a0e0c56c015cb4" style="flex-basis: 50.0%;justify-content: center;">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_cat_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>colorspace<span class="sc">::</span><span class="fu">specplot</span>(pal_cat_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img data-src="slides_files/figure-revealjs/eval-cat-2-1.png" width="1000"></p>
 </div>
@@ -1682,35 +1703,35 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 <section id="color-tools" class="slide level2">
 <h2>Color Tools</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-tool-1_901b02ff90f0fe64c87106b954832693">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_color_picker</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_color_picker</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="img/tool-hcl-color-picker.png" class="r-stretch quarto-figure-center"></section>
 <section id="color-tools-1" class="slide level2">
 <h2>Color Tools</h2>
 <div class="cell" data-hash="slides_cache/revealjs/color-tool-2_84b2866a814175e4d6273cc051df9215">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a>colorspace<span class="sc">::</span><span class="fu">choose_color</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>colorspace<span class="sc">::</span><span class="fu">choose_color</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="img/tool-choose-color.png" class="r-stretch quarto-figure-center"></section>
 <section id="color-palette-tools" class="slide level2">
 <h2>Color Palette Tools</h2>
 <div class="cell" data-hash="slides_cache/revealjs/palette-tool-1_14cb824a7a66d0ceb9d605bcbb8cfdba">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_wizard</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a>colorspace<span class="sc">::</span><span class="fu">hcl_wizard</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="img/tool-hcl-wizard.png" class="r-stretch quarto-figure-center"></section>
 <section id="color-palette-tools-1" class="slide level2">
 <h2>Color Palette Tools</h2>
 <div class="cell" data-hash="slides_cache/revealjs/palette-tool-2_aef369f5c9ec26102ed3185805e25e1e">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a>colorspace<span class="sc">::</span><span class="fu">choose_palette</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a>colorspace<span class="sc">::</span><span class="fu">choose_palette</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="img/tool-choose-palette.png" class="r-stretch quarto-figure-center"></section>
 <section id="cvd-tool" class="slide level2">
 <h2>CVD Tool</h2>
 <div class="cell" data-hash="slides_cache/revealjs/cvd-tool_82315faedd8e196878cff16fc82aa459">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>colorspace<span class="sc">::</span><span class="fu">cvd_emulator</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1"></a>colorspace<span class="sc">::</span><span class="fu">cvd_emulator</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="img/tool-cvd-emulator.png" class="r-stretch quarto-figure-center"></section>
@@ -1761,37 +1782,37 @@ $ income_grp     &lt;chr&gt; "3. Upper middle income", "1. High income: OECD", "
 </section>
 <section id="data-preparation" class="slide level2">
 <h2>Data Preparation</h2>
-<div class="cell" data-hash="slides_cache/revealjs/data-prep_81c1135e3bce1463cd4460f0d7b64c78">
-<div class="sourceCode cell-code" id="cb81" data-code-line-numbers="1,2|4,5,6,7|9|10|11,12,13,14,15,16,17|12,13,14,15|18,19,20,21|22|23|25,26|27|29,30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="co">#remotes::install_github("wmgeolab/rgeoboundaries")</span></span>
-<span id="cb81-2"><a href="#cb81-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb81-3"><a href="#cb81-3"></a></span>
-<span id="cb81-4"><a href="#cb81-4"></a>sf_world_ne <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="dv">110</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb81-5"><a href="#cb81-5"></a>sf_world_correct <span class="ot">&lt;-</span> rgeoboundaries<span class="sc">::</span><span class="fu">gb_adm0</span>()</span>
-<span id="cb81-6"><a href="#cb81-6"></a>owid_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/owid-urbanization-vs-gdp.csv"</span>)</span>
-<span id="cb81-7"><a href="#cb81-7"></a><span class="do">## via https://ourworldindata.org/urbanization</span></span>
-<span id="cb81-8"><a href="#cb81-8"></a></span>
-<span id="cb81-9"><a href="#cb81-9"></a>sf_world <span class="ot">&lt;-</span> sf_world_correct <span class="sc">%&gt;%</span> </span>
-<span id="cb81-10"><a href="#cb81-10"></a>  <span class="fu">left_join</span>(sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>(sf_world_ne), <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"shapeISO"</span> <span class="ot">=</span> <span class="st">"iso_a3"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-11"><a href="#cb81-11"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb81-12"><a href="#cb81-12"></a>    owid_data <span class="sc">%&gt;%</span> </span>
-<span id="cb81-13"><a href="#cb81-13"></a>      janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb81-14"><a href="#cb81-14"></a>      <span class="fu">rename</span>(<span class="at">urban_pop =</span> <span class="st">"urban_population_percent_long_run_to_2016_owid"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-15"><a href="#cb81-15"></a>      <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>), </span>
-<span id="cb81-16"><a href="#cb81-16"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"shapeISO"</span> <span class="ot">=</span> <span class="st">"code"</span>)</span>
-<span id="cb81-17"><a href="#cb81-17"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-18"><a href="#cb81-18"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
-<span id="cb81-19"><a href="#cb81-19"></a>    sovereignt, <span class="at">iso_a3 =</span> shapeISO, type, <span class="at">continent =</span> continent.x, region_un, subregion, </span>
-<span id="cb81-20"><a href="#cb81-20"></a>    gdp_per_capita, urban_pop, pop_est, economy, income_grp</span>
-<span id="cb81-21"><a href="#cb81-21"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-22"><a href="#cb81-22"></a>  <span class="fu">mutate</span>(<span class="at">pop_est =</span> <span class="fu">as.numeric</span>(pop_est)) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-23"><a href="#cb81-23"></a>  <span class="fu">filter</span>(<span class="sc">!</span>sovereignt <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span>
-<span id="cb81-24"><a href="#cb81-24"></a></span>
-<span id="cb81-25"><a href="#cb81-25"></a>df_world <span class="ot">&lt;-</span> sf_world <span class="sc">%&gt;%</span> </span>
-<span id="cb81-26"><a href="#cb81-26"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb81-27"><a href="#cb81-27"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_per_capita), <span class="sc">!</span><span class="fu">is.na</span>(urban_pop))</span>
-<span id="cb81-28"><a href="#cb81-28"></a></span>
-<span id="cb81-29"><a href="#cb81-29"></a>readr<span class="sc">::</span><span class="fu">write_rds</span>(sf_world, <span class="st">"data/urban-gdp-pop-sf.rds"</span>)</span>
-<span id="cb81-30"><a href="#cb81-30"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(df_world, <span class="st">"data/urban-gdp-pop.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="slides_cache/revealjs/data-prep_f85068be4f5c16950ea05cb69f121453">
+<div class="sourceCode cell-code" id="cb84" data-code-line-numbers="1,2|4,5,6,7|9|10|11,12,13,14,15,16,17|12,13,14,15|18,19,20,21|22|23|25,26|27|29,30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a><span class="co">#remotes::install_github("wmgeolab/rgeoboundaries")</span></span>
+<span id="cb84-2"><a href="#cb84-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb84-3"><a href="#cb84-3"></a></span>
+<span id="cb84-4"><a href="#cb84-4"></a>sf_world_ne <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="dv">110</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb84-5"><a href="#cb84-5"></a>sf_world_correct <span class="ot">&lt;-</span> rgeoboundaries<span class="sc">::</span><span class="fu">gb_adm0</span>()</span>
+<span id="cb84-6"><a href="#cb84-6"></a>owid_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/owid-urbanization-vs-gdp.csv"</span>)</span>
+<span id="cb84-7"><a href="#cb84-7"></a><span class="do">## via https://ourworldindata.org/urbanization</span></span>
+<span id="cb84-8"><a href="#cb84-8"></a></span>
+<span id="cb84-9"><a href="#cb84-9"></a>sf_world <span class="ot">&lt;-</span> sf_world_correct <span class="sc">%&gt;%</span> </span>
+<span id="cb84-10"><a href="#cb84-10"></a>  <span class="fu">left_join</span>(sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>(sf_world_ne), <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"shapeISO"</span> <span class="ot">=</span> <span class="st">"iso_a3"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb84-11"><a href="#cb84-11"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb84-12"><a href="#cb84-12"></a>    owid_data <span class="sc">%&gt;%</span> </span>
+<span id="cb84-13"><a href="#cb84-13"></a>      janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb84-14"><a href="#cb84-14"></a>      <span class="fu">rename</span>(<span class="at">urban_pop =</span> <span class="st">"urban_population_percent_long_run_to_2016_owid"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb84-15"><a href="#cb84-15"></a>      <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>), </span>
+<span id="cb84-16"><a href="#cb84-16"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"shapeISO"</span> <span class="ot">=</span> <span class="st">"code"</span>)</span>
+<span id="cb84-17"><a href="#cb84-17"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb84-18"><a href="#cb84-18"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb84-19"><a href="#cb84-19"></a>    <span class="at">sovereignt =</span> shapeName, <span class="at">iso_a3 =</span> shapeISO, type, <span class="at">continent =</span> continent.x, </span>
+<span id="cb84-20"><a href="#cb84-20"></a>    region_un, subregion, gdp_per_capita, urban_pop, pop_est, economy, income_grp</span>
+<span id="cb84-21"><a href="#cb84-21"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb84-22"><a href="#cb84-22"></a>  <span class="fu">mutate</span>(<span class="at">pop_est =</span> <span class="fu">as.numeric</span>(pop_est)) <span class="sc">%&gt;%</span> </span>
+<span id="cb84-23"><a href="#cb84-23"></a>  <span class="fu">filter</span>(<span class="sc">!</span>sovereignt <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span>
+<span id="cb84-24"><a href="#cb84-24"></a></span>
+<span id="cb84-25"><a href="#cb84-25"></a>df_world <span class="ot">&lt;-</span> sf_world <span class="sc">%&gt;%</span> </span>
+<span id="cb84-26"><a href="#cb84-26"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb84-27"><a href="#cb84-27"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_per_capita), <span class="sc">!</span><span class="fu">is.na</span>(urban_pop))</span>
+<span id="cb84-28"><a href="#cb84-28"></a></span>
+<span id="cb84-29"><a href="#cb84-29"></a>readr<span class="sc">::</span><span class="fu">write_rds</span>(sf_world, <span class="st">"data/urban-gdp-pop-sf.rds"</span>)</span>
+<span id="cb84-30"><a href="#cb84-30"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(df_world, <span class="st">"data/urban-gdp-pop.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer footer-default">
 <p><strong><a href="https://cedricscherer.com">Cédric Scherer</a> //</strong> Workshops for Ukraine <strong>//</strong> Jan 26, 2022</p>

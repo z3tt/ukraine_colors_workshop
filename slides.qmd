@@ -205,6 +205,13 @@ colorRampPalette(pal_d)(35)
 ## Create Sequential Color Palettes
 
 ```{r}
+#| label: color-pal-seq-multi-unikn
+unikn::shades_of(col_1 = "#28A87D", col_n = "red", n = 35)
+```
+
+## Create Sequential Color Palettes
+
+```{r}
 #| label: color-pal-seq-multi-define
 pal_seq_multi <- colorRampPalette(pal_d)(35)
 ```
@@ -583,6 +590,16 @@ colorspace::hcl_palettes(palette = "PuBuGn", n = 10, plot = TRUE)
 #| code-line-numbers: "1|2"
 pal <- colorspace::sequential_hcl(palette = "PuBuGn", n = 10)
 plot(prismatic::color(pal))
+```
+
+## {colorspace}
+
+```{r}
+#| label: pals-colorspace-pubugn-plot-scales
+#| fig-width: 14
+#| code-line-numbers: "2"
+pal <- colorspace::sequential_hcl(palette = "PuBuGn", n = 10)
+scales::show_col(pal)
 ```
 
 
@@ -1206,7 +1223,7 @@ m + scale_fill_distiller(palette = "YlGnBu", direction = 1)
 #| label: map-diverging
 #| fig-width: 12
 #| fig-height: 7
-m + scale_fill_distiller(palette = "RdYlBu", direction = 1)
+m + scale_fill_distiller(palette = "RdYlBu")
 ```
 
 ## A (Reversed) Diverging Palette
@@ -1473,8 +1490,8 @@ sf_world <- sf_world_correct %>%
     by = c("shapeISO" = "code")
   ) %>% 
   dplyr::select(
-    sovereignt, iso_a3 = shapeISO, type, continent = continent.x, region_un, subregion, 
-    gdp_per_capita, urban_pop, pop_est, economy, income_grp
+    sovereignt = shapeName, iso_a3 = shapeISO, type, continent = continent.x, 
+    region_un, subregion, gdp_per_capita, urban_pop, pop_est, economy, income_grp
   ) %>% 
   mutate(pop_est = as.numeric(pop_est)) %>% 
   filter(!sovereignt == "Antarctica")

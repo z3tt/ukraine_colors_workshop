@@ -15,7 +15,7 @@
 ## also, make sure to install the following packages 
 ## (to 'uncomment' the code below, highlight lines 13-20 and press CMD+SHIFT+C)
 # packages <- c(
-#   "ggplot2", "dplyr", "readr", "forcats", "colorspace", "prismatic", 
+#   "ggplot2", "dplyr", "readr", "forcats", "colorspace", "prismatic", "unikn",
 #   "colorblindr", "RColorBrewer", "rcartocolor", "scico",
 #   "MetBrewer", "viridis", "ggthemes" ## <- only needed for the last part
 # )
@@ -55,6 +55,10 @@ colorspace::demoplot(pal_d, type = "scatter")
 
 ## -----------------------------------------------------------------------------
 colorRampPalette(pal_d)(35)
+
+
+## -----------------------------------------------------------------------------
+unikn::shades_of(col_1 = "#28A87D", col_n = "red", n = 35)
 
 
 ## -----------------------------------------------------------------------------
@@ -248,6 +252,10 @@ colorspace::hcl_palettes(palette = "PuBuGn", n = 10, plot = TRUE)
 ## -----------------------------------------------------------------------------
 pal <- colorspace::sequential_hcl(palette = "PuBuGn", n = 10)
 plot(prismatic::color(pal))
+
+
+## -----------------------------------------------------------------------------
+scales::show_col(pal)
 
 
 ## -----------------------------------------------------------------------------
@@ -650,7 +658,7 @@ m + scale_fill_distiller(palette = "YlGnBu", direction = 1)
 
 
 ## -----------------------------------------------------------------------------
-m + scale_fill_distiller(palette = "RdYlBu", direction = 1)
+m + scale_fill_distiller(palette = "RdYlBu")
 
 
 ## -----------------------------------------------------------------------------
@@ -774,8 +782,8 @@ sf_world <- sf_world_correct %>%
     by = c("shapeISO" = "code")
   ) %>% 
   dplyr::select(
-    sovereignt, iso_a3 = shapeISO, type, continent = continent.x, region_un, subregion, 
-    gdp_per_capita, urban_pop, pop_est, economy, income_grp
+    sovereignt = shapeName, iso_a3 = shapeISO, type, continent = continent.x, 
+    region_un, subregion, gdp_per_capita, urban_pop, pop_est, economy, income_grp
   ) %>% 
   mutate(pop_est = as.numeric(pop_est)) %>% 
   filter(!sovereignt == "Antarctica")
