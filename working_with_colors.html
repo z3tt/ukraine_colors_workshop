@@ -414,12 +414,29 @@
 <p>Photo by <a href="https://unsplash.com/@mariogogh?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mario Gogh</a> on Unsplash</p>
 </div>
 </section>
+<section>
+<section id="working-with-colors" class="title-slide slide level1 center">
+<h1>Working with Colors</h1>
+
+</section>
 <section id="section-4" class="slide level2" data-background-image="img/rgb.png" data-background-position="center" data-background-size="70%">
 <h2></h2>
 </section>
 <section id="section-5" class="slide level2" data-background-image="img/hcl.png" data-background-position="center" data-background-size="70%">
 <h2></h2>
 </section>
+<section id="section-6" class="slide level2" data-background-image="img/palettes-1.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section>
+<section id="section-7" class="slide level2" data-background-image="img/palettes-1-multi.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section>
+<section id="section-8" class="slide level2" data-background-image="img/palettes-2.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section>
+<section id="section-9" class="slide level2" data-background-image="img/palettes-3.png" data-background-position="center" data-background-size="87%">
+<h2></h2>
+</section></section>
 <section>
 <section id="working-with-colors-in-r" class="title-slide slide level1 center">
 <h1>Working with Colors in R</h1>
@@ -556,18 +573,6 @@
 </div>
 </div>
 </div>
-</section>
-<section id="section-6" class="slide level2" data-background-image="img/palettes-1.png" data-background-position="center" data-background-size="87%">
-<h2></h2>
-</section>
-<section id="section-7" class="slide level2" data-background-image="img/palettes-1-multi.png" data-background-position="center" data-background-size="87%">
-<h2></h2>
-</section>
-<section id="section-8" class="slide level2" data-background-image="img/palettes-2.png" data-background-position="center" data-background-size="87%">
-<h2></h2>
-</section>
-<section id="section-9" class="slide level2" data-background-image="img/palettes-3.png" data-background-position="center" data-background-size="87%">
-<h2></h2>
 </section>
 <section id="create-sequential-color-palettes-2" class="slide level2">
 <h2>Create Sequential Color Palettes</h2>
@@ -968,8 +973,8 @@
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
-<div class="cell" data-hash="working_with_colors_cache/revealjs/prep_b7cf1c481b4ecf41243e176a13a0a2f9">
-<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="1,2,3|5|7,13|8,9,10,11,12|8|9,10|11,12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(ggplot2)</span>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/prep_802cb3ba578816e06e40b9137dcab8a4">
+<div class="sourceCode cell-code" id="cb35" data-code-line-numbers="1,2,3|5|7,17|8,9,10,11,12,13,14,15,16|8|9,10,11,12|13,14,15,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb35-2"><a href="#cb35-2"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb35-3"><a href="#cb35-3"></a><span class="fu">library</span>(prismatic)</span>
 <span id="cb35-4"><a href="#cb35-4"></a></span>
@@ -977,17 +982,24 @@
 <span id="cb35-6"><a href="#cb35-6"></a></span>
 <span id="cb35-7"><a href="#cb35-7"></a><span class="fu">theme_update</span>(</span>
 <span id="cb35-8"><a href="#cb35-8"></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb35-9"><a href="#cb35-9"></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>), <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>)),</span>
-<span id="cb35-10"><a href="#cb35-10"></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb35-11"><a href="#cb35-11"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"grey45"</span>, <span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">7</span>), <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>)),</span>
-<span id="cb35-12"><a href="#cb35-12"></a>  <span class="at">plot.caption.position =</span> <span class="st">"plot"</span></span>
-<span id="cb35-13"><a href="#cb35-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-9"><a href="#cb35-9"></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(</span>
+<span id="cb35-10"><a href="#cb35-10"></a>    <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>), <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>)</span>
+<span id="cb35-11"><a href="#cb35-11"></a>  ),</span>
+<span id="cb35-12"><a href="#cb35-12"></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb35-13"><a href="#cb35-13"></a>  <span class="at">plot.caption =</span> <span class="fu">element_text</span>(</span>
+<span id="cb35-14"><a href="#cb35-14"></a>    <span class="at">color =</span> <span class="st">"grey45"</span>, <span class="at">size =</span> <span class="fu">rel</span>(.<span class="dv">7</span>), <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>)</span>
+<span id="cb35-15"><a href="#cb35-15"></a>  ),</span>
+<span id="cb35-16"><a href="#cb35-16"></a>  <span class="at">plot.caption.position =</span> <span class="st">"plot"</span></span>
+<span id="cb35-17"><a href="#cb35-17"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="the-data-set" class="slide level2">
 <h2>The Data Set</h2>
-<div class="cell" data-hash="working_with_colors_cache/revealjs/data_84731720cf4a1aba81fcacda20fc3926">
-<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="1,2|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(df_world)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/data_e63fdc130b431d195198f967b2a63452">
+<div class="sourceCode cell-code" id="cb36" data-code-line-numbers="1,2|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>sf_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_rds</span>(<span class="st">"./data/urban-gdp-pop-sf.rds"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a>df_world <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"./data/urban-gdp-pop.csv"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a></span>
+<span id="cb36-4"><a href="#cb36-4"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(df_world)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 161
 Columns: 11
@@ -1744,31 +1756,34 @@ $ income_grp     &lt;chr&gt; "5. Low income", "1. High income: OECD", "1. High i
 </section>
 <section id="data-preparation" class="slide level2">
 <h2>Data Preparation</h2>
-<div class="cell" data-hash="working_with_colors_cache/revealjs/data-prep_7657c17822299a26d279dd2dfd3384b4">
-<div class="sourceCode cell-code" id="cb81" data-code-line-numbers="1,2|4|5,11|6,7,8,9|10|12,13,14,15|16|17|19|20|21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a>sf_world_raw <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="dv">110</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb81-2"><a href="#cb81-2"></a>owid_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"owid-urbanization-vs-gdp.csv"</span>))</span>
-<span id="cb81-3"><a href="#cb81-3"></a></span>
-<span id="cb81-4"><a href="#cb81-4"></a>sf_world <span class="ot">&lt;-</span> sf_world_raw <span class="sc">%&gt;%</span> </span>
-<span id="cb81-5"><a href="#cb81-5"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb81-6"><a href="#cb81-6"></a>    owid_data <span class="sc">%&gt;%</span> </span>
-<span id="cb81-7"><a href="#cb81-7"></a>      janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb81-8"><a href="#cb81-8"></a>      <span class="fu">rename</span>(<span class="at">urban_pop =</span> <span class="st">"urban_population_percent_long_run_to_2016_owid"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-9"><a href="#cb81-9"></a>      <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>), </span>
-<span id="cb81-10"><a href="#cb81-10"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"iso_a3"</span> <span class="ot">=</span> <span class="st">"code"</span>)</span>
-<span id="cb81-11"><a href="#cb81-11"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-12"><a href="#cb81-12"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
-<span id="cb81-13"><a href="#cb81-13"></a>    sovereignt, iso_a3, type, <span class="at">continent =</span> continent.x, region_un, subregion, </span>
-<span id="cb81-14"><a href="#cb81-14"></a>    gdp_per_capita, urban_pop, pop_est, economy, income_grp</span>
-<span id="cb81-15"><a href="#cb81-15"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-16"><a href="#cb81-16"></a>  <span class="fu">mutate</span>(<span class="at">pop_est =</span> <span class="fu">as.numeric</span>(pop_est)) <span class="sc">%&gt;%</span> </span>
-<span id="cb81-17"><a href="#cb81-17"></a>  <span class="fu">filter</span>(<span class="sc">!</span>sovereignt <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span>
-<span id="cb81-18"><a href="#cb81-18"></a></span>
-<span id="cb81-19"><a href="#cb81-19"></a>df_world <span class="ot">&lt;-</span> sf_world <span class="sc">%&gt;%</span> </span>
-<span id="cb81-20"><a href="#cb81-20"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb81-21"><a href="#cb81-21"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_per_capita), <span class="sc">!</span><span class="fu">is.na</span>(urban_pop))</span>
-<span id="cb81-22"><a href="#cb81-22"></a></span>
-<span id="cb81-23"><a href="#cb81-23"></a>readr<span class="sc">::</span><span class="fu">write_rds</span>(sf_world, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"urban-gdp-pop-sf.rds"</span>))</span>
-<span id="cb81-24"><a href="#cb81-24"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(df_world, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"urban-gdp-pop.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="working_with_colors_cache/revealjs/data-prep_83c34e4b5d17ed27592ac5f651be8e51">
+<div class="sourceCode cell-code" id="cb81" data-code-line-numbers="1,2|4|5,11|6,7,8,9|10|12,13,14,15|16|17|19|20|21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb81-2"><a href="#cb81-2"></a></span>
+<span id="cb81-3"><a href="#cb81-3"></a>sf_world_raw <span class="ot">&lt;-</span> rnaturalearth<span class="sc">::</span><span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="dv">110</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb81-4"><a href="#cb81-4"></a>owid_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"owid-urbanization-vs-gdp.csv"</span>))</span>
+<span id="cb81-5"><a href="#cb81-5"></a><span class="do">## via https://ourworldindata.org/urbanization</span></span>
+<span id="cb81-6"><a href="#cb81-6"></a></span>
+<span id="cb81-7"><a href="#cb81-7"></a>sf_world <span class="ot">&lt;-</span> sf_world_raw <span class="sc">%&gt;%</span> </span>
+<span id="cb81-8"><a href="#cb81-8"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb81-9"><a href="#cb81-9"></a>    owid_data <span class="sc">%&gt;%</span> </span>
+<span id="cb81-10"><a href="#cb81-10"></a>      janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb81-11"><a href="#cb81-11"></a>      <span class="fu">rename</span>(<span class="at">urban_pop =</span> <span class="st">"urban_population_percent_long_run_to_2016_owid"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-12"><a href="#cb81-12"></a>      <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2016</span>), </span>
+<span id="cb81-13"><a href="#cb81-13"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"iso_a3"</span> <span class="ot">=</span> <span class="st">"code"</span>)</span>
+<span id="cb81-14"><a href="#cb81-14"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-15"><a href="#cb81-15"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb81-16"><a href="#cb81-16"></a>    sovereignt, iso_a3, type, <span class="at">continent =</span> continent.x, region_un, subregion, </span>
+<span id="cb81-17"><a href="#cb81-17"></a>    gdp_per_capita, urban_pop, pop_est, economy, income_grp</span>
+<span id="cb81-18"><a href="#cb81-18"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-19"><a href="#cb81-19"></a>  <span class="fu">mutate</span>(<span class="at">pop_est =</span> <span class="fu">as.numeric</span>(pop_est)) <span class="sc">%&gt;%</span> </span>
+<span id="cb81-20"><a href="#cb81-20"></a>  <span class="fu">filter</span>(<span class="sc">!</span>sovereignt <span class="sc">==</span> <span class="st">"Antarctica"</span>)</span>
+<span id="cb81-21"><a href="#cb81-21"></a></span>
+<span id="cb81-22"><a href="#cb81-22"></a>df_world <span class="ot">&lt;-</span> sf_world <span class="sc">%&gt;%</span> </span>
+<span id="cb81-23"><a href="#cb81-23"></a>  sf<span class="sc">::</span><span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb81-24"><a href="#cb81-24"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gdp_per_capita), <span class="sc">!</span><span class="fu">is.na</span>(urban_pop))</span>
+<span id="cb81-25"><a href="#cb81-25"></a></span>
+<span id="cb81-26"><a href="#cb81-26"></a>readr<span class="sc">::</span><span class="fu">write_rds</span>(sf_world, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"urban-gdp-pop-sf.rds"</span>))</span>
+<span id="cb81-27"><a href="#cb81-27"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(df_world, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"urban-gdp-pop.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="footer footer-default">
 <p><strong><a href="https://cedricscherer.com">Cédric Scherer</a> //</strong> Workshops for Ukraine <strong>//</strong> Jan 26, 2022</p>
