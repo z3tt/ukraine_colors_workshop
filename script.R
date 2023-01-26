@@ -281,7 +281,9 @@ rcartocolor::display_carto_all(colorblind_friendly = TRUE)
 
 
 ## -----------------------------------------------------------------------------
-pal <- rcartocolor::carto_pal(name = "ag_Sunset", n = 10)
+pal <- rcartocolor::carto_pal(name = "ag_Sunset", n = 10) ## throws an error
+
+pal <- rcartocolor::carto_pal(name = "ag_Sunset", n = 7)
 plot(prismatic::color(pal))
 
 
@@ -340,7 +342,7 @@ p <-
     x = NULL, y = NULL,
     fill = "Continent:", size = "Population:",
     title = "Urban population vs. GDP per capita, 2016",
-    caption = "Sources: ourworldindata.org/urbanization; NaturalEarth | x-axis on log scale"
+    caption = "Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API"
   ) +
   guides(
     fill = guide_legend(override.aes = list(size = 3)),
@@ -625,7 +627,7 @@ m <-
   coord_sf(crs = "+proj=eqearth") +
   labs(
     title = "Share of people living in urban areas, 2016",
-    caption = "Sources: ourworldindata.org/urbanization; NaturalEarth",
+    caption = "Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API",
     fill = NULL
   ) +
   theme(
@@ -754,21 +756,25 @@ colorspace::cvd_emulator()
 
 
 ## -----------------------------------------------------------------------------
+#remotes::install_github("wmgeolab/rgeoboundaries")
 library(tidyverse)
 
-sf_world_raw <- rnaturalearth::ne_countries(scale = 110, returnclass = "sf")
-owid_data <- readr::read_csv(here::here("data", "owid-urbanization-vs-gdp.csv"))
+sf_world_ne <- rnaturalearth::ne_countries(scale = 110, returnclass = "sf")
+sf_world_correct <- rgeoboundaries::gb_adm0()
+owid_data <- readr::read_csv("data/owid-urbanization-vs-gdp.csv")
+## via https://ourworldindata.org/urbanization
 
-sf_world <- sf_world_raw %>% 
+sf_world <- sf_world_correct %>% 
+  left_join(sf::st_drop_geometry(sf_world_ne), by = c("shapeISO" = "iso_a3")) %>% 
   left_join(
     owid_data %>% 
       janitor::clean_names() %>% 
-      rename(urban_pop = "urban_population_percent_long_run_to_2016_owid") %>% 
+      rename(urban_pop = "urban_population_penaturalcent_long_run_to_2016_owid") %>% 
       filter(year == 2016), 
-    by = c("iso_a3" = "code")
+    by = c("shapeISO" = "code")
   ) %>% 
   dplyr::select(
-    sovereignt, iso_a3, type, continent = continent.x, region_un, subregion, 
+    sovereignt, iso_a3 = shapeISO, type, continent = continent.x, region_un, subregion, 
     gdp_per_capita, urban_pop, pop_est, economy, income_grp
   ) %>% 
   mutate(pop_est = as.numeric(pop_est)) %>% 
@@ -778,8 +784,8 @@ df_world <- sf_world %>%
   sf::st_drop_geometry() %>% 
   filter(!is.na(gdp_per_capita), !is.na(urban_pop))
 
-readr::write_rds(sf_world, here::here("data", "urban-gdp-pop-sf.rds"))
-readr::write_csv(df_world, here::here("data", "urban-gdp-pop.csv"))
+readr::write_rds(sf_world, "data"/"urban-gdp-pop-sf.rds")
+readr::write_csv(df_world, "data"/"urban-gdp-pop.csv")
 
 
 ## THE END :) ##################################################################
