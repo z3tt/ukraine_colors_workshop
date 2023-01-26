@@ -769,7 +769,7 @@ sf_world <- sf_world_correct %>%
   left_join(
     owid_data %>% 
       janitor::clean_names() %>% 
-      rename(urban_pop = "urban_population_penaturalcent_long_run_to_2016_owid") %>% 
+      rename(urban_pop = "urban_population_percent_long_run_to_2016_owid") %>% 
       filter(year == 2016), 
     by = c("shapeISO" = "code")
   ) %>% 
@@ -784,8 +784,8 @@ df_world <- sf_world %>%
   sf::st_drop_geometry() %>% 
   filter(!is.na(gdp_per_capita), !is.na(urban_pop))
 
-readr::write_rds(sf_world, "data"/"urban-gdp-pop-sf.rds")
-readr::write_csv(df_world, "data"/"urban-gdp-pop.csv")
+readr::write_rds(sf_world, "data/urban-gdp-pop-sf.rds")
+readr::write_csv(df_world, "data/urban-gdp-pop.csv")
 
 
 ## THE END :) ##################################################################
