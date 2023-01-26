@@ -31,10 +31,10 @@
   font-weight: 900;
   src: url('../fonts/CabinetGrotesk-Black.ttf') format("truetype");
 }
-@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap&family=DM+Serif+Display:ital@0;1');
 
 $font-family-sans-serif: "Cabinet Grotesk", "Arial Black", "Arial", sans-serif, -apple-system;
-$font-family-serif: "Silverknife V0.2", "Arial Black", "Arial", sans-serif, -apple-system;
+$font-family-serif: "Silverknife V0.2", "DM Serif Display", "Bodoni", "Georgia", serif, -apple-system;
 $presentation-heading-color: #28A87D;
 $presentation-heading-font-weight: 800;
 $link-color: #28a87d;
@@ -48,7 +48,7 @@ $presentation-block-margin: .0375rem;
 /*-- scss:rules --*/
 
 h1.title {
-  font-family: "Silverknife V0.2", "Arial Black", "Arial", sans-serif, -apple-system;
+  font-family: "Silverknife V0.2", "DM Serif Display", "Bodoni", "Georgia", serif, -apple-system;
   color: #28A87D;
   font-size: 2.3em;
   font-weight: 800;
@@ -77,7 +77,7 @@ p.author {
 }
 
 .title-slide h1 {
-  font-family: "Silverknife V0.2", "Arial Black", "Arial", sans-serif, -apple-system;
+  font-family: "Silverknife V0.2", "DM Serif Display", "Bodoni", "Georgia", serif, -apple-system;
   text-align: center;
   font-style: italic;
   font-size: 2.1em;
