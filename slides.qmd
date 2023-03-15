@@ -84,7 +84,7 @@ Photo by [Mario Gogh](https://unsplash.com/@mariogogh?utm_source=unsplash&utm_me
 
 ```{r}
 #| label: color-defs-a
-pal_a <- c("green", "red", "blue")
+pal_a <- c("green", "red", "blue") 
 ```
 
 ::: {layout-ncol="2"}

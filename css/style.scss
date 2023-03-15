@@ -248,6 +248,32 @@ code>a, code>span {
   font-size: 1.25em;
 }
 
+.reveal .slide-logo {
+  height: 55px !important;
+  width: 55px!important;
+  max-width: unset !important;
+  max-height: unset !important;
+  margin-bottom: 12px;
+}
+@media (max-width: 991.98px) {
+  .footer p {
+    font-size: 1.0em;
+  }
+  .reveal .slide-logo {
+    height: 40px !important;
+    width: 40px!important;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer p {
+    font-size: .75em;
+  }
+  .reveal .slide-logo {
+    height: 25px !important;
+    width: 25px!important;
+  }
+}
+
 a:link,a:visited {
   color: #28a87d;
 }
@@ -371,12 +397,4 @@ a:hov {
 
 .reveal .slide body::-webkit-scrollbar {
   display: none;
-}
-
-.reveal .slide-logo {
-  height: 55px !important;
-  width: 55px!important;
-  max-width: unset !important;
-  max-height: unset !important;
-  margin-bottom: 12px;
 }

@@ -37,6 +37,3 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
-
-# Custom
-fonts/Silverknife-V0_2_VF-Italic.ttf
