@@ -1,11 +1,12 @@
 ---
 title: "Color Palette Choice and Customization in R and ggplot2"
-subtitle: "<span style='font-size:1.75em;line-height:1.1;'>Workshops for Ukraine</span></span>"
+subtitle: "Workshops for Ukraine"
 author: "<b style='color:#28a87d;'><a href='https://www.cedricscherer.com'>Cédric Scherer</a></b> **//** Jan 26, 2023"
 format: 
   revealjs: 
     theme: css/style.scss
     footer: '**[Cédric Scherer](https://cedricscherer.com) //** Workshops for Ukraine **//** Jan 26, 2022'
+    logo: https://d33wubrfki0l68.cloudfront.net/d4cd9bd8e591d8973d68f98a71544bbe65d53733/79b34/img/logo.png
     transition: fade
     progress: true
     multiplex: false
@@ -33,7 +34,7 @@ execute:
   fig-height: 6
 ---
 
-##  {background-image="img/avatars.png" background-position="center" background-size="77%"}
+##  {background-image="img/portfolio-cards.png" background-position="center" background-size="77%"}
 
 ::: footer
 :::
@@ -56,7 +57,7 @@ Photo by [Mario Gogh](https://unsplash.com/@mariogogh?utm_source=unsplash&utm_me
 :::
 
 
-# Working with Colors
+# Working with<br>Colors
 
 
 ## {background-image="img/rgb.png" background-position="center" background-size="70%"}
@@ -77,7 +78,7 @@ Photo by [Mario Gogh](https://unsplash.com/@mariogogh?utm_source=unsplash&utm_me
 ## {background-image="img/palettes-3.png" background-position="center"  background-size="87%"}
 
 
-# Working with Colors in R
+# Working with<br>Colors in R
 
 ## Color Definitions
 
@@ -700,7 +701,7 @@ plot(prismatic::color(pal_extd))
 
 
   
-# Working with Colors in ggplot2
+# Working with<br>Colors in ggplot2
 
 ## Setup
   
@@ -730,11 +731,52 @@ theme_update(
 
 ```{r}
 #| label: data
-#| code-line-numbers: "1,2|4"
-sf_world <- readr::read_rds("data/urban-gdp-pop-sf.rds")
+#| code-line-numbers: "1|1,2"
 df_world <- readr::read_csv("data/urban-gdp-pop.csv")
+sf_world <- readr::read_rds("data/urban-gdp-pop-sf.rds")
+```
 
+. . .
+
+```{r}
 dplyr::glimpse(df_world)
+```
+
+## Data Preparation
+
+```{r}
+#| label: data-prep
+#| code-line-numbers: "1,2|4,5,6,7|9|10|11,12,13,14,15,16,17|12,13,14,15|18,19,20,21|22|23|25,26|27|29,30"
+#remotes::install_github("wmgeolab/rgeoboundaries")
+library(tidyverse)
+
+sf_world_ne <- rnaturalearth::ne_countries(scale = 110, returnclass = "sf")
+sf_world_correct <- rgeoboundaries::gb_adm0()
+owid_data <- readr::read_csv("data/owid-urbanization-vs-gdp.csv")
+## via https://ourworldindata.org/urbanization
+
+sf_world <- sf_world_correct %>% 
+  left_join(sf::st_drop_geometry(sf_world_ne), by = c("shapeISO" = "iso_a3")) %>% 
+  left_join(
+    owid_data %>% 
+      janitor::clean_names() %>% 
+      rename(urban_pop = "urban_population_percent_long_run_to_2016_owid") %>% 
+      filter(year == 2016), 
+    by = c("shapeISO" = "code")
+  ) %>% 
+  dplyr::select(
+    sovereignt = shapeName, iso_a3 = shapeISO, type, continent = continent.x, 
+    region_un, subregion, gdp_per_capita, urban_pop, pop_est, economy, income_grp
+  ) %>% 
+  mutate(pop_est = as.numeric(pop_est)) %>% 
+  filter(!sovereignt == "Antarctica")
+
+df_world <- sf_world %>% 
+  sf::st_drop_geometry() %>% 
+  filter(!is.na(gdp_per_capita), !is.na(urban_pop))
+
+readr::write_rds(sf_world, "data/urban-gdp-pop-sf.rds")
+readr::write_csv(df_world, "data/urban-gdp-pop.csv")
 ```
 
 
@@ -765,9 +807,25 @@ p + geom_point(aes(fill = region_un), shape = 21, alpha = .5, stroke = .7)
 ## The Chart
 
 ```{r}
-#| label: plot-urban-gdp
+#| label: plot-urban-gdp-code
 #| eval: false
 #| code-line-numbers: "1|2,3|4|5|6|7,8|9,10,11,12|13,14|16"
+p <- 
+  ggplot(data = df_world, 
+         mapping = aes(x = gdp_per_capita, y = urban_pop, size = pop_est)) + 
+  coord_cartesian(expand = FALSE, clip = "off") +
+  scale_x_log10(labels = scales::label_dollar()) + 
+  scale_y_continuous(labels = function(y) paste0(y, "%"), limits = c(0, 100)) + 
+  scale_size_area(max_size = 15, breaks = c(10, 100, 500, 1000) * 10^6,
+                  labels = scales::label_number(scale = 1/10^6, suffix = "M")) +
+  labs(x = NULL, y = NULL,
+       fill = "Continent:", size = "Population:",
+       title = "Urban population vs. GDP per capita, 2016",
+       caption = "Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API | x-axis on log scale") +
+  guides(fill = guide_legend(override.aes = list(size = 3)),
+         size = guide_legend(override.aes = list(color = "black", fill = "grey85")))
+
+p + geom_point(aes(fill = region_un), shape = 21, alpha = .5, stroke = .7)
 ```
 
 
@@ -1194,9 +1252,27 @@ m
 ## The Map
 
 ```{r}
-#| label: map-urban-gdp
+#| label: map-urban-gdp-code
 #| eval: false
 #| code-line-numbers: "1|2|2,3|4|5,6,7,8,9|10,11,12,13,14,15,16"
+m <- 
+  ggplot(data = sf_world) +
+  geom_sf(aes(fill = urban_pop), color = "white", lwd = .3) +
+  coord_sf(crs = "+proj=eqearth") +
+  labs(
+    title = "Share of people living in urban areas, 2016",
+    caption = "Sources: ourworldindata.org/urbanization; NaturalEarth; geoBoundaries API",
+    fill = NULL
+  ) +
+  theme(
+    axis.text = element_blank(),
+    panel.grid.major = element_blank(),
+    legend.key.width = unit(2.5, "lines"),
+    legend.key.height = unit(.6, "lines"),
+    legend.position = "bottom"
+  )
+
+m
 ```
 
 ## A Sequential Palette
@@ -1463,43 +1539,3 @@ colorspace::cvd_emulator()
 
 
 # Thank You!
-
-
-# Appendix
-
-## Data Preparation
-
-```{r}
-#| label: data-prep
-#| code-line-numbers: "1,2|4,5,6,7|9|10|11,12,13,14,15,16,17|12,13,14,15|18,19,20,21|22|23|25,26|27|29,30"
-#remotes::install_github("wmgeolab/rgeoboundaries")
-library(tidyverse)
-
-sf_world_ne <- rnaturalearth::ne_countries(scale = 110, returnclass = "sf")
-sf_world_correct <- rgeoboundaries::gb_adm0()
-owid_data <- readr::read_csv("data/owid-urbanization-vs-gdp.csv")
-## via https://ourworldindata.org/urbanization
-
-sf_world <- sf_world_correct %>% 
-  left_join(sf::st_drop_geometry(sf_world_ne), by = c("shapeISO" = "iso_a3")) %>% 
-  left_join(
-    owid_data %>% 
-      janitor::clean_names() %>% 
-      rename(urban_pop = "urban_population_percent_long_run_to_2016_owid") %>% 
-      filter(year == 2016), 
-    by = c("shapeISO" = "code")
-  ) %>% 
-  dplyr::select(
-    sovereignt = shapeName, iso_a3 = shapeISO, type, continent = continent.x, 
-    region_un, subregion, gdp_per_capita, urban_pop, pop_est, economy, income_grp
-  ) %>% 
-  mutate(pop_est = as.numeric(pop_est)) %>% 
-  filter(!sovereignt == "Antarctica")
-
-df_world <- sf_world %>% 
-  sf::st_drop_geometry() %>% 
-  filter(!is.na(gdp_per_capita), !is.na(urban_pop))
-
-readr::write_rds(sf_world, "data/urban-gdp-pop-sf.rds")
-readr::write_csv(df_world, "data/urban-gdp-pop.csv")
-```

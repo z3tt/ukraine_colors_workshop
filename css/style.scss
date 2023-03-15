@@ -1,40 +1,35 @@
 /*-- scss:defaults --*/
 
 // fonts
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,700;0,7..72,800;1,7..72,400;1,7..72,500;1,7..72,700;1,7..72,800&family=Spline+Sans+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&family=Spline+Sans:wght@400;500;700&display=swap&family=Asap:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600;1,800;1,900&display=swap');
 @font-face {
-  font-family: 'Silverknife V0.2';
-  font-weight: 100 900;
-  font-style: italic;
-  src: url('../fonts/Silverknife V0.2-V0_2_VF.ttf') format("truetype-variations");
+  font-family: 'Cabinet Grotesk';
+  src: url('../fonts/CabinetGrotesk-Variable.ttf') format('truetype-variations');
+  font-weight: 100-900;
 }
-@font-face {
-  font-family: 'Silverknife V0.2';
-  font-weight: 100 900;
-  src: url('../fonts/Silverknife V0.2-V0_2_VF-Italic.ttf') format("truetype-variations");
+/*--@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('../fonts/CabinetGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
 }
 @font-face {
   font-family: 'Cabinet Grotesk';
-  src: url('../fonts/CabinetGrotesk-Regular.ttf') format("truetype");
+  src: url('../fonts/CabinetGrotesk-Bold.otf') format('opentype');
+  font-weight: 600;
 }
 @font-face {
   font-family: 'Cabinet Grotesk';
-  font-weight: bold;
-  src: url('../fonts/CabinetGrotesk-Bold.ttf') format("truetype");
+  src: url('../fonts/CabinetGrotesk-ExtraBold.otf') format('opentype');
+  font-weight: 700;
 }
 @font-face {
   font-family: 'Cabinet Grotesk';
+  src: url('../fonts/CabinetGrotesk-Black.otf') format('opentype');
   font-weight: 800;
-  src: url('../fonts/CabinetGrotesk-Extrabold.ttf') format("truetype");
-}
-@font-face {
-  font-family: 'Cabinet Grotesk';
-  font-weight: 900;
-  src: url('../fonts/CabinetGrotesk-Black.ttf') format("truetype");
-}
-@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap&family=DM+Serif+Display:ital@0;1');
+}--*/
 
-$font-family-sans-serif: "Cabinet Grotesk", "Arial Black", "Arial", sans-serif, -apple-system;
-$font-family-serif: "Silverknife V0.2", "DM Serif Display", "Bodoni", "Georgia", serif, -apple-system;
+$font-family-sans-serif: 'Cabinet Grotesk', 'Asap', 'Spline Sans', 'Arial Black', 'Arial', sans-serif;
+$font-family-serif: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
 $presentation-heading-color: #28A87D;
 $presentation-heading-font-weight: 800;
 $link-color: #28a87d;
@@ -47,51 +42,45 @@ $presentation-block-margin: .0375rem;
 
 /*-- scss:rules --*/
 
-h1.title {
-  font-family: "Silverknife V0.2", "DM Serif Display", "Bodoni", "Georgia", serif, -apple-system;
-  color: #28A87D;
-  font-size: 2.3em;
-  font-weight: 800;
+.reveal h1, h1, h1.title, .title-slide h1 {
+  font-family: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
+  text-align: center;
   font-style: italic;
-  line-height: .9;
-}
-
-p.subtitle {
-  font-size: 1.4em;
-  color: #606060;
   font-weight: 800;
-  line-height: 3.5;
-  letter-spacing: .25px;
 }
 
-p.author {
-  color: #606060;
-}
-
-.backgrounds {
-    background-color: #f8f8f8
-}
-
-.backgrounds .title-slide {
-    background-color: #e6d9f2
+h1.title {
+  color: #28A87D;
+  font-size: 2.35em;
+  line-height: .9;
+  padding-bottom: 25px;
 }
 
 .title-slide h1 {
-  font-family: "Silverknife V0.2", "DM Serif Display", "Bodoni", "Georgia", serif, -apple-system;
-  text-align: center;
-  font-style: italic;
-  font-size: 2.1em;
-  line-height: .9;
+  font-size: 1.5em;
   color: #663399;
+  line-height:1;
 }
 
-.reveal h1, h2, h3, h4, h5, p {
+#title-slide .subtitle {
+  font-family: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
+  font-size: 1.2em;
+  color: #606060;
+  font-weight: 600;
+  font-style: italic;
+  line-height: .95;
+  letter-spacing: .25px;
+  text-align: center;
+}
+
+.reveal h2, h3, h4, h5, h6 {
   font-feature-settings: "ss01" 1;
 }
 
 .reveal h2 {
   font-size: 1.4em;
   margin-bottom: 2.8px;
+  font-weight: 800;
 }
 
 h2>code {
@@ -99,37 +88,106 @@ h2>code {
   margin-bottom: 2.8px;
 }
 
+h2 .center {
+  text-align:center;
+}
+
 .reveal h3 {
   font-size: 1em;
   margin-bottom: 2.8px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .reveal h4 {
   font-size: 1em;
   margin-bottom: 2.8px;
-  font-weight: bold;
+  font-weight: 700;
   color: #606060;
 }
 
 .reveal h5 {
   font-size: .8em;
   margin-bottom: 2.8px;
-  font-weight: bold;
+  font-weight: 700;
   color: #606060;
+}
+
+p {
+  color: #404040;
+  font-feature-settings: "ss01" 1;
+}
+
+div.quarto-title-author-name {
+  font-size: .7em;
+  color: #606060;
+  font-feature-settings: "ss01" 1;
+  padding-top: 40px;
 }
 
 .reveal p {
   font-size: .75em;
   margin-top: 8px;
   margin-bottom: 16px;
+  font-feature-settings: "ss01" 1;
+}
+
+i.serif {
+  font-family: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+div .formula {
+  font-family: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
+  font-size: 2.3em;
+  font-weight: 600;
+  font-style: italic;
+  color:#404040;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+div .fct {
+  font-family: 'Spline Sans Mono', 'Consolas', monospace;
+  font-size: 2em;
+  font-weight: 600;
+  color: #663399;
+  text-align: center;
+  margin-top: 20px;
+}
+
+div .fctsub {
+  font-family: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
+  font-style: italic;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #606060;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .reveal table {
   font-size: .75em;
-  font-family: "Spline Sans Mono", Consolas, monospace;
+  font-family: 'Spline Sans Mono', 'Consolas', monospace;
 }
 
+.backgrounds {
+  background-color: #f8f8f8
+}
+
+.backgrounds .title-slide {
+  background-color: #e1f6ef
+}
+
+section.has-light-background, section.has-light-background h1 {
+  color: #28a87d;
+}
+
+img .left {
+  display: left;
+}
 
 .lightable-minimal.lightable-hover tbody tr:hover { 
   background-color: #28a87d !important;
@@ -140,7 +198,7 @@ h2>code {
   font-size: .4em;
   color: #606060;
   text-align: center;
-  margin-top: 1;
+  margin-top: 15px;
 }
 
 details {
@@ -148,14 +206,27 @@ details {
 }
 
 details>summary {
-  font-family: "Spline Sans Mono", Consolas, monospace;
-  font-size: 1.25rem;
+  font-family: 'Spline Sans Mono', 'Consolas', monospace;
+  font-size: 1.25em;
   color: #a0a0a0;
 }
 
 code>a, code>span {
-  font-family: "Spline Sans Mono", Consolas, monospace;
-  font-size: 1.1rem;
+  font-family: 'Spline Sans Mono', 'Consolas', monospace;
+  font-size: .9em;
+}
+
+.reveal code {
+  font-family: 'Spline Sans Mono', 'Consolas', monospace;
+}
+
+.reveal p>code {
+  font-size: .9em;
+}
+
+.reveal pre code {
+  font-weight: 300;
+  font-size: .85em;
 }
 
 .panel-tabset li>a {
@@ -165,13 +236,16 @@ code>a, code>span {
 }
 
 .cell {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.reveal div .cell-output {
+  font-size: .8em;
 }
 
 .footer p {
   color: #a0a0a0;
-  font-size: 1.25rem;
-  line-height:.9;
+  font-size: 1.25em;
 }
 
 a:link,a:visited {
@@ -182,22 +256,43 @@ a:hov {
 }
 
 .small {
-  font-size: .75rem;
+  font-size: .75em;
+	font-feature-settings: "ss01" 1;
 }
 
 .reveal li {
-  font-size: 2.1rem;
+  color: #404040;
+  font-size: .73em;
+	font-feature-settings: "ss01" 1;
 }
 
 .reveal li li, li li li {
-  font-size: 1.75rem;
+  color: #606060;
+  font-size: 1.65rem;
+	font-feature-settings: "ss01" 1;
+}
+
+.reveal li > code, li li > code, li li li > code {
+  font-size: 1.5rem;
+}
+
+.reveal table th, .reveal table td {
+	font-feature-settings: "ss01" 1;
 }
 
 .reveal pre {
   height: 98.1%
 }
 
-.reveal .slide .question {
+.reveal blockquote {
+  font-family: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
+  color: #404040;
+  font-style: italic;
+  margin-top:12px;
+  margin-bottom:24px;
+}
+
+.reveal .slide .exercise {
   border-left: 3px solid #28a87d;
   padding: 0.5rem 0.5rem 0.2rem 1rem;
   margin-top: 0.5rem;
@@ -205,7 +300,7 @@ a:hov {
   background: #d9f6ec;
 }
 
-.reveal .slide .poll {
+.reveal .slide .question {
   border-left: 3px solid #FFD166;
   padding: 0.5rem 0.5rem 0.2rem 1rem;
   margin-top: 0.5rem;
@@ -222,13 +317,13 @@ a:hov {
 }
 
 .simple-highlight-ylw {
- background-color: #FFD166;
+ background-color: #FFEDC2;
  padding: 0.1em 0.2em;
  font-weight: bold;
 }
 
 .simple-highlight-grn {
- background-color: #79dfbd;
+ background-color: #b9eedc;
  padding: 0.1em 0.2em;
  font-weight: bold;
 }
@@ -276,4 +371,12 @@ a:hov {
 
 .reveal .slide body::-webkit-scrollbar {
   display: none;
+}
+
+.reveal .slide-logo {
+  height: 55px !important;
+  width: 55px!important;
+  max-width: unset !important;
+  max-height: unset !important;
+  margin-bottom: 12px;
 }
